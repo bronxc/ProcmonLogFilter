@@ -149,14 +149,19 @@ class StackFramePage(StackFrameBase):
 
     # ---------------------------------------------------------------------------
 
-    def set_func_to_page_offset(self, func_to_page_offset):
+    def set_func_addr(self, func_addr):
         """
-        设置函数相对于 堆起始地址 的偏移
+        设置函数地址
 
-        数据来源: 从 IDA 遍历[函数起始地址相对于 堆起始地址 的偏移]得到列表, 挨个匹配 self.addr_to_page_offset 得到对应的函数, 传入其起始地址的偏移
+        数据来源: 从 IDA 遍历[函数起始地址 函数结束地址 函数名称]得到列表, 挨个匹配 self.addr 得到对应的函数, 传入其起始地址
+
+        - 注意: 此时 self.page_start 与 IDA 中的模块基址应该是相同的
         """
-        self.func_to_page_offset = func_to_page_offset
-        self.addr_to_func_offset = self.addr_to_page_offset - func_to_page_offset
+        assert self.page_start
+
+        self.func_addr = func_addr
+        self.func_to_page_offset = func_addr - self.page_start
+        self.addr_to_func_offset = self.addr - func_addr
 
     def set_func_name(self, func_name):
         """
@@ -343,20 +348,25 @@ class StackFrameModule(StackFrameBase):
 
     # ---------------------------------------------------------------------------
 
-    def set_func_to_md_offset(self, func_to_md_offset):
+    def set_func_addr(self, func_addr):
         """
-        设置函数相对于模块地址的偏移
+        设置函数地址
 
-        数据来源: 从 IDA 遍历[函数起始地址相对于 模块基址 的偏移]得到列表, 挨个匹配 self.addr_to_md_offset 得到对应的函数, 传入其起始地址的偏移
+        数据来源: 从 IDA 遍历[函数起始地址 函数结束地址 函数名称]得到列表, 挨个匹配 self.addr 得到对应的函数, 传入其起始地址
+
+        - 注意: 此时 self.md_base 与 IDA 中的模块基址应该是相同的
         """
-        self.func_to_md_offset = func_to_md_offset
-        self.addr_to_func_offset = self.addr_to_md_offset - func_to_md_offset
+        assert self.md_base
+
+        self.func_addr = func_addr
+        self.func_to_md_offset = func_addr - self.md_base
+        self.addr_to_func_offset = self.addr - func_addr
 
     def set_func_name(self, func_name):
         """
         设置函数的名称
 
-        数据来源: 从 IDA 遍历(已 PE 方式加载的)[函数起始地址相对于 模块基址 的偏移]得到列表
+        数据来源: 从 IDA 遍历(已 PE 方式加载的)[函数起始地址 函数结束地址 函数名称]得到列表
                   挨个匹配 self.addr_to_md_offset 得到对应的函数, 传入其名称
 
         - 此处名称应该是有意义的, 要不然来个 sub_xxxx 有毛用
@@ -387,11 +397,14 @@ class StackFrameModule(StackFrameBase):
 
         if self.md_base != md_rebase:
 
+            # 重定位
+
             self.md_base = md_rebase
             self.addr = self.addr_to_md_offset + self.md_base
             if self.func_to_md_offset:
                 self.func_addr = self.func_to_md_offset + self.md_base
         else:
+            # 不需重定位
             pass
 
     # ---------------------------------------------------------------------------
@@ -461,14 +474,14 @@ class ProcmonEvent(object):
 
     def __init__(self, *args, **kwargs):
         """"""
-        if len(args) == 7:
-            self.__init__raw(args[0], args[1], args[2], args[3], args[4], args[5], args[6])
-        elif len(args) == 4:
-            self.__init__dict(args[0], args[1], args[2], args[3])
+        if len(args) == 5:
+            self.__init__raw(args[0], args[1], args[2], args[3], args[4])
+        elif len(args) == 7:
+            self.__init__dict(args[0], args[1], args[2], args[3], args[4], args[5], args[6])
         else:
             raise Exception("invalid param count for init ProcmonEvent: %s" % args)
 
-    def __init__raw(self, proc_name, pid_str, operation, path, detail, frame_list, event_tag):
+    def __init__raw(self, operation, path, detail, frame_list, event_tag):
         """
         从 xml 中解析的 <event> Tag 创建对象
 
@@ -480,12 +493,30 @@ class ProcmonEvent(object):
         self.frame_list = frame_list
         self.event_tag_list = [event_tag]
 
-    def __init__dict(self, operation_list, path_list, frame_list, event_tag_list):
-        """从保存的 json 中 "恢复" 此对象"""
+        self.direct_invoke_api = None
+        self.direct_invoke_api_retnto_addr = None
+        self.direct_invoke_api_invoke_inst = None
+
+    def __init__dict(self, operation_list, path_list, frame_list, event_tag_list, direct_invoke_api, direct_invoke_api_retnto_addr, direct_invoke_api_invoke_inst):
+        """
+        从保存的 json 中 "恢复" 此对象
+
+        - operation_list                : list   :
+        - path_list                     : list   :
+        - frame_list                    : list   :
+        - event_tag_list                : list   :
+        - direct_invoke_api             : string : 调用的 api. 有了这个, self.operation_list 就没有意义了
+        - direct_invoke_api_retnto_addr : int    : 调用 api 的返回地址. 可以依据此地址, 在 IDA 中匹配 direct_invoke_api
+        - direct_invoke_api_invoke_inst : string : 调用 api 的指令. 例如: "call eax" "call [eax + 0xC]" "call dowrd_12345"
+        """
         self.operation_list = operation_list
         self.path_list = path_list
         self.frame_list = frame_list
         self.event_tag_list = event_tag_list
+
+        self.direct_invoke_api = direct_invoke_api
+        self.direct_invoke_api_retnto_addr = direct_invoke_api_retnto_addr
+        self.direct_invoke_api_invoke_inst = direct_invoke_api_invoke_inst
 
     # ---------------------------------------------------------------------------
 
@@ -517,13 +548,17 @@ class ProcmonEvent(object):
         tag_str = tag_str[:-1]
 
         oper_str = ""
-        for operation in self.operation_list:
-            oper_str = operation + "/" + oper_str
-        oper_str = oper_str[:-1]
+        if self.direct_invoke_api:
+            oper_str = self.direct_invoke_api
+        else:
+            for operation in self.operation_list:
+                oper_str = operation + "/" + oper_str
+            oper_str = oper_str[:-1]
 
         path_str = ""
         for path_ in self.path_list:
-            path_str = path_ + "\n" + path_str
+            if len(path_) != 0:
+                path_str = path_ + "\n" + path_str
         if len(path_str) != 0:
             path_str = path_str[:-1]
 
@@ -581,9 +616,28 @@ class ProcmonEvent(object):
         return False
 
     def merge(self, other):
-        """当2个对象 调用堆栈 相同时, 组合其 Operation/path/detail"""
+        """
+        当2个对象 调用堆栈 相同时, 将其内容混合
+
+        - 如果有 direct_invoke_api, 则不管 operation_list
+        """
+        has_direct_invoke_api = False
+        if self.direct_invoke_api and other.direct_invoke_api:
+            assert self.direct_invoke_api == other.direct_invoke_api
+            has_direct_invoke_api = True
+        elif self.direct_invoke_api:
+            has_direct_invoke_api = True
+        elif other.direct_invoke_api:
+            self.direct_invoke_api = other.direct_invoke_api
+            has_direct_invoke_api = True
+        else:
+            pass
+
+        # 没有调用的 api, 则混合 operation_list
+        if not has_direct_invoke_api:
+            self.operation_list = list(set(self.operation_list + other.operation_list))
+
         self.path_list = list(set(self.path_list + other.path_list))
-        self.operation_list = list(set(self.operation_list + other.operation_list))
         self.event_tag_list = list(set(self.event_tag_list + other.event_tag_list))
 
     # ---------------------------------------------------------------------------
@@ -660,7 +714,7 @@ class Output(object):
         pass
 
     # ---------------------------------------------------------------------------
-    # util
+    # util -
 
     @classmethod
     def __dup_file_name(cls, file_path, append_text=None, new_ext=None):
@@ -704,6 +758,119 @@ class Output(object):
 
         # 超过最大尝试次数了
         raise Exception("reach max try cnt when gen file name: %s" % file_path)
+
+    # ---------------------------------------------------------------------------
+    # 内容补全
+
+    @classmethod
+    def guess_direct_invoke_api(self):
+        """猜测 direct_invoke_api"""
+        for evt in self.event_list:
+            pass
+
+    def export_unguessable_direct_invoke_api_retn_addrs(self):
+        """导出不能猜测 direct_invoke_api 的 evnt 的 direct_invoke_api_retnto_addr, 借助 IDA 来判断具体的 api"""
+        pass
+
+    def complete_direct_invoke_api(slef, file_path):
+        """用 IDA 解析的内容, 补全 evt.direct_invoke_api"""
+        pass
+
+    def complete_event_frame_by_md_func_list(self, md_name, md_func_list):
+        """用 函数范围/名称 列表补全 event.frame_list 的内容"""
+        for evt in self.event_list:
+            for frame in evt.frame_list:
+                if isinstance(frame, StackFrameModule) and frame.md_name == md_name:
+
+                    # 遍历函数范围
+
+                    for func_tuple in md_func_list:
+
+                        # 这里直接比较地址, 所以要确保两者的基址是一样的
+                        if func_tuple[0] <= frame.addr and frame.addr <= func_tuple[1]:
+
+                            # 设置函数地址和名称
+
+                            frame.set_func_addr(func_tuple[0])
+                            if not func_tuple[2].startswith("sub_"):
+                                frame.set_func_name(func_tuple[2])
+
+    def complete_event_frame_by_page_func_list(self, page_start, page_func_list):
+        """用 函数范围/名称 列表补全 event.frame_list 的内容"""
+        for evt in self.event_list:
+            for frame in evt.frame_list:
+                if isinstance(frame, StackFramePage) and frame.page_start == page_start:
+
+                    # 遍历函数范围
+
+                    for func_tuple in page_func_list:
+
+                        # 这里直接比较地址, 所以要确保两者的基址是一样的
+                        if func_tuple[0] <= frame.addr and frame.addr <= func_tuple[1]:
+
+                            # 设置函数地址和名称
+
+                            frame.set_func_addr(func_tuple[0])
+                            if not func_tuple[2].startswith("sub_"):
+                                frame.set_func_name(func_tuple[2])
+
+    def complete_event_frame_by_md_func_file(self, md_name, md_func_file_path):
+        """
+        用 .txt 文件中的内容补全 event.frame_list 的内容
+
+        - 文件的格式:
+            - func_start func_end func_name
+            - func_start func_end func_name
+            - ...
+        - 数据来源: IDA 脚本解析
+        - 注意: IDA 中的基址, 与对应的 frame.md_base 应该是相同的, 不然补全个屁啊
+        """
+        with open(md_func_file_path, mode='r', encoding='utf-8') as f:
+
+            md_func_list = []
+
+            # 解析文件
+            for line in f.readlines():
+
+                splits = line.strip().split(" ")
+
+                func_start = int(splits[0], 16)
+                func_end = int(splits[1], 16)
+                func_name = splits[2]
+
+                md_func_list.append(func_start, func_end, func_name)
+
+            # 补全
+            self.complete_event_frame_by_md_func_list(md_name, md_func_list)
+
+    def complete_event_frame_by_page_func_file(self, page_start, page_func_file_path):
+        """
+        用 .txt 文件中的内容补全 event.frame_list 的内容
+
+        - 文件的格式:
+            - func_start func_end func_name
+            - func_start func_end func_name
+            - ...
+        - 数据来源: IDA 脚本解析
+        - 注意: IDA 中的基址, 与对应的 frame.page_start 应该是相同的, 不然补全个屁啊
+        """
+        with open(page_func_file_path, mode='r', encoding='utf-8') as f:
+
+            page_func_list = []
+
+            # 解析文件
+            for line in f.readlines():
+
+                splits = line.strip().split(" ")
+
+                func_start = int(splits[0], 16)
+                func_end = int(splits[1], 16)
+                func_name = splits[2]
+
+                page_func_list.append(func_start, func_end, func_name)
+
+            # 补全
+            self.complete_event_frame_by_page_func_list(page_start, page_func_list)
 
     # ---------------------------------------------------------------------------
     # 分割
@@ -990,7 +1157,36 @@ class Output(object):
         return event_list
 
     # ---------------------------------------------------------------------------
-    # 等价替换
+    # 混合/等价替换/去重
+
+    def __add__(self, other):
+        """
+        相同版本的 Output 对象混合到一起
+
+        - 要加就把两堆 ProcmonEvent() 对象加到一起, 因为每次添加都要执行 去重/组合 等操作, 如果一个一个加就太慢了
+        - 最好重定位都是正确的, 要不然, 呵呵...
+
+        - 不提供 self.merge_from_xml_file()/self.merge_from_json_file() 的操作. 请先通过 xml_file/json_file 创建 Output 对象, 再让2个对象 +
+        """
+        # 比较版本
+        if self.version != other.version:
+            raise Exception("can't merge 2 Output object with different version: %s vs %s" % (self.version, other.version))
+
+        # 对于模块名不相同的, 警告下, 后果用户自己承担吧...
+        new_itd_md_list = self.itd_md_list
+        if set(self.itd_md_list) != set(other.itd_md_list):
+            print("merge 2 Output object with different itd module list: %s vs %s" % (self.itd_md_list, other.itd_md_list))
+            new_itd_md_list = list(set(self.itd_md_list + other.itd_md_list))
+
+        # 混合
+        new_event_list = self.__merge_duplicate_event_list(list(self.event_list + other.event_list))
+
+        # 返回新对象
+        return Output(self.version, new_itd_md_list, new_event_list)
+
+    def diff(self, other):
+        """比较2个 Output() 对象的不同"""
+        pass
 
     @classmethod
     def __equalvent_event_list(cls, event_list):
@@ -1014,22 +1210,45 @@ class Output(object):
 
                 frame_1st = evt.frame_list[0]
 
-                # LoadLibrary 系列
+                # LoadLibrary
+
                 if frame_1st.func_name.startswith("LoadLibrary"):
 
-                    # 文件操作
-                    if operation in ["QueryOpen", "CreateFile", "CreateFileMapping", "CloseFile", "Load Image"]:
-                        evt.operation_list[0] = "Load Image"
+                    print("equalventing evt with LoadLibrary to Load Image. evt:\n%s\n" % evt)
 
-                    # 注册表操作
-                    elif operation in ["RegQueryValue", "RegOpenKey", "RegCreateKey"]:
-                        evt.operation_list[0] = "Load Image"
+                    evt.operation_list[0] = "Load Image"
+                    if operation in ["RegQueryValue", "RegOpenKey", "RegCreateKey"]:
                         evt.path_list[0] = ""
 
-        return event_list
+                # CopyFileW
 
-    # ---------------------------------------------------------------------------
-    # 混合
+                if frame_1st.func_name.startswith("CopyFile"):
+
+                    print("equalventing evt with CopyFile to CopyFile. evt:\n%s\n" % evt)
+
+                    evt.operation_list[0] = "CopyFile"
+                    if operation in ["RegQueryValue", "RegOpenKey", "RegCreateKey"]:
+                        evt.path_list[0] = ""
+
+                # GetFileAttributes
+
+                if frame_1st.func_name.startswith("GetFileAttributes"):
+
+                    print("equalventing evt with GetFileAttributes to GetFileAttributes. evt:\n%s\n" % evt)
+
+                    evt.operation_list[0] = "GetFileAttributes"
+                    if operation in ["RegQueryValue", "RegOpenKey", "RegCreateKey"]:
+                        evt.path_list[0] = ""
+
+                # KiFastCallEntry - 这个得靠 IDA 救场
+
+                # ElfCloseEventLog           - RegCreateKey, operation 就是这个
+                # EtwpProcessTraceLog        - RegOpenKey, operation 就是这个
+
+                # gethostname/gethostbyname 会导致很多 RegQueryValue, 而且中间有 procmon 无法识别的系统模块帧
+                # 0x00DB928F/0x00DB92B7
+
+        return event_list
 
     @classmethod
     def __merge_duplicate_event_list(cls, event_list):
@@ -1080,30 +1299,29 @@ class Output(object):
         print("%d procmon event remained..." % (len(filtered_event_list)))
         return filtered_event_list
 
-    def __add__(self, other):
+    @classmethod
+    def remove_frames_procmon_recognized_sysmd_as_heap(cls, event_list):
         """
-        相同版本的 Output 对象混合到一起
+        去除 procmon 将系统模块帧识别为堆帧的帧
 
-        - 要加就把两堆 ProcmonEvent() 对象加到一起, 因为每次添加都要执行 去重/组合 等操作, 如果一个一个加就太慢了
-        - 最好重定位都是正确的, 要不然, 呵呵...
-
-        - 不提供 self.merge_from_xml_file()/self.merge_from_json_file() 的操作. 请先通过 xml_file/json_file 创建 Output 对象, 再让2个对象 +
+        - 把 frame.addr 以 0x70000000 开头的 frame
         """
-        # 比较版本
-        if self.version != other.version:
-            raise Exception("can't merge 2 Output object with different version: %s vs %s" % (self.version, other.version))
+        for evt in event_list:
 
-        # 对于模块名不相同的, 警告下, 后果用户自己承担吧...
-        new_itd_md_list = self.itd_md_list
-        if set(self.itd_md_list) != set(other.itd_md_list):
-            print("merge 2 Output object with different itd module list: %s vs %s" % (self.itd_md_list, other.itd_md_list))
-            new_itd_md_list = list(set(self.itd_md_list + other.itd_md_list))
+            # 将符合条件的帧添加到删除列表
+            remove_frame_list = []
+            for frame in evt.frame_list:
+                if isinstance(frame, StackFramePage) and frame.addr > 0x70000000:
+                    remove_frame_list.append(frame)
 
-        # 混合
-        new_event_list = self.__merge_duplicate_event_list(list(self.event_list + other.event_list))
+            # 删除
+            if len(remove_frame_list) != 0:
+                print("remove %d frames procmon recognized sysmd as heap for evt:\n%s\n" % (len(remove_frame_list), evt))
+                for frame_remove in remove_frame_list:
+                    evt.frame_list.remove(frame_remove)
 
-        # 返回新对象
-        return Output(self.version, new_itd_md_list, new_event_list)
+        # 返回
+        return event_list
 
     # ---------------------------------------------------------------------------
     # json
@@ -1225,7 +1443,12 @@ class Output(object):
                     pass
 
                 elif not frame_tag.path:
+
                     # 堆上的帧, 保留
+                    # 这里依据 frame_tag.path 判断是否在堆上, 有可能导致: 某些 procmon 无法识别的系统模块的帧被作为堆上的帧
+                    # 然而, 毕竟没有什么有效的解决方案
+                    # 在 <modulelist> 里面去找 ??
+
                     is_ignore_frame = False
 
                 else:
@@ -1252,8 +1475,10 @@ class Output(object):
                     pass
 
             # 添加到 ProcmonEvent() 对象列表
-            event = ProcmonEvent(evt.Process_Name.text, evt.PID.text, evt.Operation.text, evt.Path.text, evt.Detail.text, frame_list, event_tag)
+            event = ProcmonEvent(evt.Operation.text, evt.Path.text, evt.Detail.text, frame_list, event_tag)
             event_list.append(event)
+
+        print("%d event Tag converted to ProcmonEvent object" % len(event_list))
 
         # 返回
         return event_list
@@ -1264,8 +1489,9 @@ class Output(object):
         读取 xml 文件, 创建此对象
 
         @param: meta : dict : 内容是这样的:
-                            "md_rebase_list": None,
-                            "page_rebase_list": None,
+                            "md_rebase_list": None/[(),(),...],
+                            "page_rebase_list": None/[(),(),...],
+                            "is_remove_frames_procmon_recognized_sysmd_as_heap": True/False,
                             "version": "0.1"
         """
         # 检查/补全参数
@@ -1290,10 +1516,14 @@ class Output(object):
             # 转为 ProcmonEvent() 对象列表
             event_list = cls.__to_event_list(soup, itd_md_list, event_tag)
 
+            # 移除哪些 procmon 将系统模块帧识别为堆帧的 帧
+            if "is_remove_frames_procmon_recognized_sysmd_as_heap" in meta and meta["is_remove_frames_procmon_recognized_sysmd_as_heap"]:
+                event_list = cls.remove_frames_procmon_recognized_sysmd_as_heap(event_list)
+
             # 等价转换某些 ProcmonEvent()
             event_list = cls.__equalvent_event_list(event_list)
 
-            # 去重
+            # 混合调用栈相同的 ProcmonEvent()
             event_list = cls.__merge_duplicate_event_list(event_list)
 
             # 重定向
@@ -1323,21 +1553,19 @@ def test():
 
 if __name__ == "__main__":
 
-    if False:
+    if True:
         Output.from_xml_file(r"e:\tmp\logfile.xml", ["explorer.exe"], "run_default", {
-            "page_rebase_list": [(0x90000, 0xF0000, 0xD80000)]
+            "page_rebase_list": [(0x90000, 0xF0000, 0xD80000)],
+            "is_remove_frames_procmon_recognized_sysmd_as_heap": True
         })
     else:
-        obj = Output.from_json_file(r"e:\tmp\logfile_001.json")
-        obj_1 = Output.from_json_file(r"e:\tmp\log_split_0x00D80000_001.json")
-        obj_2 = obj + obj_1
-        obj_2._to_json_file(r"e:\tmp\xx.json")
-        print(obj_2)
-        # obj.split(r"e:\\tmp\\")
-        # for evt in obj.event_list:
-        #     if len(evt.frame_list) > 0 and evt.frame_list[0].func_name.startswith("KiFastCallEntry"):
-        #         print(evt)
-        #         print("\n")
+        obj = Output.from_json_file(r"e:\tmp\logfile_000.json")
+        for evt in obj.event_list:
+            # if len(evt.frame_list) > 0 and evt.frame_list[0].func_name.startswith("KiFastCallEntry"):
+            #     print(evt)
+            #     print("\n")
+            print(evt)
+            print("\n")
 
     #
     pass

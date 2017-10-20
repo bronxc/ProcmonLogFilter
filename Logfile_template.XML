@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<procmon>
+    <processlist>
+        <process>
+            <ProcessIndex>1</ProcessIndex>
+            <ProcessId>11232</ProcessId>
+            <ParentProcessId>7852</ParentProcessId>
+            <ParentProcessIndex>2</ParentProcessIndex>
+            <AuthenticationId>00000000:05496285</AuthenticationId>
+            <CreateTime>131527117656316902</CreateTime>
+            <FinishTime>0</FinishTime>
+            <IsVirtualized>0</IsVirtualized>
+            <Is64bit>1</Is64bit>
+            <Integrity>High</Integrity>
+            <Owner>DESKTOP-E96BP3K\LYCLOVECHL</Owner>
+            <ProcessName>Procmon64.exe</ProcessName>
+            <ImagePath>D:\Temp\Procmon64.exe</ImagePath>
+            <CommandLine>&quot;D:\Temp\Procmon64.exe&quot;  /originalpath &quot;D:\SoftWare\SysinternalsSuite\Procmon.exe&quot;</CommandLine>
+            <CompanyName>Sysinternals - www.sysinternals.com</CompanyName>
+            <Version>3.4</Version>
+            <Description>Process Monitor</Description>
+            <modulelist>
+                <module>
+                    <Timestamp>131527117667385997</Timestamp>
+                    <BaseAddress>0x7ff6dba90000</BaseAddress>
+                    <Size>1208320</Size>
+                    <Path>D:\Temp\Procmon64.exe</Path>
+                    <Version>3.4</Version>
+                    <Company>Sysinternals - www.sysinternals.com</Company>
+                    <Description>Process Monitor</Description>
+                </module>
+                <module>
+                    <xxx></xxx>>
+                </module>
+            </modulelist>
+        </process>
+        <process>
+            <xxx></xxx>>
+        </process>
+    </processlist>
+    <eventlist>
+        <event>
+            <ProcessIndex>5</ProcessIndex>
+            <Time_of_Day>19:02:46.7400171</Time_of_Day>
+            <Process_Name>Explorer.EXE</Process_Name>
+            <PID>1356</PID>
+            <Operation>RegQueryKey</Operation>
+            <Path>HKCU\Software\Classes</Path>
+            <Result>SUCCESS</Result>
+            <Detail>Query: Name</Detail>
+            <stack>
+                <frame>
+                    <depth>0</depth>
+                    <address>0xfffff803e9721945</address>
+                    <path>C:\Windows\system32\ntoskrnl.exe</path>
+                    <location>PopZeroHiberFile + 0x75</location>
+                </frame>
+                <frame>
+                    <xxx></xxx>>
+                </frame>
+            </stack>
+        </event>
+            <xxx></xxx>>
+        </event>
+    </eventlist>
+</procmon>
