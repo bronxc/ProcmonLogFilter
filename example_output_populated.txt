@@ -1,0 +1,2754 @@
+run_default - Thread Create:
+0x00129423 -> 0x7C8106E5(CreateThread+0x1E)
+
+
+run_default - Load Image:
+C:\WINDOWS\WS2HELP.dll
+C:\WINDOWS\dnsapi.dll
+C:\WINDOWS\system32\ws2help.dll
+C:\WINDOWS\system32\ws2_32.dll
+C:\WINDOWS\WS2_32.dll
+C:\WINDOWS\system32\dnsapi.dll:
+0x00DB84FB -> 0x00DB85DD -> 0x00D881A9 -> 0x00D88329 -> 0x7C80AEEC(LoadLibraryW+0x11)
+
+
+run_default - RegCreateKey:
+HKCU\Software\AppDataLow\Software\MyMailClient:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8681 -> 0x00DA11D2 -> 0x77DA7820(ElfCloseEventLog+0x68)
+
+
+run_default - Thread Create:
+0x00D880D1 -> 0x00DBD9D4 -> 0x00D9889F -> 0x00D87F3A -> 0x7C8106E5(CreateThread+0x1E)
+
+
+run_default - QueryOpen:
+C:\_sample\1111.exe.config
+C:\_sample\1111.exe.manifest:
+0x00D880D1 -> 0x00DBDAF2 -> 0x00DBE0B5 -> 0x00DC1906 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - Load Image:
+C:\WINDOWS\sfc_os.dll
+C:\WINDOWS\system32\sfc_os.dll:
+0x00DB84FB -> 0x00DB85DD -> 0x00D881A9 -> 0x00D883E0 -> 0x00D8875D -> 0x7C801DA8(LoadLibraryA+0x94)
+
+
+run_default - RegCreateKey:
+HKCU\Software\AppDataLow\Software:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8681 -> 0x00DA11B6 -> 0x00DA1194 -> 0x77DA7820(ElfCloseEventLog+0x68)
+
+
+run_default - Load Image:
+C:\WINDOWS\Psapi.dll
+C:\WINDOWS\system32\psapi.dll:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D85B0C -> 0x7C801DA8(LoadLibraryA+0x94)
+
+
+run_default - RegOpenKey/RegQueryValue:
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000001\LibraryPath
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000008\PackedCatalogItem
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000004
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000005
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000002\LibraryPath
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000009\PackedCatalogItem
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000011
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000004\DisplayString
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000003
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000001\AddressFamily
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000015
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000015\PackedCatalogItem
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000001\DisplayString
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000003\AddressFamily
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000003\Enabled
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000003\SupportedNameSpace
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000003\StoresServiceClassInfo
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000005\PackedCatalogItem
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000003\ProviderId
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000010
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000002\SupportedNameSpace
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000001\Enabled
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000006\PackedCatalogItem
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Num_Catalog_Entries
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Num_Catalog_Entries
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000004\PackedCatalogItem
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000004\AddressFamily
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\00000005
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000012\PackedCatalogItem
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000003\DisplayString
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000009
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000004\ProviderId
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000002\DisplayString
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000007\PackedCatalogItem
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000001
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000001\StoresServiceClassInfo
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000003\Version
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000007
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000014
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000010\PackedCatalogItem
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000002\Enabled
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\00000006
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\WinSock_Registry_Version
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000001\PackedCatalogItem
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000006
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000008
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000004\Version
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000002\Version
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Serial_Access_Num
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000004\LibraryPath
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000002\StoresServiceClassInfo
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000002
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000001\SupportedNameSpace
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000002\PackedCatalogItem
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Serial_Access_Num
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000011\PackedCatalogItem
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000004\Enabled
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000016\PackedCatalogItem
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000013\PackedCatalogItem
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000013
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000001\Version
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000014\PackedCatalogItem
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000002\ProviderId
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000012
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000016
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000001
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000004\SupportedNameSpace
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000003\LibraryPath
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000003
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Next_Catalog_Entry_ID
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000004
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000002
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000004\StoresServiceClassInfo
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\000000000003\PackedCatalogItem
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000002\AddressFamily
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\000000000001\ProviderId:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E9B -> 0x00DB901A -> 0x71A27EAF(WahCreateHandleContextTable+0x4E)
+
+
+run_default - RegOpenKey/RegQueryValue:
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Ws2_32SpinCount
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\Ws2_32NumHandleBuckets
+HKLM\System\CurrentControlSet\Services\Winsock2\Parameters:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E9B -> 0x00DB901A -> 0x71A28231(OpenAppIdCatalog+0x5D)
+
+
+run_default - RegOpenKey/RegQueryValue:
+HKLM\System\CurrentControlSet\Control\ComputerName\ActiveComputerName\ComputerName
+HKLM\System\CurrentControlSet\Control\ComputerName\ActiveComputerName:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94EBB -> 0x00D8A2F1 -> 0x7C8204C8(GetComputerNameExW+0xAB)
+
+
+run_default - RegEnumValue:
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D951BB -> 0x00D976B9 -> 0x77DA7F77(CredUnmarshalCredentialW+0xF6)
+
+
+run_default - RegEnumKey:
+HKLM\System\CurrentControlSet\Services:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D951BB -> 0x00D977EF -> 0x77DA7C63(EtwpMapEventToEventRecord+0x21B)
+
+
+run_default - RegEnumKey:
+HKLM\SOFTWARE:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D951BB -> 0x00D9796C -> 0x77DA7C63(EtwpMapEventToEventRecord+0x21B)
+
+
+run_default - QueryOpen:
+C:\Program Files\Common Files:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94D98 -> 0x00DB4F49 -> 0x77F47DAC(g_abCMAP+0x3FF4)
+
+
+run_default - SetBasicInformationFile/CloseFile/CreateFile:
+C:\Program Files\Common Files:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94D98 -> 0x00DB4F6D -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - SetBasicInformationFile/CloseFile/CreateFile:
+C:\Program Files\Common Files\Google Updater 2.0:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94D98 -> 0x00DB516B -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - CloseFile:
+C:\_sample\1111.exe:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94D98 -> 0x00DB518C -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - CopyFile:
+C:\Program Files\Common Files\Google Updater 2.0\aywa539e.exe
+C:\_sample\1111.exe
+C:\Program Files\Common Files\Google Updater 2.0:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94D98 -> 0x00DB51AF -> 0x7C82F881(CopyFileW+0x1E)
+
+
+run_default - SetBasicInformationFile/CloseFile/CreateFile:
+C:\Program Files\Common Files\Google Updater 2.0:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94D98 -> 0x00DB51C5 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - CopyFile:
+C:\Program Files\Common Files\Google Updater 2.0\aywa539e.exe
+C:\_sample\1111.exe
+C:\Program Files\Common Files\Google Updater 2.0:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94D98 -> 0x00DB51E6 -> 0x7C82F881(CopyFileW+0x1E)
+
+
+run_default - GetFileAttributes:
+C:\LinhaDefensiva
+C:\ComboFix:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95457 -> 0x00DC18C6 -> 0x7C8115E9(GetFileAttributesA+0x1E)
+
+
+run_default - QueryOpen:
+C:\Documents and Settings\Administrator\Local Settings\Temp\HouseCall:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95457 -> 0x00DC1906 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - QueryOpen:
+C:\Documents and Settings\Administrator\Application Data\.minecraft
+C:\Program Files\League of Legends
+C:\Documents and Settings\Administrator\jagexcache:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95465 -> 0x00DC1906 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - RegCreateKey:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70:
+0x00D880D1 -> 0x00DC3425 -> 0x00D9D80F -> 0x00D83218 -> 0x00D83277 -> 0x77DA7820(ElfCloseEventLog+0x68)
+
+
+run_default - RegCreateKey:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\9f66f6e3cea9a:
+0x00D880D1 -> 0x00DC3425 -> 0x00D9D82F -> 0x00D83218 -> 0x00D83277 -> 0x77DA7820(ElfCloseEventLog+0x68)
+
+
+run_default - RegSetValue:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\9f66f6e3cea9a\b719cc91e22fbf:
+0x00D880D1 -> 0x00DC344E -> 0x00D9D5A8 -> 0x00D83690 -> 0x00DBB369 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - Thread Create:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB879E -> 0x00D87F3A -> 0x7C8106E5(CreateThread+0x1E)
+
+
+run_default - Thread Create:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB87F1 -> 0x00D87F3A -> 0x7C8106E5(CreateThread+0x1E)
+
+
+run_default - RegQueryValue:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\48dad8aaf7\cb831d05bdde903:
+0x00D880D1 -> 0x00DA0D9F -> 0x00D9D602 -> 0x00D9D3E7 -> 0x00D83742 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegOpenKey:
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\1111.exe:
+0x00D880D1 -> 0x00DBDA96 -> 0x00DBDDAB -> 0x00D83570 -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - CreateFile:
+C:\_sample\1111.exe:Zone.Identifier:
+0x00D880D1 -> 0x00DBDAF2 -> 0x00DBE0B5 -> 0x00DBDF00 -> 0x00DC1FB4 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - RegCreateKey/RegOpenKey/RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Hostname
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters
+HKLM\Software\Policies\Microsoft\Windows NT\DnsClient
+HKLM\System\CurrentControlSet\Services\DnsCache\Parameters:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x76EF7A5A(dnsapi.dll+0x7A5A)
+
+
+run_default - RegCreateKey/RegOpenKey/RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\UseEdns
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\RegisterReverseLookup
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\RegistrationRefreshInterval
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\RegistrationEnabled
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\DnsTest
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\UpdateSecurityLevel
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\UseHostsFile
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\WaitForNameErrorOnAll
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\DisableReverseAddressRegistrations
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Hostname
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\RegistrationMaxAddressCount
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\RegistrationMaxAddressCount
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\MaxNumberOfAddressesToRegister
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\UpdateTopLevelDomainZones
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\MaxNumberOfAddressesToRegister
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\DisableAdapterDomainName
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\RegistrationTtl
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\QueryAdapterName
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\MaxCacheTtl
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\MaxCacheSize
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\UpdateZoneExcludeFile
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\DisableAdapterDomainName
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\QueryAdapterName
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\RegisterPrimaryName
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\QueryIpMatching
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\ServerPriorityTimeLimit
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\DisableDynamicUpdate
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\Domain
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\DhcpDomain
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\MaxCachedSockets
+HKLM\System\Setup
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\UseDomainNameDevolution
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\EnableAdapterDomainNameRegistration
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\UpdateSecurityLevel
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\ScreenUnreachableServers
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\RegisterAdapterName
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Domain
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\Domain
+HKLM\System\CurrentControlSet\Services\DnsCache\Parameters
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\DisableWanDynamicUpdate
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\RegistrationEnabled
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\ScreenBadTlds
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\MaxNumberOfAddressesToRegister
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\MulticastSendLevel
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\AllowUnqualifiedQuery
+HKLM\SYSTEM\Setup\SystemSetupInProgress
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\UseDomainNameDevolution
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\DisableAdapterDomainName
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\AdapterTimeoutLimit
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\FilterClusterIp
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\AppendToMultiLabelName
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\RegisterAdapterName
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\PrioritizeRecordData
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\MaxNegativeCacheTtl
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\QueryAdapterName
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\DefaultRegistrationTTL
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\DhcpDomain
+HKLM\Software\Policies\Microsoft\Windows NT\DnsClient
+HKLM\Software\Policies\Microsoft\System\DNSClient
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\AllowUnqualifiedQuery
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\RegisterAdapterName
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\RegistrationEnabled
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\MulticastListenLevel
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\RegisterWanAdapters
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\DefaultRegistrationRefreshInterval
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\PrioritizeRecordData
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\RegistrationMaxAddressCount:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x76EF2E20(dnsapi.dll+0x2E20)
+
+
+run_default - RegCreateKey/RegOpenKey/RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Domain
+HKLM\System\CurrentControlSet\Services\DnsCache\Parameters
+HKLM\Software\Policies\Microsoft\Windows NT\DnsClient
+HKLM\Software\Policies\Microsoft\System\DNSClient
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x76EF7A5A(dnsapi.dll+0x7A5A)
+
+
+run_default - RegCreateKey/RegOpenKey/RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Hostname
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters
+HKLM\Software\Policies\Microsoft\Windows NT\DnsClient
+HKLM\System\CurrentControlSet\Services\DnsCache\Parameters:
+0x00D880D1 -> 0x00DB932C -> 0x00DB92B7 -> 0x76EF7A5A(dnsapi.dll+0x7A5A)
+
+
+run_default - RegCreateKey/RegOpenKey/RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\UseEdns
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\RegisterReverseLookup
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\RegistrationRefreshInterval
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\RegistrationEnabled
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\DnsTest
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\UpdateSecurityLevel
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\UseHostsFile
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\WaitForNameErrorOnAll
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\DisableReverseAddressRegistrations
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Hostname
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\RegistrationMaxAddressCount
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\RegistrationMaxAddressCount
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\MaxNumberOfAddressesToRegister
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\UpdateTopLevelDomainZones
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\MaxNumberOfAddressesToRegister
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\DisableAdapterDomainName
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\RegistrationTtl
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\QueryAdapterName
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\MaxCacheTtl
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\MaxCacheSize
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\UpdateZoneExcludeFile
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\DisableAdapterDomainName
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\QueryAdapterName
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\RegisterPrimaryName
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\QueryIpMatching
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\ServerPriorityTimeLimit
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\DisableDynamicUpdate
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\Domain
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\DhcpDomain
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\MaxCachedSockets
+HKLM\System\Setup
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\UseDomainNameDevolution
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\EnableAdapterDomainNameRegistration
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\UpdateSecurityLevel
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\ScreenUnreachableServers
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\RegisterAdapterName
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Domain
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\Domain
+HKLM\System\CurrentControlSet\Services\DnsCache\Parameters
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\DisableWanDynamicUpdate
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\RegistrationEnabled
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\ScreenBadTlds
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\MaxNumberOfAddressesToRegister
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\MulticastSendLevel
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\AllowUnqualifiedQuery
+HKLM\SYSTEM\Setup\SystemSetupInProgress
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\UseDomainNameDevolution
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\DisableAdapterDomainName
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\AdapterTimeoutLimit
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\FilterClusterIp
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\AppendToMultiLabelName
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\RegisterAdapterName
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\PrioritizeRecordData
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\MaxNegativeCacheTtl
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\QueryAdapterName
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\DefaultRegistrationTTL
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\DhcpDomain
+HKLM\Software\Policies\Microsoft\Windows NT\DnsClient
+HKLM\Software\Policies\Microsoft\System\DNSClient
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\AllowUnqualifiedQuery
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\RegisterAdapterName
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\RegistrationEnabled
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\MulticastListenLevel
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\RegisterWanAdapters
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\DefaultRegistrationRefreshInterval
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\PrioritizeRecordData
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\RegistrationMaxAddressCount:
+0x00D880D1 -> 0x00DB932C -> 0x00DB92B7 -> 0x76EF2E20(dnsapi.dll+0x2E20)
+
+
+run_default - RegCreateKey/RegOpenKey/RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Domain
+HKLM\System\CurrentControlSet\Services\DnsCache\Parameters
+HKLM\Software\Policies\Microsoft\Windows NT\DnsClient
+HKLM\Software\Policies\Microsoft\System\DNSClient
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters:
+0x00D880D1 -> 0x00DB932C -> 0x00DB92B7 -> 0x76EF7A5A(dnsapi.dll+0x7A5A)
+
+
+run_default - QueryOpen:
+C:\WINDOWS\explorer.exe:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D94626 -> 0x00D95737 -> 0x7C81343B(GetLongPathNameW+0x62)
+
+
+run_default - QueryDirectory/CreateFile:
+C:\WINDOWS
+C:\WINDOWS\explorer.exe
+C:\:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D94626 -> 0x00D95737 -> 0x7C8135B5(GetLongPathNameW+0x231)
+
+
+run_default - CloseFile:
+C:\WINDOWS
+C:\:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D94626 -> 0x00D95737 -> 0x7C8135CD(GetLongPathNameW+0x249)
+
+
+run_default - QueryInformationVolume/CloseFile/CreateFile:
+C:\:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D946CC -> 0x00DC24E7 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - QueryNameInformationFile:
+C:\:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D946CC -> 0x00DC24E7 -> 0x7C80FB4B(GetVolumeInformationW+0x11B)
+
+
+run_default - Thread Create:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D946F6 -> 0x00D87F3A -> 0x7C8106E5(CreateThread+0x1E)
+
+
+run_default - RegCreateKey/RegSetValue/QueryOpen/RegQueryValue:
+HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders\AppData
+HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
+HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders\AppData
+HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders
+C:\Documents and Settings\Administrator\Application Data:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D94739 -> 0x00DC2527 -> 0x7D5BEDFC(CDefView::WndProc+0x22E)
+
+
+run_default - QueryOpen:
+C:\Documents and Settings\Administrator\Application Data:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D94739 -> 0x00DC1906 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - RegOpenKey/QueryOpen/RegQueryValue:
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\S-1-5-21-2052111302-1123561945-1606980848-500\ProfileImagePath
+C:\Documents and Settings\Administrator
+HKLM\Software\Microsoft\Windows NT\CurrentVersion\ProfileList\S-1-5-21-2052111302-1123561945-1606980848-500:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D9474C -> 0x00DC2527 -> 0x7D5BEDFC(CDefView::WndProc+0x22E)
+
+
+run_default - QueryOpen:
+C:\Documents and Settings\Administrator:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D9474C -> 0x00DC1906 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - RegCreateKey/RegSetValue/QueryOpen/RegQueryValue:
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders\Common AppData
+C:\Documents and Settings\All Users\Application Data
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders\Common AppData
+HKLM\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders
+HKLM\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D9475F -> 0x00DC2527 -> 0x7D5BEDFC(CDefView::WndProc+0x22E)
+
+
+run_default - QueryOpen:
+C:\Documents and Settings\All Users\Application Data:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D9475F -> 0x00DC1906 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+
+
+
+
+
+
+run_default - RegCreateKey/RegSetValue/QueryOpen/RegQueryValue:
+HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders\Personal
+C:\Documents and Settings\Administrator\My Documents
+HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders\Personal
+HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
+HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D94798 -> 0x00DC2527 -> 0x7D5BEDFC(CDefView::WndProc+0x22E)
+
+
+run_default - QueryOpen:
+C:\Documents and Settings\Administrator\My Documents:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D94798 -> 0x00DC1906 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - RegCreateKey/RegSetValue/QueryOpen/RegQueryValue:
+HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders\My Music
+C:\Documents and Settings\Administrator\My Documents\My Music
+HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
+HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders
+HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders\My Music:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D947AB -> 0x00DC2527 -> 0x7D5BEDFC(CDefView::WndProc+0x22E)
+
+
+run_default - QueryOpen:
+C:\Documents and Settings\Administrator\My Documents\My Music:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D947AB -> 0x00DC1906 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - RegCreateKey/RegSetValue/QueryOpen/RegQueryValue:
+HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders\My Video
+HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
+HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders\My Video
+C:\Documents and Settings\Administrator\My Documents\My Videos
+HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D947BE -> 0x00DC2527 -> 0x7D5BEDFC(CDefView::WndProc+0x22E)
+
+
+run_default - QueryOpen:
+C:\Documents and Settings\Administrator\My Documents\My Videos:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D947BE -> 0x00DC1906 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - RegCreateKey/RegSetValue/QueryOpen/RegQueryValue:
+HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders\My Pictures
+HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders\My Pictures
+C:\Documents and Settings\Administrator\My Documents\My Pictures
+HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
+HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D947D1 -> 0x00DC2527 -> 0x7D5BEDFC(CDefView::WndProc+0x22E)
+
+
+run_default - QueryOpen:
+C:\Documents and Settings\Administrator\My Documents\My Pictures:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D947D1 -> 0x00DC1906 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - RegOpenKey/QueryOpen/RegQueryValue:
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\ProgramFilesDir
+HKLM\Software\Microsoft\Windows\CurrentVersion
+C:\Program Files:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D947E4 -> 0x00DC2527 -> 0x7D5BEDFC(CDefView::WndProc+0x22E)
+
+
+run_default - QueryOpen:
+C:\Program Files:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D947E4 -> 0x00DC1906 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - RegOpenKey/RegQueryValue:
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\ProgramFilesDir (x86)
+HKLM\Software\Microsoft\Windows\CurrentVersion:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D947F7 -> 0x00DC2527 -> 0x7D5BEDFC(CDefView::WndProc+0x22E)
+
+
+run_default - QueryOpen:
+C:\Program Files:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D947F7 -> 0x00DC1906 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - QueryOpen:
+C:\WINDOWS\system32\uxtheme.dll:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D94806 -> 0x00D931DD -> 0x7C92E453(KiUserCallbackDispatcher+0x13)
+
+
+run_default - RegQueryValue:
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProductId:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94EBB -> 0x00D8A1B8 -> 0x00D834FE -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProductId:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94EBB -> 0x00D8A1B8 -> 0x00D834FE -> 0x77DAEEB1(EtwpGetTimeZoneInformation+0xCF)
+
+
+run_default - QueryOpen:
+C:\WINDOWS\explorer.exe:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D950B3 -> 0x00D93E89 -> 0x00DC1906 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - RegOpenKey:
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D951BB -> 0x00D97665 -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKLM\SYSTEM\CurrentControlSet\services:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D951BB -> 0x00D97781 -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegQueryKey:
+HKLM\System\CurrentControlSet\Services:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D951BB -> 0x00D97791 -> 0x00D83833 -> 0x77DB43B7(ConvertSidToStringSidW+0x80)
+
+
+run_default - RegQueryKey:
+HKLM\System\CurrentControlSet\Services\ACPIEC
+HKLM\System\CurrentControlSet\Services\Msfs
+HKLM\System\CurrentControlSet\Services\CryptSvc
+HKLM\System\CurrentControlSet\Services\IpFilterDriver
+HKLM\System\CurrentControlSet\Services\ql1280
+HKLM\System\CurrentControlSet\Services\VMMEMCTL
+HKLM\System\CurrentControlSet\Services\PCnet
+HKLM\System\CurrentControlSet\Services\Messenger
+HKLM\System\CurrentControlSet\Services\Gpc
+HKLM\System\CurrentControlSet\Services\i8042prt
+HKLM\System\CurrentControlSet\Services\symc810
+HKLM\System\CurrentControlSet\Services\Srv
+HKLM\System\CurrentControlSet\Services\ServiceModelOperation 4.0.0.0
+HKLM\System\CurrentControlSet\Services\Beep
+HKLM\System\CurrentControlSet\Services\ACPI
+HKLM\System\CurrentControlSet\Services\vsock
+HKLM\System\CurrentControlSet\Services\clr_optimization_v2.0.50727_32
+HKLM\System\CurrentControlSet\Services\NetBT
+HKLM\System\CurrentControlSet\Services\ServiceModelOperation 3.0.0.0
+HKLM\System\CurrentControlSet\Services\RDPDD
+HKLM\System\CurrentControlSet\Services\redbook
+HKLM\System\CurrentControlSet\Services\vmci
+HKLM\System\CurrentControlSet\Services\symc8xx
+HKLM\System\CurrentControlSet\Services\Pcmcia
+HKLM\System\CurrentControlSet\Services\TermService
+HKLM\System\CurrentControlSet\Services\aic78u2
+HKLM\System\CurrentControlSet\Services\ServiceModelService 3.0.0.0
+HKLM\System\CurrentControlSet\Services\ql1240
+HKLM\System\CurrentControlSet\Services\Aha154x
+HKLM\System\CurrentControlSet\Services\Null
+HKLM\System\CurrentControlSet\Services\MSPCLOCK
+HKLM\System\CurrentControlSet\Services\vmusbmouse
+HKLM\System\CurrentControlSet\Services\AFD
+HKLM\System\CurrentControlSet\Services\WinTrust
+HKLM\System\CurrentControlSet\Services\adpu160m
+HKLM\System\CurrentControlSet\Services\W3SVC
+HKLM\System\CurrentControlSet\Services\drmkaud
+HKLM\System\CurrentControlSet\Services\dmload
+HKLM\System\CurrentControlSet\Services\IRENUM
+HKLM\System\CurrentControlSet\Services\PCIDump
+HKLM\System\CurrentControlSet\Services\xmlprov
+HKLM\System\CurrentControlSet\Services\Windows Workflow Foundation 3.0.0.0
+HKLM\System\CurrentControlSet\Services\RFCOMM
+HKLM\System\CurrentControlSet\Services\IpNat
+HKLM\System\CurrentControlSet\Services\COMSysApp
+HKLM\System\CurrentControlSet\Services\Fs_Rec
+HKLM\System\CurrentControlSet\Services\BTHUSB
+HKLM\System\CurrentControlSet\Services\Abiosdsk
+HKLM\System\CurrentControlSet\Services\PerfNet
+HKLM\System\CurrentControlSet\Services\VGAuthService
+HKLM\System\CurrentControlSet\Services\Tcpip
+HKLM\System\CurrentControlSet\Services\Nla
+HKLM\System\CurrentControlSet\Services\Kbdclass
+HKLM\System\CurrentControlSet\Services\RasAcd
+HKLM\System\CurrentControlSet\Services\WmiApRpl
+HKLM\System\CurrentControlSet\Services\vmxnet
+HKLM\System\CurrentControlSet\Services\TlntSvr
+HKLM\System\CurrentControlSet\Services\audstub
+HKLM\System\CurrentControlSet\Services\Disk
+HKLM\System\CurrentControlSet\Services\Alerter
+HKLM\System\CurrentControlSet\Services\LicenseService
+HKLM\System\CurrentControlSet\Services\dmio
+HKLM\System\CurrentControlSet\Services\usbhub
+HKLM\System\CurrentControlSet\Services\rdpdr
+HKLM\System\CurrentControlSet\Services\CiSvc
+HKLM\System\CurrentControlSet\Services\ASP.NET_2.0.50727
+HKLM\System\CurrentControlSet\Services\.NET Data Provider for Oracle
+HKLM\System\CurrentControlSet\Services\Sparrow
+HKLM\System\CurrentControlSet\Services\ServiceModelService 4.0.0.0
+HKLM\System\CurrentControlSet\Services\Dhcp
+HKLM\System\CurrentControlSet\Services\Schedule
+HKLM\System\CurrentControlSet\Services\RemoteAccess
+HKLM\System\CurrentControlSet\Services\Ql10wnt
+HKLM\System\CurrentControlSet\Services\perc2
+HKLM\System\CurrentControlSet\Services\ImapiService
+HKLM\System\CurrentControlSet\Services\dpti2o
+HKLM\System\CurrentControlSet\Services\Mouclass
+HKLM\System\CurrentControlSet\Services\Fips
+HKLM\System\CurrentControlSet\Services\asc3550
+HKLM\System\CurrentControlSet\Services\RDPNP
+HKLM\System\CurrentControlSet\Services\SharedAccess
+HKLM\System\CurrentControlSet\Services\perc2hib
+HKLM\System\CurrentControlSet\Services\WmdmPmSN
+HKLM\System\CurrentControlSet\Services\NtmsSvc
+HKLM\System\CurrentControlSet\Services\seclogon
+HKLM\System\CurrentControlSet\Services\CmBatt
+HKLM\System\CurrentControlSet\Services\usbccgp
+HKLM\System\CurrentControlSet\Services\Compbatt
+HKLM\System\CurrentControlSet\Services\Cdaudio
+HKLM\System\CurrentControlSet\Services\Ftdisk
+HKLM\System\CurrentControlSet\Services\Ntfs
+HKLM\System\CurrentControlSet\Services\Update
+HKLM\System\CurrentControlSet\Services\MSPQM
+HKLM\System\CurrentControlSet\Services\SamSs
+HKLM\System\CurrentControlSet\Services\PDCOMP
+HKLM\System\CurrentControlSet\Services\FastUserSwitchingCompatibility
+HKLM\System\CurrentControlSet\Services\MountMgr
+HKLM\System\CurrentControlSet\Services\VMTools
+HKLM\System\CurrentControlSet\Services\vmhgfs
+HKLM\System\CurrentControlSet\Services\swmidi
+HKLM\System\CurrentControlSet\Services\Imapi
+HKLM\System\CurrentControlSet\Services\Cdfs
+HKLM\System\CurrentControlSet\Services\dac960nt
+HKLM\System\CurrentControlSet\Services\HidServ
+HKLM\System\CurrentControlSet\Services\BthEnum
+HKLM\System\CurrentControlSet\Services\.NET Memory Cache 4.0
+HKLM\System\CurrentControlSet\Services\PDRFRAME
+HKLM\System\CurrentControlSet\Services\upnphost
+HKLM\System\CurrentControlSet\Services\Browser
+HKLM\System\CurrentControlSet\Services\WinSock2
+HKLM\System\CurrentControlSet\Services\WinRM
+HKLM\System\CurrentControlSet\Services\NdisWan
+HKLM\System\CurrentControlSet\Services\Sfloppy
+HKLM\System\CurrentControlSet\Services\Ptilink
+HKLM\System\CurrentControlSet\Services\Cdrom
+HKLM\System\CurrentControlSet\Services\ASP.NET
+HKLM\System\CurrentControlSet\Services\VMware Physical Disk Helper Service
+HKLM\System\CurrentControlSet\Services\NetBIOS
+HKLM\System\CurrentControlSet\Services\Fdc
+HKLM\System\CurrentControlSet\Services\BthPan
+HKLM\System\CurrentControlSet\Services\BITS
+HKLM\System\CurrentControlSet\Services\RpcSs
+HKLM\System\CurrentControlSet\Services\Mup
+HKLM\System\CurrentControlSet\Services\NetDDE
+HKLM\System\CurrentControlSet\Services\PDFRAME
+HKLM\System\CurrentControlSet\Services\Udfs
+HKLM\System\CurrentControlSet\Services\NDProxy
+HKLM\System\CurrentControlSet\Services\PDRELI
+HKLM\System\CurrentControlSet\Services\AsyncMac
+HKLM\System\CurrentControlSet\Services\stisvc
+HKLM\System\CurrentControlSet\Services\asc3350p
+HKLM\System\CurrentControlSet\Services\ProtectedStorage
+HKLM\System\CurrentControlSet\Services\AudioSrv
+HKLM\System\CurrentControlSet\Services\Windows Workflow Foundation 4.0.0.0
+HKLM\System\CurrentControlSet\Services\Atmarpc
+HKLM\System\CurrentControlSet\Services\CmdIde
+HKLM\System\CurrentControlSet\Services\RDSessMgr
+HKLM\System\CurrentControlSet\Services\TDPIPE
+HKLM\System\CurrentControlSet\Services\Npfs
+HKLM\System\CurrentControlSet\Services\ultra
+HKLM\System\CurrentControlSet\Services\ServiceModelEndpoint 3.0.0.0
+HKLM\System\CurrentControlSet\Services\RasAuto
+HKLM\System\CurrentControlSet\Services\aspnet_state
+HKLM\System\CurrentControlSet\Services\ALG
+HKLM\System\CurrentControlSet\Services\ParVdm
+HKLM\System\CurrentControlSet\Services\AliIde
+HKLM\System\CurrentControlSet\Services\DcomLaunch
+HKLM\System\CurrentControlSet\Services\AppMgmt
+HKLM\System\CurrentControlSet\Services\PolicyAgent
+HKLM\System\CurrentControlSet\Services\PerfOS
+HKLM\System\CurrentControlSet\Services\PSched
+HKLM\System\CurrentControlSet\Services\i2omgmt
+HKLM\System\CurrentControlSet\Services\hpn
+HKLM\System\CurrentControlSet\Services\TPAutoConnSvc
+HKLM\System\CurrentControlSet\Services\sysaudio
+HKLM\System\CurrentControlSet\Services\WZCSVC
+HKLM\System\CurrentControlSet\Services\TermDD
+HKLM\System\CurrentControlSet\Services\LanmanServer
+HKLM\System\CurrentControlSet\Services\mraid35x
+HKLM\System\CurrentControlSet\Services\Atdisk
+HKLM\System\CurrentControlSet\Services\BTHPORT
+HKLM\System\CurrentControlSet\Services\intelppm
+HKLM\System\CurrentControlSet\Services\FltMgr
+HKLM\System\CurrentControlSet\Services\PCIIde
+HKLM\System\CurrentControlSet\Services\mnmdd
+HKLM\System\CurrentControlSet\Services\Cpqarray
+HKLM\System\CurrentControlSet\Services\amsint
+HKLM\System\CurrentControlSet\Services\sym_u3
+HKLM\System\CurrentControlSet\Services\Modem
+HKLM\System\CurrentControlSet\Services\Dnscache
+HKLM\System\CurrentControlSet\Services\DMusic
+HKLM\System\CurrentControlSet\Services\sr
+HKLM\System\CurrentControlSet\Services\cbidf2k
+HKLM\System\CurrentControlSet\Services\PCI
+HKLM\System\CurrentControlSet\Services\Everything
+HKLM\System\CurrentControlSet\Services\helpsvc
+HKLM\System\CurrentControlSet\Services\LmHosts
+HKLM\System\CurrentControlSet\Services\IPSec
+HKLM\System\CurrentControlSet\Services\NwlnkFwd
+HKLM\System\CurrentControlSet\Services\usbuhci
+HKLM\System\CurrentControlSet\Services\UPS
+HKLM\System\CurrentControlSet\Services\SMSvcHost 3.0.0.0
+HKLM\System\CurrentControlSet\Services\Inport
+HKLM\System\CurrentControlSet\Services\TDTCP
+HKLM\System\CurrentControlSet\Services\Dot3svc
+HKLM\System\CurrentControlSet\Services\MRxDAV
+HKLM\System\CurrentControlSet\Services\WDICA
+HKLM\System\CurrentControlSet\Services\Parport
+HKLM\System\CurrentControlSet\Services\vmrawdsk
+HKLM\System\CurrentControlSet\Services\PlugPlay
+HKLM\System\CurrentControlSet\Services\ISAPISearch
+HKLM\System\CurrentControlSet\Services\isapnp
+HKLM\System\CurrentControlSet\Services\winmgmt
+HKLM\System\CurrentControlSet\Services\usbehci
+HKLM\System\CurrentControlSet\Services\VgaSave
+HKLM\System\CurrentControlSet\Services\NdisTapi
+HKLM\System\CurrentControlSet\Services\IntelIde
+HKLM\System\CurrentControlSet\Services\inetaccs
+HKLM\System\CurrentControlSet\Services\Rdbss
+HKLM\System\CurrentControlSet\Services\SSDPSRV
+HKLM\System\CurrentControlSet\Services\ClipSrv
+HKLM\System\CurrentControlSet\Services\NwlnkFlt
+HKLM\System\CurrentControlSet\Services\cd20xrnt
+HKLM\System\CurrentControlSet\Services\Secdrv
+HKLM\System\CurrentControlSet\Services\dac2w2k
+HKLM\System\CurrentControlSet\Services\wdmaud
+HKLM\System\CurrentControlSet\Services\wscsvc
+HKLM\System\CurrentControlSet\Services\NetTcpPortSharing
+HKLM\System\CurrentControlSet\Services\VolSnap
+HKLM\System\CurrentControlSet\Services\dmserver
+HKLM\System\CurrentControlSet\Services\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}
+HKLM\System\CurrentControlSet\Services\TosIde
+HKLM\System\CurrentControlSet\Services\Netlogon
+HKLM\System\CurrentControlSet\Services\.NET CLR Data
+HKLM\System\CurrentControlSet\Services\ShellHWDetection
+HKLM\System\CurrentControlSet\Services\KSecDD
+HKLM\System\CurrentControlSet\Services\vmscsi
+HKLM\System\CurrentControlSet\Services\Raspti
+HKLM\System\CurrentControlSet\Services\napagent
+HKLM\System\CurrentControlSet\Services\kmixer
+HKLM\System\CurrentControlSet\Services\dmadmin
+HKLM\System\CurrentControlSet\Services\ERSvc
+HKLM\System\CurrentControlSet\Services\vmx_svga
+HKLM\System\CurrentControlSet\Services\swenum
+HKLM\System\CurrentControlSet\Services\SMSvcHost 4.0.0.0
+HKLM\System\CurrentControlSet\Services\FontCache3.0.0.0
+HKLM\System\CurrentControlSet\Services\IpInIp
+HKLM\System\CurrentControlSet\Services\Winsock
+HKLM\System\CurrentControlSet\Services\PROCMON23
+HKLM\System\CurrentControlSet\Services\EapHost
+HKLM\System\CurrentControlSet\Services\MRxSmb
+HKLM\System\CurrentControlSet\Services\TrkWks
+HKLM\System\CurrentControlSet\Services\NDIS
+HKLM\System\CurrentControlSet\Services\MSDTC
+HKLM\System\CurrentControlSet\Services\TPVCGateway
+HKLM\System\CurrentControlSet\Services\HTTPFilter
+HKLM\System\CurrentControlSet\Services\srservice
+HKLM\System\CurrentControlSet\Services\ini910u
+HKLM\System\CurrentControlSet\Services\abp480n5
+HKLM\System\CurrentControlSet\Services\RasMan
+HKLM\System\CurrentControlSet\Services\mnmsrvc
+HKLM\System\CurrentControlSet\Services\ContentIndex
+HKLM\System\CurrentControlSet\Services\Netman
+HKLM\System\CurrentControlSet\Services\PerfDisk
+HKLM\System\CurrentControlSet\Services\gameenum
+HKLM\System\CurrentControlSet\Services\mssmbios
+HKLM\System\CurrentControlSet\Services\MSDTC Bridge 3.0.0.0
+HKLM\System\CurrentControlSet\Services\clr_optimization_v4.0.30319_32
+HKLM\System\CurrentControlSet\Services\Eventlog
+HKLM\System\CurrentControlSet\Services\BthServ
+HKLM\System\CurrentControlSet\Services\.NET CLR Networking
+HKLM\System\CurrentControlSet\Services\Flpydisk
+HKLM\System\CurrentControlSet\Services\vmmouse
+HKLM\System\CurrentControlSet\Services\W32Time
+HKLM\System\CurrentControlSet\Services\Wmi
+HKLM\System\CurrentControlSet\Services\EventSystem
+HKLM\System\CurrentControlSet\Services\HTTP
+HKLM\System\CurrentControlSet\Services\mouhid
+HKLM\System\CurrentControlSet\Services\NtLmSsp
+HKLM\System\CurrentControlSet\Services\WebClient
+HKLM\System\CurrentControlSet\Services\VisualSVNServer
+HKLM\System\CurrentControlSet\Services\MSDTC Bridge 4.0.0.0
+HKLM\System\CurrentControlSet\Services\Fastfat
+HKLM\System\CurrentControlSet\Services\es1371
+HKLM\System\CurrentControlSet\Services\PartMgr
+HKLM\System\CurrentControlSet\Services\ldap
+HKLM\System\CurrentControlSet\Services\NetDDEdsdm
+HKLM\System\CurrentControlSet\Services\i2omp
+HKLM\System\CurrentControlSet\Services\hkmsvc
+HKLM\System\CurrentControlSet\Services\asc
+HKLM\System\CurrentControlSet\Services\lanmanworkstation
+HKLM\System\CurrentControlSet\Services\ContentFilter
+HKLM\System\CurrentControlSet\Services\RasPppoe
+HKLM\System\CurrentControlSet\Services\SwPrv
+HKLM\System\CurrentControlSet\Services\RDPWD
+HKLM\System\CurrentControlSet\Services\WS2IFSL
+HKLM\System\CurrentControlSet\Services\RpcLocator
+HKLM\System\CurrentControlSet\Services\RDPCDD
+HKLM\System\CurrentControlSet\Services\dmboot
+HKLM\System\CurrentControlSet\Services\Ip6Fw
+HKLM\System\CurrentControlSet\Services\PptpMiniport
+HKLM\System\CurrentControlSet\Services\aic78xx
+HKLM\System\CurrentControlSet\Services\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}
+HKLM\System\CurrentControlSet\Services\ql12160
+HKLM\System\CurrentControlSet\Services\TSDDD
+HKLM\System\CurrentControlSet\Services\SysmonLog
+HKLM\System\CurrentControlSet\Services\RemoteRegistry
+HKLM\System\CurrentControlSet\Services\WmiApSrv
+HKLM\System\CurrentControlSet\Services\Rockey5U
+HKLM\System\CurrentControlSet\Services\ViaIde
+HKLM\System\CurrentControlSet\Services\ASP.NET_4.0.30319
+HKLM\System\CurrentControlSet\Services\ServiceModelEndpoint 4.0.0.0
+HKLM\System\CurrentControlSet\Services\ql1080
+HKLM\System\CurrentControlSet\Services\.NETFramework
+HKLM\System\CurrentControlSet\Services\atapi
+HKLM\System\CurrentControlSet\Services\SENS
+HKLM\System\CurrentControlSet\Services\Wanarp
+HKLM\System\CurrentControlSet\Services\Simbad
+HKLM\System\CurrentControlSet\Services\FsVga
+HKLM\System\CurrentControlSet\Services\Serial
+HKLM\System\CurrentControlSet\Services\hidusb
+HKLM\System\CurrentControlSet\Services\.NET CLR Networking 4.0.0.0
+HKLM\System\CurrentControlSet\Services\TapiSrv
+HKLM\System\CurrentControlSet\Services\Themes
+HKLM\System\CurrentControlSet\Services\Spooler
+HKLM\System\CurrentControlSet\Services\Ndisuio
+HKLM\System\CurrentControlSet\Services\splitter
+HKLM\System\CurrentControlSet\Services\agp440
+HKLM\System\CurrentControlSet\Services\wuauserv
+HKLM\System\CurrentControlSet\Services\PerfProc
+HKLM\System\CurrentControlSet\Services\SCardSvr
+HKLM\System\CurrentControlSet\Services\WPFFontCache_v0400
+HKLM\System\CurrentControlSet\Services\RSVP
+HKLM\System\CurrentControlSet\Services\sym_hi
+HKLM\System\CurrentControlSet\Services\Rasl2tp
+HKLM\System\CurrentControlSet\Services\BattC
+HKLM\System\CurrentControlSet\Services\VSS
+HKLM\System\CurrentControlSet\Services\lbrtfdc
+HKLM\System\CurrentControlSet\Services\.NET Data Provider for SqlServer
+HKLM\System\CurrentControlSet\Services\Changer
+HKLM\System\CurrentControlSet\Services\MSKSSRV
+HKLM\System\CurrentControlSet\Services\idsvc
+HKLM\System\CurrentControlSet\Services\MSIServer
+HKLM\System\CurrentControlSet\Services\aec:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D951BB -> 0x00D97834 -> 0x00D838F1 -> 0x77DB4A4D($$VProc_ImageExportDirectory+0x11)
+
+
+run_default - RegOpenKey:
+HKLM\SOFTWARE:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D951BB -> 0x00D978FA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegQueryKey:
+HKLM\SOFTWARE:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D951BB -> 0x00D9790A -> 0x00D83833 -> 0x77DB43B7(ConvertSidToStringSidW+0x80)
+
+
+run_default - RegOpenKey:
+HKLM\SOFTWARE\Secure
+HKLM\SOFTWARE\Piriform
+HKCR
+HKLM\SOFTWARE\ODBC
+HKLM\SOFTWARE\MozillaPlugins
+HKLM\SOFTWARE\Google
+HKLM\SOFTWARE\C07ft5Y
+HKLM\SOFTWARE\TortoiseSVN
+HKLM\SOFTWARE\7-Zip
+HKLM\SOFTWARE\PyQt5
+HKLM\SOFTWARE\ThinPrint
+HKLM\SOFTWARE\Scooter Software
+HKLM\SOFTWARE\Policies
+HKLM\SOFTWARE\JreMetrics
+HKLM\SOFTWARE\Gemplus
+HKLM\SOFTWARE\VMware, Inc.
+HKLM\SOFTWARE\JetBrains
+HKLM\SOFTWARE\Schlumberger
+HKLM\SOFTWARE\Microsoft
+HKLM\SOFTWARE\Clients
+HKLM\SOFTWARE\Python
+HKLM\SOFTWARE\JavaSoft
+HKLM\SOFTWARE\Windows 3.1 Migration Status
+HKLM\SOFTWARE\VisualSVN
+HKLM\SOFTWARE\Mozilla
+HKLM\SOFTWARE\Program Groups
+HKLM\SOFTWARE\TortoiseOverlays:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D951BB -> 0x00D979C0 -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegQueryKey:
+HKLM\SOFTWARE\Secure
+HKLM\SOFTWARE\Piriform
+HKCR
+HKLM\SOFTWARE\ODBC
+HKLM\SOFTWARE\MozillaPlugins
+HKLM\SOFTWARE\Google
+HKLM\SOFTWARE\C07ft5Y
+HKLM\SOFTWARE\TortoiseSVN
+HKLM\SOFTWARE\7-Zip
+HKLM\SOFTWARE\PyQt5
+HKLM\SOFTWARE\ThinPrint
+HKLM\SOFTWARE\Scooter Software
+HKLM\SOFTWARE\Policies
+HKLM\SOFTWARE\JreMetrics
+HKLM\SOFTWARE\Gemplus
+HKLM\SOFTWARE\VMware, Inc.
+HKLM\SOFTWARE\JetBrains
+HKLM\SOFTWARE\Schlumberger
+HKLM\SOFTWARE\Microsoft
+HKLM\SOFTWARE\Clients
+HKLM\SOFTWARE\Python
+HKLM\SOFTWARE\JavaSoft
+HKLM\SOFTWARE\Windows 3.1 Migration Status
+HKLM\SOFTWARE\VisualSVN
+HKLM\SOFTWARE\Mozilla
+HKLM\SOFTWARE\Program Groups
+HKLM\SOFTWARE\TortoiseOverlays:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D951BB -> 0x00D979CC -> 0x00D83880 -> 0x77DB43B7(ConvertSidToStringSidW+0x80)
+
+
+run_default - RegQueryKey:
+HKLM\SOFTWARE\Secure
+HKLM\SOFTWARE\Piriform
+HKCR
+HKLM\SOFTWARE\ODBC
+HKLM\SOFTWARE\MozillaPlugins
+HKLM\SOFTWARE\Google
+HKLM\SOFTWARE\C07ft5Y
+HKLM\SOFTWARE\TortoiseSVN
+HKLM\SOFTWARE\7-Zip
+HKLM\SOFTWARE\PyQt5
+HKLM\SOFTWARE\ThinPrint
+HKLM\SOFTWARE\Scooter Software
+HKLM\SOFTWARE\Policies
+HKLM\SOFTWARE\JreMetrics
+HKLM\SOFTWARE\Gemplus
+HKLM\SOFTWARE\VMware, Inc.
+HKLM\SOFTWARE\JetBrains
+HKLM\SOFTWARE\Schlumberger
+HKLM\SOFTWARE\Microsoft
+HKLM\SOFTWARE\Clients
+HKLM\SOFTWARE\Python
+HKLM\SOFTWARE\JavaSoft
+HKLM\SOFTWARE\Windows 3.1 Migration Status
+HKLM\SOFTWARE\VisualSVN
+HKLM\SOFTWARE\Mozilla
+HKLM\SOFTWARE\Program Groups
+HKLM\SOFTWARE\TortoiseOverlays:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D951BB -> 0x00D979D6 -> 0x00D83833 -> 0x77DB43B7(ConvertSidToStringSidW+0x80)
+
+
+run_default - SetBasicInformationFile/CloseFile/CreateFile:
+C:\Program Files\Common Files:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94D98 -> 0x00DB4F7E -> 0x00DB4BE2 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - QueryOpen:
+C:\Program Files\Common Files\Google Updater 2.0:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94D98 -> 0x00DB4F7E -> 0x00DB4BF5 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - CreateFile:
+C:\Program Files\Common Files\Google Updater 2.0:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94D98 -> 0x00DB4F7E -> 0x00DB4C23 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - SetBasicInformationFile/CloseFile/CreateFile:
+C:\Program Files\Common Files:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94D98 -> 0x00DB5014 -> 0x00DB4CAA -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - QueryOpen:
+C:\Program Files\Common Files\Google Updater 2.0:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94D98 -> 0x00DB5141 -> 0x00DC1948 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - CreateFile:
+C:\Program Files\Common Files\Google Updater 2.0:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94D98 -> 0x00DB5141 -> 0x00DC1EC8 -> 0x76CB2609(MartaOpenFileNamedObject+0x20)
+
+
+run_default - QuerySecurityFile:
+C:\Program Files\Common Files\Google Updater 2.0:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94D98 -> 0x00DB5141 -> 0x00DC1EC8 -> 0x76CB262F(MartaOpenFileNamedObject+0x43)
+
+
+run_default - CloseFile:
+C:\Program Files\Common Files\Google Updater 2.0:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94D98 -> 0x00DB5141 -> 0x00DC1EC8 -> 0x76CB2637(MartaOpenFileNamedObject+0x4B)
+
+
+run_default - SetRenameInformationFile/CloseFile/CreateFile/QueryBasicInformationFile/QueryAttributeTagFile:
+C:\_sample\1111.exe
+C:\Program Files\Common Files\Google Updater 2.0:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94D98 -> 0x00DB518C -> 0x00DC1BBE -> 0x7C83568A(MoveFileExW+0x17)
+
+
+run_default - CreateFile:
+C:\_sample\1111.exe:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94D98 -> 0x00DB518C -> 0x00DC1C6E -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - QueryOpen:
+C:\_sample\1111.exe:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95439 -> 0x00DB6C67 -> 0x00DC1906 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - RegEnumKey:
+HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D9543E -> 0x00D93784 -> 0x00D87291 -> 0x77DB529A($$VProc_ImageExportDirectory+0x85E)
+
+
+run_default - RegCreateKey:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\9f66f6e3cea9a:
+0x00D880D1 -> 0x00DC344E -> 0x00D9D5A8 -> 0x00D83676 -> 0x00D83218 -> 0x00D83277 -> 0x77DA7820(ElfCloseEventLog+0x68)
+
+
+run_default - QueryOpen:
+C:\_sample\1111.exe:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB8784 -> 0x00DB6C67 -> 0x00DC1906 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - Thread Create:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB8789 -> 0x00DB0357 -> 0x00D87F3A -> 0x7C8106E5(CreateThread+0x1E)
+
+
+run_default - Thread Create:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EC3 -> 0x00D87F3A -> 0x7C8106E5(CreateThread+0x1E)
+
+
+run_default - RegOpenKey/RegQueryValue/Load Image/CloseFile/CreateFile/CreateFileMapping/QueryOpen:
+C:\WINDOWS\NTMARTA.DLL
+HKLM\Software\Microsoft\Rpc\PagedBuffers
+HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NTMARTA.DLL
+HKLM\System\CurrentControlSet\Control\ComputerName\ActiveComputerName\ComputerName
+HKLM\Software\Microsoft\Rpc
+HKLM\System\CurrentControlSet\Control\ComputerName
+HKLM\System\CurrentControlSet\Control\ComputerName\ActiveComputerName
+HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\explorer.exe\RpcThreadPoolThrottle
+C:\WINDOWS\system32\samlib.dll
+C:\WINDOWS\system32\ntmarta.dll
+HKLM\SOFTWARE\Microsoft\Rpc\MaxRpcSize
+HKLM\Software\Policies\Microsoft\Windows NT\Rpc
+HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SAMLIB.dll
+C:\WINDOWS\SAMLIB.dll:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D946F6 -> 0x00D87FD3 -> 0x00D87A35 -> 0x00D8937C -> 0x00D8907B -> 0x77DF1A5E(LookupSecurityDescriptorPartsW+0x48)
+
+
+run_default - RegQueryValue:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\48dad8aaf7\056816169a1:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D94806 -> 0x00D93219 -> 0x00D9D602 -> 0x00D9D3E7 -> 0x00D83742 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\48dad8aaf7\c2d6d7eb1ec:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D94806 -> 0x00D9323D -> 0x00D9D602 -> 0x00D9D3E7 -> 0x00D83742 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\48dad8aaf7\1ff6be34ba69c1a7:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D94806 -> 0x00D9325B -> 0x00D9D602 -> 0x00D9D3E7 -> 0x00D83742 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegOpenKey:
+HKLM\HARDWARE\DESCRIPTION\System\CentralProcessor\0:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D9486E -> 0x00D9362A -> 0x00D85FC5 -> 0x00D83570 -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D9486E -> 0x00D9366D -> 0x00D834E0 -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\48dad8aaf7:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D939AE -> 0x00D9D602 -> 0x00D9D3E7 -> 0x00D83724 -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegQueryValue:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\48dad8aaf7\11741c86e1b40887be:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95004 -> 0x00D94A07 -> 0x00D95D76 -> 0x00D9D602 -> 0x00D9D3E7 -> 0x00D83742 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegOpenKey:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\48dad8aaf7:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D939C3 -> 0x00D9D602 -> 0x00D9D3E7 -> 0x00D83724 -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\48dad8aaf7:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95239 -> 0x00D9D602 -> 0x00D9D3E7 -> 0x00D83724 -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegCreateKey:
+HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95439 -> 0x00DB6C67 -> 0x00DB706C -> 0x00DB6C07 -> 0x00D833BD -> 0x00D83277 -> 0x77DA7820(ElfCloseEventLog+0x68)
+
+
+run_default - RegOpenKey:
+HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95439 -> 0x00DB6C67 -> 0x00DB706C -> 0x00DB6C20 -> 0x00D83570 -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegCreateKey:
+HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95439 -> 0x00DB6C67 -> 0x00DB70DC -> 0x00DB6C07 -> 0x00D833BD -> 0x00D83277 -> 0x77DA7820(ElfCloseEventLog+0x68)
+
+
+run_default - RegOpenKey:
+HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95439 -> 0x00DB6C67 -> 0x00DB70DC -> 0x00DB6C20 -> 0x00D83570 -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKLM\SYSTEM\CurrentControlSet\services\dg_ssudbus:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D9543E -> 0x00D937F1 -> 0x00D8604C -> 0x00D92201 -> 0x00D83570 -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKLM\SYSTEM\CurrentControlSet\services\Apple Mobile Device:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D9543E -> 0x00D937F1 -> 0x00D86068 -> 0x00D92201 -> 0x00D83570 -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegCreateKey:
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\rstrui.exe:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95481 -> 0x00D8B1AC -> 0x00D9A57E -> 0x00D9A60E -> 0x00D833BD -> 0x00D83277 -> 0x77DA7820(ElfCloseEventLog+0x68)
+
+
+run_default - RegCreateKey:
+HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3
+HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\4
+HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2
+HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\1:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95481 -> 0x00D94A65 -> 0x00D84E6C -> 0x00D8397D -> 0x00D83218 -> 0x00D83277 -> 0x77DA7820(ElfCloseEventLog+0x68)
+
+
+run_default - RegCreateKey:
+HKCU\Software\Microsoft\Internet Explorer\Main:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95481 -> 0x00D94A65 -> 0x00D84EBD -> 0x00D8397D -> 0x00D83218 -> 0x00D83277 -> 0x77DA7820(ElfCloseEventLog+0x68)
+
+
+run_default - RegCreateKey:
+HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB8784 -> 0x00DB6C67 -> 0x00DB706C -> 0x00DB6C07 -> 0x00D833BD -> 0x00D83277 -> 0x77DA7820(ElfCloseEventLog+0x68)
+
+
+run_default - RegOpenKey:
+HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB8784 -> 0x00DB6C67 -> 0x00DB706C -> 0x00DB6C20 -> 0x00D83570 -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegCreateKey:
+HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB8784 -> 0x00DB6C67 -> 0x00DB70DC -> 0x00DB6C07 -> 0x00D833BD -> 0x00D83277 -> 0x77DA7820(ElfCloseEventLog+0x68)
+
+
+run_default - RegOpenKey:
+HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB8784 -> 0x00DB6C67 -> 0x00DB70DC -> 0x00DB6C20 -> 0x00D83570 -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegSetValue:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\48dad8aaf7\41ea7199b75:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB87CD -> 0x00DB1879 -> 0x00D9D62B -> 0x00D9D5A8 -> 0x00D83690 -> 0x00DBB369 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - RegOpenKey:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\48dad8aaf7:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88BF -> 0x00D9D602 -> 0x00D9D3E7 -> 0x00D83724 -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA7912(ElfGetLogInformation+0x8F)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\DnsNbtLookupOrder:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegOpenKey:
+HKLM\SYSTEM\CurrentControlSet\Control\MiniNT:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegQueryValue:
+HKLM\SYSTEM\Setup\OsLoaderPath:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegQueryValue:
+HKLM\SYSTEM\Setup\OsLoaderPath:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegQueryValue:
+HKLM\SYSTEM\Setup\SystemPartition:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegQueryValue:
+HKLM\SYSTEM\Setup\SystemPartition:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegQueryValue:
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\SourcePath:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegQueryValue:
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\SourcePath:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegQueryValue:
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\ServicePackSourcePath:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegQueryValue:
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\ServicePackSourcePath:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegQueryValue:
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\ServicePackCachePath:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegQueryValue:
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\ServicePackCachePath:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegQueryValue:
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\DriverCachePath:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegQueryValue:
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\DriverCachePath:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegOpenKey:
+HKLM\Software\Microsoft\Windows\CurrentVersion:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegQueryValue:
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DevicePath:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegQueryValue:
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\LogLevel:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegQueryValue:
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\LogLevel:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Linkage\Bind:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Linkage\Bind:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegOpenKey:
+HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}
+HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA7912(ElfGetLogInformation+0x8F)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\EnableDHCP
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\EnableDHCP:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\LeaseObtainedTime
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\LeaseObtainedTime:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\LeaseTerminatesTime
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\LeaseTerminatesTime:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\DhcpServer
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\DhcpServer:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\DhcpServer:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DAEEB1(EtwpGetTimeZoneInformation+0xCF)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Linkage\Bind:
+0x00D880D1 -> 0x00DB932C -> 0x00DB92B7 -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Linkage\Bind:
+0x00D880D1 -> 0x00DB932C -> 0x00DB92B7 -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegOpenKey:
+HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}
+HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}:
+0x00D880D1 -> 0x00DB932C -> 0x00DB92B7 -> 0x77DA7912(ElfGetLogInformation+0x8F)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\EnableDHCP
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\EnableDHCP:
+0x00D880D1 -> 0x00DB932C -> 0x00DB92B7 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\LeaseObtainedTime
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\LeaseObtainedTime:
+0x00D880D1 -> 0x00DB932C -> 0x00DB92B7 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\LeaseTerminatesTime
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\LeaseTerminatesTime:
+0x00D880D1 -> 0x00DB932C -> 0x00DB92B7 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\DhcpServer
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\DhcpServer:
+0x00D880D1 -> 0x00DB932C -> 0x00DB92B7 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\DhcpServer:
+0x00D880D1 -> 0x00DB932C -> 0x00DB92B7 -> 0x77DAEEB1(EtwpGetTimeZoneInformation+0xCF)
+
+
+run_default - RegOpenKey:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\48dad8aaf7:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D94806 -> 0x00D93219 -> 0x00D9D602 -> 0x00D9D3E7 -> 0x00D83724 -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\48dad8aaf7:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D94806 -> 0x00D9323D -> 0x00D9D602 -> 0x00D9D3E7 -> 0x00D83724 -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\48dad8aaf7:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D94806 -> 0x00D9325B -> 0x00D9D602 -> 0x00D9D3E7 -> 0x00D83724 -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\48dad8aaf7:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95004 -> 0x00D94A07 -> 0x00D95D76 -> 0x00D9D602 -> 0x00D9D3E7 -> 0x00D83724 -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\c49f22a2d3e38:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95481 -> 0x00D94A74 -> 0x00DAF4B7 -> 0x00DC0212 -> 0x00D9D30B -> 0x00D837AE -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\c49f22a2d3e38:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95481 -> 0x00D94A9C -> 0x00DA0164 -> 0x00DC0212 -> 0x00D9D30B -> 0x00D837AE -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\c49f22a2d3e38:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95481 -> 0x00D94ACE -> 0x00DA2D3E -> 0x00DC0212 -> 0x00D9D30B -> 0x00D837AE -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegQueryValue:
+HKLM\HARDWARE\DESCRIPTION\System\CentralProcessor\0\ProcessorNameString:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D9486E -> 0x00D9362A -> 0x00D85FC5 -> 0x00D8358E -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegOpenKey:
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94EBB -> 0x00D8A1B8 -> 0x00D834E0 -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - CreateFile:
+C:\WINDOWS\system32\ntdll.dll:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95004 -> 0x00D94A07 -> 0x00D96F15 -> 0x00DBCC79 -> 0x00DBCA9E -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - CreateFileMapping:
+C:\WINDOWS\system32\ntdll.dll:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95004 -> 0x00D94A07 -> 0x00D96F15 -> 0x00DBCC79 -> 0x00DBCAC5 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - Load Image:
+C:\WINDOWS\system32\ntdll.dll:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95004 -> 0x00D94A07 -> 0x00D96F15 -> 0x00DBCC79 -> 0x00DBCAE7 -> 0x7C80B9B0(MapViewOfFile+0x1B)
+
+
+run_default - CloseFile:
+C:\WINDOWS\system32\ntdll.dll:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95004 -> 0x00D94A07 -> 0x00D96F15 -> 0x00DBCD6F -> 0x00DBC9D2 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - CreateFile:
+C:\WINDOWS\explorer.exe:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D950B3 -> 0x00D93E89 -> 0x00DA3AE4 -> 0x00DC20CB -> 0x00DC1869 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - RegCreateKey:
+HKLM\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\StandardProfile\AuthorizedApplications\List:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D950B3 -> 0x00D93E98 -> 0x00D8AB1D -> 0x00D833BD -> 0x00D83277 -> 0x77DA7820(ElfCloseEventLog+0x68)
+
+
+run_default - CreateFile:
+C:\Program Files\Common Files\Google Updater 2.0\pixujlhwc.txt
+C:\Program Files\Common Files\Google Updater 2.0:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94D98 -> 0x00DB4F7E -> 0x00DB4C48 -> 0x00DB4B61 -> 0x00DC1869 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - SetBasicInformationFile/CloseFile/CreateFile:
+C:\Program Files\Common Files\Google Updater 2.0\pixujlhwc.txt:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94D98 -> 0x00DB4F7E -> 0x00DB4C48 -> 0x00DB4B7C -> 0x00DC1AF3 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - QueryAttributeTagFile/CloseFile/SetDispositionInformationFile/CreateFile:
+C:\Program Files\Common Files\Google Updater 2.0\pixujlhwc.txt:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94D98 -> 0x00DB4F7E -> 0x00DB4C48 -> 0x00DB4B7C -> 0x00DC1AFA -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - RegSetValue:
+HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce\Google Updater 2.0:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95439 -> 0x00DB6C67 -> 0x00DB706C -> 0x00DB6C07 -> 0x00D833E1 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - RegQueryValue:
+HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce\Google Updater 2.0:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95439 -> 0x00DB6C67 -> 0x00DB706C -> 0x00DB6C20 -> 0x00D8358E -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegSetValue:
+HKCU\Software\Microsoft\Windows\CurrentVersion\Run\Google Updater 2.0:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95439 -> 0x00DB6C67 -> 0x00DB70DC -> 0x00DB6C07 -> 0x00D833E1 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - RegQueryValue:
+HKCU\Software\Microsoft\Windows\CurrentVersion\Run\Google Updater 2.0:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95439 -> 0x00DB6C67 -> 0x00DB70DC -> 0x00DB6C20 -> 0x00D8358E -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegOpenKey/RegQueryKey:
+HKCU\Software\Classes
+HKCU\Software\Classes\HTTP\shell\open\command
+HKCR\HTTP\shell\open\command:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D9543E -> 0x00D93723 -> 0x00D8510C -> 0x00D83570 -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D9543E -> 0x00D93784 -> 0x00D87265 -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey/RegQueryKey:
+HKCU\Software\Classes\jarfile\shell\open\command
+HKCU\Software\Classes
+HKCR\jarfile\shell\open\command:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D9543E -> 0x00D93790 -> 0x00D83C81 -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKCU\Software\Valve\Steam:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D9543E -> 0x00D937B4 -> 0x00D834E0 -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKCU\Software\Microsoft\Terminal Server Client\Default:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D9543E -> 0x00D937DA -> 0x00D834E0 -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKLM\SOFTWARE\AdwCleaner:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95457 -> 0x00D934E5 -> 0x00D83CEA -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKLM\SOFTWARE\Safer Networking Limited\Spybot - Search & Destroy 2:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95457 -> 0x00D934FA -> 0x00D83CEA -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKCU\Software\Classes\VirtualStore\MACHINE\SOFTWARE\TrendMicro\HijackThis:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95457 -> 0x00D93511 -> 0x00D83CEA -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKLM\SYSTEM\CurrentControlSet\services\RapportMgmtService:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95457 -> 0x00D935D4 -> 0x00D92201 -> 0x00D83570 -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKCR\origin:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95465 -> 0x00D933B1 -> 0x00D83CEA -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKCU\SOFTWARE\Blizzard Entertainment:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95465 -> 0x00D933F6 -> 0x00D83CEA -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKCU\Software\Skype:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95465 -> 0x00D93464 -> 0x00D83CEA -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKCU\Software\Microsoft\VisualStudio:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95465 -> 0x00D93479 -> 0x00D83CEA -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKCU\Software\VMware, Inc.:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95465 -> 0x00D9348E -> 0x00D83CEA -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegSetValue:
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\rstrui.exe\Debugger:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95481 -> 0x00D8B1AC -> 0x00D9A57E -> 0x00D9A60E -> 0x00D833E1 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - RegQueryValue:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\48dad8aaf7\ff550a41bfc9318f:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB8731 -> 0x00D972A4 -> 0x00DB6626 -> 0x00D9D3E7 -> 0x00D83742 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - CreateFile:
+C:\Documents and Settings\Administrator\Local Settings\Temp\03A11F80.txt:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB8731 -> 0x00D972A4 -> 0x00DB6648 -> 0x00DC19C7 -> 0x00DC1869 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - RegSetValue:
+HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce\Google Updater 2.0:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB8784 -> 0x00DB6C67 -> 0x00DB706C -> 0x00DB6C07 -> 0x00D833E1 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - RegQueryValue:
+HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce\Google Updater 2.0:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB8784 -> 0x00DB6C67 -> 0x00DB706C -> 0x00DB6C20 -> 0x00D8358E -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegSetValue:
+HKCU\Software\Microsoft\Windows\CurrentVersion\Run\Google Updater 2.0:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB8784 -> 0x00DB6C67 -> 0x00DB70DC -> 0x00DB6C07 -> 0x00D833E1 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - RegQueryValue:
+HKCU\Software\Microsoft\Windows\CurrentVersion\Run\Google Updater 2.0:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB8784 -> 0x00DB6C67 -> 0x00DB70DC -> 0x00DB6C20 -> 0x00D8358E -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegQueryValue:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\48dad8aaf7\41ea7199b75:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB87CD -> 0x00DB182F -> 0x00D9D602 -> 0x00D9D3E7 -> 0x00D83742 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegOpenKey:
+HKLM\SYSTEM\CurrentControlSet\services\NAV:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB89D8 -> 0x00D8CBF1 -> 0x00D92201 -> 0x00D83570 -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKLM\SYSTEM\CurrentControlSet\services\NIS:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB89D8 -> 0x00D8CC01 -> 0x00D92201 -> 0x00D83570 -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKLM\SYSTEM\CurrentControlSet\services\N360:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB89D8 -> 0x00D8CC11 -> 0x00D92201 -> 0x00D83570 -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegQueryValue:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\48dad8aaf7\d77cb8079e55f:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98E71 -> 0x00D9D602 -> 0x00D9D3E7 -> 0x00D83742 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegOpenKey:
+HKLM\System\Setup:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegQueryValue:
+HKLM\SYSTEM\Setup\SystemSetupInProgress:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegOpenKey:
+HKLM\System\WPA\PnP:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegQueryValue:
+HKLM\SYSTEM\WPA\PnP\seed:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegOpenKey:
+HKLM\SYSTEM\Setup:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKLM\SYSTEM\Setup:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKLM\Software\Microsoft\Windows\CurrentVersion\Setup:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKLM\Software\Microsoft\Windows\CurrentVersion\Setup:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKLM\Software\Microsoft\Windows\CurrentVersion\Setup:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKLM\Software\Microsoft\Windows\CurrentVersion\Setup:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegQueryValue:
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\LogPath:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - QueryOpen:
+C:\WINDOWS:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - RegOpenKey:
+HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}
+HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA7912(ElfGetLogInformation+0x8F)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\EnableDHCP
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\EnableDHCP:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\LeaseObtainedTime
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\LeaseObtainedTime:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\LeaseTerminatesTime
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\LeaseTerminatesTime:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\DhcpServer
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\DhcpServer:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\DhcpServer:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DAEEB1(EtwpGetTimeZoneInformation+0xCF)
+
+
+run_default - RegOpenKey:
+HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA7912(ElfGetLogInformation+0x8F)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\IPAutoconfigurationEnabled:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\AddressType:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\NameServer:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\NameServer:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DAEEB1(EtwpGetTimeZoneInformation+0xCF)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\DhcpNameServer:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegOpenKey:
+HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}
+HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}:
+0x00D880D1 -> 0x00DB932C -> 0x00DB92B7 -> 0x77DA7912(ElfGetLogInformation+0x8F)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\EnableDHCP
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\EnableDHCP:
+0x00D880D1 -> 0x00DB932C -> 0x00DB92B7 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\LeaseObtainedTime
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\LeaseObtainedTime:
+0x00D880D1 -> 0x00DB932C -> 0x00DB92B7 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\LeaseTerminatesTime
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\LeaseTerminatesTime:
+0x00D880D1 -> 0x00DB932C -> 0x00DB92B7 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\DhcpServer
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\DhcpServer:
+0x00D880D1 -> 0x00DB932C -> 0x00DB92B7 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\DhcpServer:
+0x00D880D1 -> 0x00DB932C -> 0x00DB92B7 -> 0x77DAEEB1(EtwpGetTimeZoneInformation+0xCF)
+
+
+run_default - RegOpenKey:
+HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}:
+0x00D880D1 -> 0x00DB932C -> 0x00DB92B7 -> 0x77DA7912(ElfGetLogInformation+0x8F)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\IPAutoconfigurationEnabled:
+0x00D880D1 -> 0x00DB932C -> 0x00DB92B7 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\AddressType:
+0x00D880D1 -> 0x00DB932C -> 0x00DB92B7 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\NameServer:
+0x00D880D1 -> 0x00DB932C -> 0x00DB92B7 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\NameServer:
+0x00D880D1 -> 0x00DB932C -> 0x00DB92B7 -> 0x77DAEEB1(EtwpGetTimeZoneInformation+0xCF)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\DhcpNameServer:
+0x00D880D1 -> 0x00DB932C -> 0x00DB92B7 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProductId:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D9486E -> 0x00D9366D -> 0x00D834FE -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProductId:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94E58 -> 0x00D9486E -> 0x00D9366D -> 0x00D834FE -> 0x77DAEEB1(EtwpGetTimeZoneInformation+0xCF)
+
+
+run_default - RegQueryValue:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\48dad8aaf7\e3d51df802e819d:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D939AE -> 0x00D9D602 -> 0x00D9D3E7 -> 0x00D83742 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - QueryStandardInformationFile:
+C:\WINDOWS\explorer.exe:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D950B3 -> 0x00D93E89 -> 0x00DA3AE4 -> 0x00DC20F2 -> 0x7C810B1A(GetFileSize+0x13)
+
+
+run_default - ReadFile:
+C:\WINDOWS\explorer.exe:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D950B3 -> 0x00D93E89 -> 0x00DA3AE4 -> 0x00DC2112 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - CloseFile:
+C:\WINDOWS\explorer.exe:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D950B3 -> 0x00D93E89 -> 0x00DA3AE4 -> 0x00DC216B -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - RegSetValue:
+HKLM\System\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\StandardProfile\AuthorizedApplications\List\C:\WINDOWS\explorer.exe:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D950B3 -> 0x00D93E98 -> 0x00D8AB1D -> 0x00D833E1 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - RegOpenKey:
+HKLM\SYSTEM\CurrentControlSet\services\CryptSvc
+HKLM\SYSTEM\CurrentControlSet\services\Windows Workflow Foundation 3.0.0.0
+HKLM\SYSTEM\CurrentControlSet\services\swmidi
+HKLM\SYSTEM\CurrentControlSet\services\WmiApSrv
+HKLM\SYSTEM\CurrentControlSet\services\sym_hi
+HKLM\SYSTEM\CurrentControlSet\services\Imapi
+HKLM\SYSTEM\CurrentControlSet\services\TPVCGateway
+HKLM\SYSTEM\CurrentControlSet\services\MRxSmb
+HKLM\SYSTEM\CurrentControlSet\services\ProtectedStorage
+HKLM\SYSTEM\CurrentControlSet\services\helpsvc
+HKLM\SYSTEM\CurrentControlSet\services\dpti2o
+HKLM\SYSTEM\CurrentControlSet\services\ServiceModelOperation 4.0.0.0
+HKLM\SYSTEM\CurrentControlSet\services\PartMgr
+HKLM\SYSTEM\CurrentControlSet\services\sr
+HKLM\SYSTEM\CurrentControlSet\services\IntelIde
+HKLM\SYSTEM\CurrentControlSet\services\dmio
+HKLM\SYSTEM\CurrentControlSet\services\WinRM
+HKLM\SYSTEM\CurrentControlSet\services\Dhcp
+HKLM\SYSTEM\CurrentControlSet\services\NetDDE
+HKLM\SYSTEM\CurrentControlSet\services\napagent
+HKLM\SYSTEM\CurrentControlSet\services\mnmdd
+HKLM\SYSTEM\CurrentControlSet\services\HidServ
+HKLM\SYSTEM\CurrentControlSet\services\asc
+HKLM\SYSTEM\CurrentControlSet\services\VgaSave
+HKLM\SYSTEM\CurrentControlSet\services\usbhub
+HKLM\SYSTEM\CurrentControlSet\services\ContentFilter
+HKLM\SYSTEM\CurrentControlSet\services\mouhid
+HKLM\SYSTEM\CurrentControlSet\services\DMusic
+HKLM\SYSTEM\CurrentControlSet\services\DcomLaunch
+HKLM\SYSTEM\CurrentControlSet\services\W32Time
+HKLM\SYSTEM\CurrentControlSet\services\Tcpip
+HKLM\SYSTEM\CurrentControlSet\services\aspnet_state
+HKLM\SYSTEM\CurrentControlSet\services\RasAcd
+HKLM\SYSTEM\CurrentControlSet\services\vmusbmouse
+HKLM\SYSTEM\CurrentControlSet\services\MountMgr
+HKLM\SYSTEM\CurrentControlSet\services\Kbdclass
+HKLM\SYSTEM\CurrentControlSet\services\.NET CLR Networking 4.0.0.0
+HKLM\SYSTEM\CurrentControlSet\services\Everything
+HKLM\SYSTEM\CurrentControlSet\services\clr_optimization_v2.0.50727_32
+HKLM\SYSTEM\CurrentControlSet\services\usbuhci
+HKLM\SYSTEM\CurrentControlSet\services\SENS
+HKLM\SYSTEM\CurrentControlSet\services\perc2
+HKLM\SYSTEM\CurrentControlSet\services\ultra
+HKLM\SYSTEM\CurrentControlSet\services\WmdmPmSN
+HKLM\SYSTEM\CurrentControlSet\services\Rasl2tp
+HKLM\SYSTEM\CurrentControlSet\services\VolSnap
+HKLM\SYSTEM\CurrentControlSet\services\PDCOMP
+HKLM\SYSTEM\CurrentControlSet\services\TPAutoConnSvc
+HKLM\SYSTEM\CurrentControlSet\services\Themes
+HKLM\SYSTEM\CurrentControlSet\services\Ndisuio
+HKLM\SYSTEM\CurrentControlSet\services\isapnp
+HKLM\SYSTEM\CurrentControlSet\services\TDTCP
+HKLM\SYSTEM\CurrentControlSet\services\ql12160
+HKLM\SYSTEM\CurrentControlSet\services\CmBatt
+HKLM\SYSTEM\CurrentControlSet\services\audstub
+HKLM\SYSTEM\CurrentControlSet\services\SMSvcHost 3.0.0.0
+HKLM\SYSTEM\CurrentControlSet\services\srservice
+HKLM\SYSTEM\CurrentControlSet\services\Cdrom
+HKLM\SYSTEM\CurrentControlSet\services\PolicyAgent
+HKLM\SYSTEM\CurrentControlSet\services\vmmouse
+HKLM\SYSTEM\CurrentControlSet\services\NDProxy
+HKLM\SYSTEM\CurrentControlSet\services\Alerter
+HKLM\SYSTEM\CurrentControlSet\services\dmadmin
+HKLM\SYSTEM\CurrentControlSet\services\Aha154x
+HKLM\SYSTEM\CurrentControlSet\services\Modem
+HKLM\SYSTEM\CurrentControlSet\services\Messenger
+HKLM\SYSTEM\CurrentControlSet\services\dmload
+HKLM\SYSTEM\CurrentControlSet\services\aic78xx
+HKLM\SYSTEM\CurrentControlSet\services\WPFFontCache_v0400
+HKLM\SYSTEM\CurrentControlSet\services\ViaIde
+HKLM\SYSTEM\CurrentControlSet\services\NetBIOS
+HKLM\SYSTEM\CurrentControlSet\services\MSDTC
+HKLM\SYSTEM\CurrentControlSet\services\idsvc
+HKLM\SYSTEM\CurrentControlSet\services\ACPIEC
+HKLM\SYSTEM\CurrentControlSet\services\AFD
+HKLM\SYSTEM\CurrentControlSet\services\Compbatt
+HKLM\SYSTEM\CurrentControlSet\services\PDFRAME
+HKLM\SYSTEM\CurrentControlSet\services\Ip6Fw
+HKLM\SYSTEM\CurrentControlSet\services\SSDPSRV
+HKLM\SYSTEM\CurrentControlSet\services\ServiceModelService 4.0.0.0
+HKLM\SYSTEM\CurrentControlSet\services\ini910u
+HKLM\SYSTEM\CurrentControlSet\services\agp440
+HKLM\SYSTEM\CurrentControlSet\services\NetTcpPortSharing
+HKLM\SYSTEM\CurrentControlSet\services\IpNat
+HKLM\SYSTEM\CurrentControlSet\services\rdpdr
+HKLM\SYSTEM\CurrentControlSet\services\Raspti
+HKLM\SYSTEM\CurrentControlSet\services\PlugPlay
+HKLM\SYSTEM\CurrentControlSet\services\FltMgr
+HKLM\SYSTEM\CurrentControlSet\services\SCardSvr
+HKLM\SYSTEM\CurrentControlSet\services\Null
+HKLM\SYSTEM\CurrentControlSet\services\perc2hib
+HKLM\SYSTEM\CurrentControlSet\services\LmHosts
+HKLM\SYSTEM\CurrentControlSet\services\dac960nt
+HKLM\SYSTEM\CurrentControlSet\services\atapi
+HKLM\SYSTEM\CurrentControlSet\services\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}
+HKLM\SYSTEM\CurrentControlSet\services\i8042prt
+HKLM\SYSTEM\CurrentControlSet\services\Wmi
+HKLM\SYSTEM\CurrentControlSet\services\MSPCLOCK
+HKLM\SYSTEM\CurrentControlSet\services\drmkaud
+HKLM\SYSTEM\CurrentControlSet\services\TermService
+HKLM\SYSTEM\CurrentControlSet\services\MSPQM
+HKLM\SYSTEM\CurrentControlSet\services\Changer
+HKLM\SYSTEM\CurrentControlSet\services\BattC
+HKLM\SYSTEM\CurrentControlSet\services\BthEnum
+HKLM\SYSTEM\CurrentControlSet\services\cbidf2k
+HKLM\SYSTEM\CurrentControlSet\services\wdmaud
+HKLM\SYSTEM\CurrentControlSet\services\RpcSs
+HKLM\SYSTEM\CurrentControlSet\services\Netman
+HKLM\SYSTEM\CurrentControlSet\services\Wanarp
+HKLM\SYSTEM\CurrentControlSet\services\RDPWD
+HKLM\SYSTEM\CurrentControlSet\services\SMSvcHost 4.0.0.0
+HKLM\SYSTEM\CurrentControlSet\services\WZCSVC
+HKLM\SYSTEM\CurrentControlSet\services\VGAuthService
+HKLM\SYSTEM\CurrentControlSet\services\gameenum
+HKLM\SYSTEM\CurrentControlSet\services\Simbad
+HKLM\SYSTEM\CurrentControlSet\services\Nla
+HKLM\SYSTEM\CurrentControlSet\services\WmiApRpl
+HKLM\SYSTEM\CurrentControlSet\services\PerfNet
+HKLM\SYSTEM\CurrentControlSet\services\vmci
+HKLM\SYSTEM\CurrentControlSet\services\mnmsrvc
+HKLM\SYSTEM\CurrentControlSet\services\.NET Data Provider for SqlServer
+HKLM\SYSTEM\CurrentControlSet\services\BTHPORT
+HKLM\SYSTEM\CurrentControlSet\services\Beep
+HKLM\SYSTEM\CurrentControlSet\services\winmgmt
+HKLM\SYSTEM\CurrentControlSet\services\RemoteAccess
+HKLM\SYSTEM\CurrentControlSet\services\dac2w2k
+HKLM\SYSTEM\CurrentControlSet\services\Abiosdsk
+HKLM\SYSTEM\CurrentControlSet\services\NtmsSvc
+HKLM\SYSTEM\CurrentControlSet\services\es1371
+HKLM\SYSTEM\CurrentControlSet\services\RDPNP
+HKLM\SYSTEM\CurrentControlSet\services\ACPI
+HKLM\SYSTEM\CurrentControlSet\services\TrkWks
+HKLM\SYSTEM\CurrentControlSet\services\Windows Workflow Foundation 4.0.0.0
+HKLM\SYSTEM\CurrentControlSet\services\WinSock2
+HKLM\SYSTEM\CurrentControlSet\services\Mouclass
+HKLM\SYSTEM\CurrentControlSet\services\wscsvc
+HKLM\SYSTEM\CurrentControlSet\services\Cdaudio
+HKLM\SYSTEM\CurrentControlSet\services\RDPCDD
+HKLM\SYSTEM\CurrentControlSet\services\HTTPFilter
+HKLM\SYSTEM\CurrentControlSet\services\splitter
+HKLM\SYSTEM\CurrentControlSet\services\NtLmSsp
+HKLM\SYSTEM\CurrentControlSet\services\cd20xrnt
+HKLM\SYSTEM\CurrentControlSet\services\BTHUSB
+HKLM\SYSTEM\CurrentControlSet\services\Netlogon
+HKLM\SYSTEM\CurrentControlSet\services\asc3350p
+HKLM\SYSTEM\CurrentControlSet\services\NwlnkFlt
+HKLM\SYSTEM\CurrentControlSet\services\WDICA
+HKLM\SYSTEM\CurrentControlSet\services\AliIde
+HKLM\SYSTEM\CurrentControlSet\services\IPSec
+HKLM\SYSTEM\CurrentControlSet\services\Udfs
+HKLM\SYSTEM\CurrentControlSet\services\ParVdm
+HKLM\SYSTEM\CurrentControlSet\services\ImapiService
+HKLM\SYSTEM\CurrentControlSet\services\ClipSrv
+HKLM\SYSTEM\CurrentControlSet\services\ASP.NET
+HKLM\SYSTEM\CurrentControlSet\services\.NETFramework
+HKLM\SYSTEM\CurrentControlSet\services\TSDDD
+HKLM\SYSTEM\CurrentControlSet\services\MSDTC Bridge 3.0.0.0
+HKLM\SYSTEM\CurrentControlSet\services\Atmarpc
+HKLM\SYSTEM\CurrentControlSet\services\EapHost
+HKLM\SYSTEM\CurrentControlSet\services\NdisTapi
+HKLM\SYSTEM\CurrentControlSet\services\VMTools
+HKLM\SYSTEM\CurrentControlSet\services\Rdbss
+HKLM\SYSTEM\CurrentControlSet\services\upnphost
+HKLM\SYSTEM\CurrentControlSet\services\ASP.NET_4.0.30319
+HKLM\SYSTEM\CurrentControlSet\services\usbccgp
+HKLM\SYSTEM\CurrentControlSet\services\Ql10wnt
+HKLM\SYSTEM\CurrentControlSet\services\ShellHWDetection
+HKLM\SYSTEM\CurrentControlSet\services\redbook
+HKLM\SYSTEM\CurrentControlSet\services\seclogon
+HKLM\SYSTEM\CurrentControlSet\services\EventSystem
+HKLM\SYSTEM\CurrentControlSet\services\Fdc
+HKLM\SYSTEM\CurrentControlSet\services\Dnscache
+HKLM\SYSTEM\CurrentControlSet\services\intelppm
+HKLM\SYSTEM\CurrentControlSet\services\CiSvc
+HKLM\SYSTEM\CurrentControlSet\services\Browser
+HKLM\SYSTEM\CurrentControlSet\services\ServiceModelEndpoint 3.0.0.0
+HKLM\SYSTEM\CurrentControlSet\services\RasMan
+HKLM\SYSTEM\CurrentControlSet\services\Schedule
+HKLM\SYSTEM\CurrentControlSet\services\kmixer
+HKLM\SYSTEM\CurrentControlSet\services\Sparrow
+HKLM\SYSTEM\CurrentControlSet\services\Ptilink
+HKLM\SYSTEM\CurrentControlSet\services\ServiceModelService 3.0.0.0
+HKLM\SYSTEM\CurrentControlSet\services\sysaudio
+HKLM\SYSTEM\CurrentControlSet\services\KSecDD
+HKLM\SYSTEM\CurrentControlSet\services\vmhgfs
+HKLM\SYSTEM\CurrentControlSet\services\TermDD
+HKLM\SYSTEM\CurrentControlSet\services\lanmanworkstation
+HKLM\SYSTEM\CurrentControlSet\services\Msfs
+HKLM\SYSTEM\CurrentControlSet\services\PCnet
+HKLM\SYSTEM\CurrentControlSet\services\clr_optimization_v4.0.30319_32
+HKLM\SYSTEM\CurrentControlSet\services\vmscsi
+HKLM\SYSTEM\CurrentControlSet\services\VSS
+HKLM\SYSTEM\CurrentControlSet\services\vsock
+HKLM\SYSTEM\CurrentControlSet\services\vmrawdsk
+HKLM\SYSTEM\CurrentControlSet\services\amsint
+HKLM\SYSTEM\CurrentControlSet\services\SharedAccess
+HKLM\SYSTEM\CurrentControlSet\services\RDPDD
+HKLM\SYSTEM\CurrentControlSet\services\NetDDEdsdm
+HKLM\SYSTEM\CurrentControlSet\services\MSDTC Bridge 4.0.0.0
+HKLM\SYSTEM\CurrentControlSet\services\IpInIp
+HKLM\SYSTEM\CurrentControlSet\services\FsVga
+HKLM\SYSTEM\CurrentControlSet\services\dmboot
+HKLM\SYSTEM\CurrentControlSet\services\Dot3svc
+HKLM\SYSTEM\CurrentControlSet\services\Fips
+HKLM\SYSTEM\CurrentControlSet\services\inetaccs
+HKLM\SYSTEM\CurrentControlSet\services\ql1240
+HKLM\SYSTEM\CurrentControlSet\services\Npfs
+HKLM\SYSTEM\CurrentControlSet\services\TlntSvr
+HKLM\SYSTEM\CurrentControlSet\services\Pcmcia
+HKLM\SYSTEM\CurrentControlSet\services\RSVP
+HKLM\SYSTEM\CurrentControlSet\services\Update
+HKLM\SYSTEM\CurrentControlSet\services\Flpydisk
+HKLM\SYSTEM\CurrentControlSet\services\Secdrv
+HKLM\SYSTEM\CurrentControlSet\services\Rockey5U
+HKLM\SYSTEM\CurrentControlSet\services\hidusb
+HKLM\SYSTEM\CurrentControlSet\services\.NET CLR Data
+HKLM\SYSTEM\CurrentControlSet\services\VMMEMCTL
+HKLM\SYSTEM\CurrentControlSet\services\PerfOS
+HKLM\SYSTEM\CurrentControlSet\services\PDRELI
+HKLM\SYSTEM\CurrentControlSet\services\TDPIPE
+HKLM\SYSTEM\CurrentControlSet\services\PptpMiniport
+HKLM\SYSTEM\CurrentControlSet\services\PSched
+HKLM\SYSTEM\CurrentControlSet\services\wuauserv
+HKLM\SYSTEM\CurrentControlSet\services\ServiceModelEndpoint 4.0.0.0
+HKLM\SYSTEM\CurrentControlSet\services\swenum
+HKLM\SYSTEM\CurrentControlSet\services\IRENUM
+HKLM\SYSTEM\CurrentControlSet\services\PCI
+HKLM\SYSTEM\CurrentControlSet\services\SwPrv
+HKLM\SYSTEM\CurrentControlSet\services\.NET Memory Cache 4.0
+HKLM\SYSTEM\CurrentControlSet\services\Inport
+HKLM\SYSTEM\CurrentControlSet\services\ISAPISearch
+HKLM\SYSTEM\CurrentControlSet\services\WebClient
+HKLM\SYSTEM\CurrentControlSet\services\BthServ
+HKLM\SYSTEM\CurrentControlSet\services\Gpc
+HKLM\SYSTEM\CurrentControlSet\services\lbrtfdc
+HKLM\SYSTEM\CurrentControlSet\services\stisvc
+HKLM\SYSTEM\CurrentControlSet\services\MRxDAV
+HKLM\SYSTEM\CurrentControlSet\services\PerfProc
+HKLM\SYSTEM\CurrentControlSet\services\Parport
+HKLM\SYSTEM\CurrentControlSet\services\ql1280
+HKLM\SYSTEM\CurrentControlSet\services\Serial
+HKLM\SYSTEM\CurrentControlSet\services\ERSvc
+HKLM\SYSTEM\CurrentControlSet\services\FontCache3.0.0.0
+HKLM\SYSTEM\CurrentControlSet\services\aic78u2
+HKLM\SYSTEM\CurrentControlSet\services\Mup
+HKLM\SYSTEM\CurrentControlSet\services\dmserver
+HKLM\SYSTEM\CurrentControlSet\services\Ftdisk
+HKLM\SYSTEM\CurrentControlSet\services\CmdIde
+HKLM\SYSTEM\CurrentControlSet\services\sym_u3
+HKLM\SYSTEM\CurrentControlSet\services\asc3550
+HKLM\SYSTEM\CurrentControlSet\services\LicenseService
+HKLM\SYSTEM\CurrentControlSet\services\SysmonLog
+HKLM\SYSTEM\CurrentControlSet\services\FastUserSwitchingCompatibility
+HKLM\SYSTEM\CurrentControlSet\services\abp480n5
+HKLM\SYSTEM\CurrentControlSet\services\Eventlog
+HKLM\SYSTEM\CurrentControlSet\services\MSIServer
+HKLM\SYSTEM\CurrentControlSet\services\ldap
+HKLM\SYSTEM\CurrentControlSet\services\WS2IFSL
+HKLM\SYSTEM\CurrentControlSet\services\RDSessMgr
+HKLM\SYSTEM\CurrentControlSet\services\WinTrust
+HKLM\SYSTEM\CurrentControlSet\services\W3SVC
+HKLM\SYSTEM\CurrentControlSet\services\vmxnet
+HKLM\SYSTEM\CurrentControlSet\services\NwlnkFwd
+HKLM\SYSTEM\CurrentControlSet\services\AsyncMac
+HKLM\SYSTEM\CurrentControlSet\services\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}
+HKLM\SYSTEM\CurrentControlSet\services\xmlprov
+HKLM\SYSTEM\CurrentControlSet\services\vmx_svga
+HKLM\SYSTEM\CurrentControlSet\services\.NET CLR Networking
+HKLM\SYSTEM\CurrentControlSet\services\ALG
+HKLM\SYSTEM\CurrentControlSet\services\Cpqarray
+HKLM\SYSTEM\CurrentControlSet\services\AppMgmt
+HKLM\SYSTEM\CurrentControlSet\services\.NET Data Provider for Oracle
+HKLM\SYSTEM\CurrentControlSet\services\VisualSVNServer
+HKLM\SYSTEM\CurrentControlSet\services\TapiSrv
+HKLM\SYSTEM\CurrentControlSet\services\BthPan
+HKLM\SYSTEM\CurrentControlSet\services\Sfloppy
+HKLM\SYSTEM\CurrentControlSet\services\NDIS
+HKLM\SYSTEM\CurrentControlSet\services\ContentIndex
+HKLM\SYSTEM\CurrentControlSet\services\i2omp
+HKLM\SYSTEM\CurrentControlSet\services\Fastfat
+HKLM\SYSTEM\CurrentControlSet\services\TosIde
+HKLM\SYSTEM\CurrentControlSet\services\RpcLocator
+HKLM\SYSTEM\CurrentControlSet\services\symc8xx
+HKLM\SYSTEM\CurrentControlSet\services\Spooler
+HKLM\SYSTEM\CurrentControlSet\services\PerfDisk
+HKLM\SYSTEM\CurrentControlSet\services\MSKSSRV
+HKLM\SYSTEM\CurrentControlSet\services\Disk
+HKLM\SYSTEM\CurrentControlSet\services\adpu160m
+HKLM\SYSTEM\CurrentControlSet\services\RemoteRegistry
+HKLM\SYSTEM\CurrentControlSet\services\ql1080
+HKLM\SYSTEM\CurrentControlSet\services\UPS
+HKLM\SYSTEM\CurrentControlSet\services\i2omgmt
+HKLM\SYSTEM\CurrentControlSet\services\RasAuto
+HKLM\SYSTEM\CurrentControlSet\services\PCIIde
+HKLM\SYSTEM\CurrentControlSet\services\Srv
+HKLM\SYSTEM\CurrentControlSet\services\Fs_Rec
+HKLM\SYSTEM\CurrentControlSet\services\BITS
+HKLM\SYSTEM\CurrentControlSet\services\usbehci
+HKLM\SYSTEM\CurrentControlSet\services\RFCOMM
+HKLM\SYSTEM\CurrentControlSet\services\Winsock
+HKLM\SYSTEM\CurrentControlSet\services\NdisWan
+HKLM\SYSTEM\CurrentControlSet\services\ASP.NET_2.0.50727
+HKLM\SYSTEM\CurrentControlSet\services\aec
+HKLM\SYSTEM\CurrentControlSet\services\mssmbios
+HKLM\SYSTEM\CurrentControlSet\services\VMware Physical Disk Helper Service
+HKLM\SYSTEM\CurrentControlSet\services\HTTP
+HKLM\SYSTEM\CurrentControlSet\services\ServiceModelOperation 3.0.0.0
+HKLM\SYSTEM\CurrentControlSet\services\hkmsvc
+HKLM\SYSTEM\CurrentControlSet\services\hpn
+HKLM\SYSTEM\CurrentControlSet\services\NetBT
+HKLM\SYSTEM\CurrentControlSet\services\symc810
+HKLM\SYSTEM\CurrentControlSet\services\PROCMON23
+HKLM\SYSTEM\CurrentControlSet\services\Ntfs
+HKLM\SYSTEM\CurrentControlSet\services\Cdfs
+HKLM\SYSTEM\CurrentControlSet\services\PDRFRAME
+HKLM\SYSTEM\CurrentControlSet\services\LanmanServer
+HKLM\SYSTEM\CurrentControlSet\services\COMSysApp
+HKLM\SYSTEM\CurrentControlSet\services\IpFilterDriver
+HKLM\SYSTEM\CurrentControlSet\services\Atdisk
+HKLM\SYSTEM\CurrentControlSet\services\SamSs
+HKLM\SYSTEM\CurrentControlSet\services\mraid35x
+HKLM\SYSTEM\CurrentControlSet\services\RasPppoe
+HKLM\SYSTEM\CurrentControlSet\services\AudioSrv
+HKLM\SYSTEM\CurrentControlSet\services\PCIDump:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D951BB -> 0x00D97834 -> 0x00D838D4 -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegQueryValue:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\48dad8aaf7\01cafa8fca5629:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D939C3 -> 0x00D9D602 -> 0x00D9D3E7 -> 0x00D83742 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\48dad8aaf7\cbaa62e8dd40b:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95239 -> 0x00D9D602 -> 0x00D9D3E7 -> 0x00D83742 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - QueryOpen:
+C:\Program Files\Common Files\Google Updater 2.0:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94D98 -> 0x00DB4F7E -> 0x00DB4C14 -> 0x00DC1948 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - CreateFile:
+C:\Program Files\Common Files\Google Updater 2.0:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94D98 -> 0x00DB4F7E -> 0x00DB4C14 -> 0x00DC1EC8 -> 0x76CB2609(MartaOpenFileNamedObject+0x20)
+
+
+run_default - QuerySecurityFile:
+C:\Program Files\Common Files\Google Updater 2.0:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94D98 -> 0x00DB4F7E -> 0x00DB4C14 -> 0x00DC1EC8 -> 0x76CB262F(MartaOpenFileNamedObject+0x43)
+
+
+run_default - CloseFile:
+C:\Program Files\Common Files\Google Updater 2.0:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94D98 -> 0x00DB4F7E -> 0x00DB4C14 -> 0x00DC1EC8 -> 0x76CB2637(MartaOpenFileNamedObject+0x4B)
+
+
+run_default - SetBasicInformationFile/CloseFile/CreateFile:
+C:\Program Files\Common Files\Google Updater 2.0:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94D98 -> 0x00DB4F7E -> 0x00DB4C48 -> 0x00DB4B53 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - CloseFile:
+C:\Program Files\Common Files\Google Updater 2.0\pixujlhwc.txt:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D94D98 -> 0x00DB4F7E -> 0x00DB4C48 -> 0x00DB4B6D -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - RegOpenKey/RegQueryKey/RegQueryValue:
+HKCR\HTTP\shell\open\command\(Default)
+HKCU\Software\Classes\HTTP\shell\open\command
+HKCR\HTTP\shell\open\command:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D9543E -> 0x00D93723 -> 0x00D8510C -> 0x00D8358E -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegSetValue:
+HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\1\2500
+HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2\2500
+HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3\2500
+HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\4\2500:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95481 -> 0x00D94A65 -> 0x00D84E6C -> 0x00D83998 -> 0x77DAEBCF(`string'+0x6F)
+
+
+run_default - RegSetValue:
+HKCU\Software\Microsoft\Internet Explorer\Main\NoProtectedModeBanner:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95481 -> 0x00D94A65 -> 0x00D84EBD -> 0x00D83998 -> 0x77DAEBCF(`string'+0x6F)
+
+
+run_default - Thread Create:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95481 -> 0x00D94AD3 -> 0x00D9F8C8 -> 0x00D87F3A -> 0x7C8106E5(CreateThread+0x1E)
+
+
+run_default - Thread Create:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB86B0 -> 0x00D95481 -> 0x00D94B18 -> 0x00DB7E77 -> 0x00D87F3A -> 0x7C8106E5(CreateThread+0x1E)
+
+
+run_default - RegCreateKey:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB882A -> 0x00D9D716 -> 0x00D83218 -> 0x00D83277 -> 0x77DA7820(ElfCloseEventLog+0x68)
+
+
+run_default - RegCreateKey:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\0d5bc5189c8de31365:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB882A -> 0x00D9D761 -> 0x00D83218 -> 0x00D83277 -> 0x77DA7820(ElfCloseEventLog+0x68)
+
+
+run_default - RegOpenKey:
+HKLM\SOFTWARE\Symantec\Symantec Endpoint Protection\InstalledApps:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB89D8 -> 0x00D8CBD0 -> 0x00D83570 -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKLM\SOFTWARE\Symantec\Symantec Endpoint Protection\InstalledApps:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB89D8 -> 0x00D8CC6A -> 0x00D83570 -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKLM\SOFTWARE\Symantec\InstalledApps:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB89D8 -> 0x00D8CCB3 -> 0x00D83570 -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegQueryValue:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\48dad8aaf7\15bfced079aafedd:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88BF -> 0x00D9D602 -> 0x00D9D3E7 -> 0x00D83742 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegOpenKey:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\48dad8aaf7:
+0x00D880D1 -> 0x00DA0D9F -> 0x00D9D602 -> 0x00D9D3E7 -> 0x00D83724 -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey/RegQueryValue/CloseFile/CreateFile/QueryStandardInformationFile/CreateFileMapping/QueryOpen:
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\WinSock_Registry_Version
+C:\WINDOWS\rasadhlp.dll
+HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\mswsock.dll
+HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\rasadhlp.dll
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters
+C:\WINDOWS\system32\rasadhlp.dll
+HKLM\System\CurrentControlSet\Services\WinSock2\Parameters\AutodialDLL
+C:\WINDOWS\system32\mswsock.dll:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x71A22ACA($$VProc_ImageExportDirectory+0x14BA)
+
+
+run_default - RegOpenKey:
+HKLM\Software\Microsoft\Windows\CurrentVersion\Setup:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\AppLogLevels:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey/RegQueryValue:
+HKLM\System\CurrentControlSet\Control\ComputerName\ActiveComputerName\ComputerName
+HKLM\System\CurrentControlSet\Control\ComputerName\ActiveComputerName:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x7C8204C8(GetComputerNameExW+0xAB)
+
+
+run_default - RegOpenKey/RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Hostname
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x7C820723(GetComputerNameExW+0x15F)
+
+
+run_default - RegOpenKey/RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters
+HKLM\Software\Policies\Microsoft\System\DNSclient
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Domain:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x7C820751(GetComputerNameExW+0x189)
+
+
+run_default - RegOpenKey:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70:
+0x00D880D1 -> 0x00DC3397 -> 0x00DB835C -> 0x77DA7912(ElfGetLogInformation+0x8F)
+
+
+run_default - RegOpenKey:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\CW1:
+0x00D880D1 -> 0x00DC3397 -> 0x00DB836E -> 0x77DB42E4(LsarLookupPrivilegeValue+0x23)
+
+
+
+
+
+run_default - RegOpenKey/RegQueryValue:
+HKLM\System\CurrentControlSet\Control\ComputerName\ActiveComputerName\ComputerName
+HKLM\System\CurrentControlSet\Control\ComputerName\ActiveComputerName:
+0x00D880D1 -> 0x00DC33F6 -> 0x00DB8282 -> 0x7C8204C8(GetComputerNameExW+0xAB)
+
+
+run_default - CreateFile:
+C:\_sample\1111.exe:
+0x00D880D1 -> 0x00DBDAF2 -> 0x00DBE052 -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - QueryStandardInformationFile:
+C:\_sample\1111.exe:
+0x00D880D1 -> 0x00DBDAF2 -> 0x00DBE0C2 -> 0x7C810B1A(GetFileSize+0x13)
+
+
+run_default - CloseFile:
+C:\_sample\1111.exe:
+0x00D880D1 -> 0x00DBDAF2 -> 0x00DBE0DA -> 0x8054261C(KiFastCallEntry+0xFC)
+
+
+run_default - RegOpenKey/CloseFile/CreateFile/QueryStandardInformationFile/CreateFileMapping/QueryOpen:
+C:\WINDOWS\SETUPAPI.dll
+C:\WINDOWS\system32\wshbth.dll
+HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\wshbth.dll
+HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SETUPAPI.dll
+C:\WINDOWS\system32\setupapi.dll
+HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\winrnr.dll
+C:\WINDOWS\system32\mswsock.dll
+C:\WINDOWS\system32\winrnr.dll:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x71A254F0(NSQUERY::Initialize+0x45)
+
+
+run_default - RegEnumValue/RegOpenKey/RegQueryKey/RegQueryValue:
+HKLM\System\CurrentControlSet\Control\Nls\Language Groups\a
+HKLM\System\CurrentControlSet\Control\Nls\Language Groups
+HKLM\System\CurrentControlSet\Control\Nls\Locale\00000804
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\LanguagePack\SurrogateFallback
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\FontLink\SystemLink
+HKLM\System\CurrentControlSet\Control\Nls\Locale
+HKLM\System\CurrentControlSet\Control\Nls\Locale\Alternate Sorts:
+0x00D880D1 -> 0x00DC33B3 -> 0x7C92E453(KiUserCallbackDispatcher+0x13)
+
+
+run_default - RegOpenKey:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\48dad8aaf7:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB8731 -> 0x00D972A4 -> 0x00DB6626 -> 0x00D9D3E7 -> 0x00D83724 -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegOpenKey:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\48dad8aaf7:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB87CD -> 0x00DB182F -> 0x00D9D602 -> 0x00D9D3E7 -> 0x00D83724 -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegCreateKey:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\48dad8aaf7:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB87CD -> 0x00DB1879 -> 0x00D9D62B -> 0x00D9D5A8 -> 0x00D83676 -> 0x00D83218 -> 0x00D83277 -> 0x77DA7820(ElfCloseEventLog+0x68)
+
+
+run_default - RegOpenKey:
+HKCU\Software\AppDataLow\Software\{85AE3130-2EA3-4F31-6A24-31B8B3AF9BA4}\03B11D70\48dad8aaf7:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98E71 -> 0x00D9D602 -> 0x00D9D3E7 -> 0x00D83724 -> 0x00D830CA -> 0x00D83122 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegCreateKey/RegOpenKey/RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Hostname
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters
+HKLM\Software\Policies\Microsoft\Windows NT\DnsClient
+HKLM\System\CurrentControlSet\Services\DnsCache\Parameters:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x76EF7A5A(dnsapi.dll+0x7A5A)
+
+
+run_default - RegCreateKey/RegOpenKey/RegQueryValue/CloseFile/CreateFile/CreateFileMapping/QueryOpen:
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\UseEdns
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\RegisterReverseLookup
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\RegistrationRefreshInterval
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\RegistrationEnabled
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\DnsTest
+C:\WINDOWS\iphlpapi.dll
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\UpdateSecurityLevel
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\UseHostsFile
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\WaitForNameErrorOnAll
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\DisableReverseAddressRegistrations
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Hostname
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\RegistrationMaxAddressCount
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\RegistrationMaxAddressCount
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\MaxNumberOfAddressesToRegister
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\UpdateTopLevelDomainZones
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\MaxNumberOfAddressesToRegister
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\DisableAdapterDomainName
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\RegistrationTtl
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\QueryAdapterName
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\MaxCacheTtl
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\MaxCacheSize
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\UpdateZoneExcludeFile
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\DisableAdapterDomainName
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\QueryAdapterName
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\RegisterPrimaryName
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\QueryIpMatching
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\ServerPriorityTimeLimit
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\DisableDynamicUpdate
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\Domain
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\DhcpDomain
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\MaxCachedSockets
+HKLM\System\Setup
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\UseDomainNameDevolution
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\EnableAdapterDomainNameRegistration
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\UpdateSecurityLevel
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\ScreenUnreachableServers
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\RegisterAdapterName
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Domain
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\Domain
+HKLM\System\CurrentControlSet\Services\DnsCache\Parameters
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\DisableWanDynamicUpdate
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\RegistrationEnabled
+C:\WINDOWS\system32\iphlpapi.dll
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\ScreenBadTlds
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\MaxNumberOfAddressesToRegister
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\MulticastSendLevel
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\AllowUnqualifiedQuery
+HKLM\SYSTEM\Setup\SystemSetupInProgress
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\UseDomainNameDevolution
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\DisableAdapterDomainName
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\AdapterTimeoutLimit
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\FilterClusterIp
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\AppendToMultiLabelName
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\RegisterAdapterName
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\PrioritizeRecordData
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\MaxNegativeCacheTtl
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\QueryAdapterName
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\DefaultRegistrationTTL
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\DhcpDomain
+HKLM\Software\Policies\Microsoft\Windows NT\DnsClient
+HKLM\Software\Policies\Microsoft\System\DNSClient
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\AllowUnqualifiedQuery
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\RegisterAdapterName
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\RegistrationEnabled
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\MulticastListenLevel
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\RegisterWanAdapters
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\DefaultRegistrationRefreshInterval
+HKLM\System\CurrentControlSet\Services\Dnscache\Parameters\PrioritizeRecordData
+HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\iphlpapi.dll
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\RegistrationMaxAddressCount:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x76EF2E20(dnsapi.dll+0x2E20)
+
+
+run_default - RegCreateKey/RegOpenKey/RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Domain
+HKLM\System\CurrentControlSet\Services\DnsCache\Parameters
+HKLM\Software\Policies\Microsoft\Windows NT\DnsClient
+HKLM\Software\Policies\Microsoft\System\DNSClient
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x76EF7A5A(dnsapi.dll+0x7A5A)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Linkage\Bind:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Linkage\Bind:
+0x00D880D1 -> 0x00DB932C -> 0x00DB928F -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Linkage\Bind:
+0x00D880D1 -> 0x00DB932C -> 0x00DB92B7 -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Linkage\Bind:
+0x00D880D1 -> 0x00DB932C -> 0x00DB92B7 -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - Thread Exit:
+
+
+
+run_default - RegOpenKey:
+HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Linkage:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA7912(ElfGetLogInformation+0x8F)
+
+
+run_default - RegOpenKey:
+HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA7912(ElfGetLogInformation+0x8F)
+
+
+run_default - RegOpenKey:
+HKLM\SYSTEM\CurrentControlSet\Services\NetBT\Parameters\Interfaces:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA7912(ElfGetLogInformation+0x8F)
+
+
+run_default - RegOpenKey:
+HKLM\SYSTEM\CurrentControlSet\Services\NetBT\Parameters:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA7912(ElfGetLogInformation+0x8F)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Linkage\Bind:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Linkage\Bind:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegOpenKey:
+HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}
+HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA7912(ElfGetLogInformation+0x8F)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\EnableDHCP
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\EnableDHCP:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\LeaseObtainedTime
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\LeaseObtainedTime:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\LeaseTerminatesTime
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\LeaseTerminatesTime:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\DhcpServer
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\DhcpServer:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\DhcpServer:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DAEEB1(EtwpGetTimeZoneInformation+0xCF)
+
+
+run_default - RegOpenKey:
+HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}
+HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA7912(ElfGetLogInformation+0x8F)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\EnableDHCP
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\EnableDHCP:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\LeaseObtainedTime
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\LeaseObtainedTime:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\LeaseTerminatesTime
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\LeaseTerminatesTime:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{610EC6F8-25A8-425D-B3B5-C9D00AF5D321}\DhcpServer
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\DhcpServer:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\DhcpServer:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DAEEB1(EtwpGetTimeZoneInformation+0xCF)
+
+
+run_default - RegOpenKey:
+HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA7912(ElfGetLogInformation+0x8F)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\IPAutoconfigurationEnabled:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\AddressType:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\NameServer:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\NameServer:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DAEEB1(EtwpGetTimeZoneInformation+0xCF)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{B8BE72FC-4D68-47FB-B45D-7EDCF24900AA}\DhcpNameServer:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA7B58(EtwpSendUmLogRequest+0xBB)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Linkage\Bind:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\Tcpip\Linkage\Bind:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegOpenKey:
+HKLM\SYSTEM\CurrentControlSet\Services\NetBT\Linkage:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA6B85(EtwpProcessTraceLog+0x16)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\NetBT\Linkage\Export:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)
+
+
+run_default - RegQueryValue:
+HKLM\System\CurrentControlSet\Services\NetBT\Linkage\Export:
+0x00DB84FB -> 0x00DB85FA -> 0x00DB8708 -> 0x00DB88DE -> 0x00D98EAE -> 0x00D99195 -> 0x00DB9133 -> 0x77DA707B(EtwpProcessTraceLegacy+0x46)

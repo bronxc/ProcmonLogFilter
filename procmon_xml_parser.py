@@ -28,6 +28,47 @@ version = "0.1"
 # ---------------------------------------------------------------------------
 # util -
 
+def __dup_file_name(file_path, append_text=None, new_ext=None):
+    """
+    由文件名生成 相关的 文件名
+
+    @param: new_ext : string : (optional, dft=None)不带 "." 的后缀
+    """
+    splitext = os.path.splitext(file_path)
+    if not new_ext:
+
+        # 不改后缀
+
+        if not append_text:
+            # 不改后缀, 也不在名称后面添加内容, 就只加 "_00X" 这种
+            for i in range(200):
+                ret = os.path.join(os.path.dirname(file_path), os.path.basename(splitext[0]) + ("_%.3d" % i) + splitext[1])
+                if not os.path.exists(ret):
+                    return ret
+        else:
+            # 不改后缀, 在名称后面添加内容
+            for i in range(200):
+                ret = os.path.join(os.path.dirname(file_path), os.path.basename(splitext[0]) + append_text + ("_%.3d" % i) + splitext[1])
+                if not os.path.exists(ret):
+                    return ret
+    else:
+        # 更改后缀
+
+        if not append_text:
+            # 更改后缀, 也不在名称后面增加内容, 就只加 "_00X" 这种
+            for i in range(200):
+                ret = os.path.join(os.path.dirname(file_path), os.path.basename(splitext[0]) + ("_%.3d" % i) + "." + new_ext)
+                if not os.path.exists(ret):
+                    return ret
+        else:
+            # 更改后缀, 同时在名称后面增加内容
+            for i in range(200):
+                ret = os.path.join(os.path.dirname(file_path), os.path.basename(splitext[0]) + append_text + ("_%.3d" % i) + "." + new_ext)
+                if not os.path.exists(ret):
+                    return ret
+
+    # 超过最大尝试次数了
+    raise Exception("reach max try cnt when gen file name: %s" % file_path)
 
 # ---------------------------------------------------------------------------
 # 类
@@ -476,8 +517,11 @@ class ProcmonEvent(object):
         """"""
         if len(args) == 5:
             self.__init__raw(args[0], args[1], args[2], args[3], args[4])
-        elif len(args) == 7:
-            self.__init__dict(args[0], args[1], args[2], args[3], args[4], args[5], args[6])
+        elif len(args) == 1:
+
+            assert isinstance(args[0], dict)
+            self.__init__dict(args[0])
+
         else:
             raise Exception("invalid param count for init ProcmonEvent: %s" % args)
 
@@ -497,7 +541,7 @@ class ProcmonEvent(object):
         self.direct_invoke_api_retnto_addr = None
         self.direct_invoke_api_invoke_inst = None
 
-    def __init__dict(self, operation_list, path_list, frame_list, event_tag_list, direct_invoke_api, direct_invoke_api_retnto_addr, direct_invoke_api_invoke_inst):
+    def __init__dict(self, dict_):
         """
         从保存的 json 中 "恢复" 此对象
 
@@ -509,14 +553,36 @@ class ProcmonEvent(object):
         - direct_invoke_api_retnto_addr : int    : 调用 api 的返回地址. 可以依据此地址, 在 IDA 中匹配 direct_invoke_api
         - direct_invoke_api_invoke_inst : string : 调用 api 的指令. 例如: "call eax" "call [eax + 0xC]" "call dowrd_12345"
         """
-        self.operation_list = operation_list
-        self.path_list = path_list
-        self.frame_list = frame_list
-        self.event_tag_list = event_tag_list
+        self.operation_list = dict_["operation_list"]
+        self.path_list = dict_["path_list"]
+        self.event_tag_list = dict_["event_tag_list"]
 
-        self.direct_invoke_api = direct_invoke_api
-        self.direct_invoke_api_retnto_addr = direct_invoke_api_retnto_addr
-        self.direct_invoke_api_invoke_inst = direct_invoke_api_invoke_inst
+        if "direct_invoke_api" in dict_:
+            self.direct_invoke_api = dict_["direct_invoke_api"]
+        else:
+            self.direct_invoke_api = None
+        if "direct_invoke_api_retnto_addr" in dict_:
+            self.direct_invoke_api_retnto_addr = dict_["direct_invoke_api_retnto_addr"]
+        else:
+            self.direct_invoke_api_retnto_addr = None
+        if "direct_invoke_api_invoke_inst" in dict_:
+            self.direct_invoke_api_invoke_inst = dict_["direct_invoke_api_invoke_inst"]
+        else:
+            self.direct_invoke_api_invoke_inst = None
+
+        frame_list_json = dict_["frame_list"]
+        frame_list = []
+        for frame_json in frame_list_json:
+
+            if frame_json["frame_type"] == "page_frame":
+                frame_list.append(StackFramePage.from_dict(frame_json))
+
+            elif frame_json["frame_type"] == "module_frame":
+                frame_list.append(StackFrameModule.from_dict(frame_json))
+
+            else:
+                raise Exception("invalid frame type from json: %s" % frame_json["frame_type"])
+        self.frame_list = frame_list
 
     # ---------------------------------------------------------------------------
 
@@ -644,38 +710,31 @@ class ProcmonEvent(object):
 
     def to_dict(self):
         """将自身转化为 dict_"""
-        frame_list_json = []
-        for frame in self.frame_list:
-            frame_list_json.append(frame.to_dict())
-
-        return {
+        dict_ = {
             "operation_list": self.operation_list,
             "path_list": self.path_list,
             "event_tag_list": self.event_tag_list,
-            "frame_list": frame_list_json
+
         }
+
+        if self.direct_invoke_api:
+            dict_["direct_invoke_api"] = self.direct_invoke_api
+        if self.direct_invoke_api_retnto_addr:
+            dict_["direct_invoke_api_retnto_addr"] = self.direct_invoke_api_retnto_addr
+        if self.direct_invoke_api_invoke_inst:
+            dict_["direct_invoke_api_invoke_inst"] = self.direct_invoke_api_invoke_inst
+
+        frame_list_json = []
+        for frame in self.frame_list:
+            frame_list_json.append(frame.to_dict())
+        dict_["frame_list"] = frame_list_json
+
+        return dict_
 
     @classmethod
     def from_dict(cls, dict_):
         """从 dict_ 中创建对象"""
-        operation_list = dict_["operation_list"]
-        path_list = dict_["path_list"]
-        event_tag_list = dict_["event_tag_list"]
-
-        frame_list_json = dict_["frame_list"]
-        frame_list = []
-        for frame_json in frame_list_json:
-
-            if frame_json["frame_type"] == "page_frame":
-                frame_list.append(StackFramePage.from_dict(frame_json))
-
-            elif frame_json["frame_type"] == "module_frame":
-                frame_list.append(StackFrameModule.from_dict(frame_json))
-
-            else:
-                raise Exception("invalid frame type from json: %s" % frame_json["frame_type"])
-
-        return ProcmonEvent(operation_list, path_list, frame_list, event_tag_list)
+        return ProcmonEvent(dict_)
 
     # ---------------------------------------------------------------------------
     # END OF CLASS
@@ -716,53 +775,9 @@ class Output(object):
     # ---------------------------------------------------------------------------
     # util -
 
-    @classmethod
-    def __dup_file_name(cls, file_path, append_text=None, new_ext=None):
-        """
-        由文件名生成 相关的 文件名
-
-        @param: new_ext : string : (optional, dft=None)不带 "." 的后缀
-        """
-        splitext = os.path.splitext(file_path)
-        if not new_ext:
-
-            # 不改后缀
-
-            if not append_text:
-                # 不改后缀, 也不在名称后面添加内容, 就只加 "_00X" 这种
-                for i in range(200):
-                    ret = os.path.join(os.path.dirname(file_path), os.path.basename(splitext[0]) + ("_%.3d" % i) + splitext[1])
-                    if not os.path.exists(ret):
-                        return ret
-            else:
-                # 不改后缀, 在名称后面添加内容
-                for i in range(200):
-                    ret = os.path.join(os.path.dirname(file_path), os.path.basename(splitext[0]) + append_text + ("_%.3d" % i) + splitext[1])
-                    if not os.path.exists(ret):
-                        return ret
-        else:
-            # 更改后缀
-
-            if not append_text:
-                # 更改后缀, 也不在名称后面增加内容, 就只加 "_00X" 这种
-                for i in range(200):
-                    ret = os.path.join(os.path.dirname(file_path), os.path.basename(splitext[0]) + ("_%.3d" % i) + "." + new_ext)
-                    if not os.path.exists(ret):
-                        return ret
-            else:
-                # 更改后缀, 同时在名称后面增加内容
-                for i in range(200):
-                    ret = os.path.join(os.path.dirname(file_path), os.path.basename(splitext[0]) + append_text + ("_%.3d" % i) + "." + new_ext)
-                    if not os.path.exists(ret):
-                        return ret
-
-        # 超过最大尝试次数了
-        raise Exception("reach max try cnt when gen file name: %s" % file_path)
-
     # ---------------------------------------------------------------------------
     # 内容补全
 
-    @classmethod
     def guess_direct_invoke_api(self):
         """猜测 direct_invoke_api"""
         for evt in self.event_list:
@@ -891,7 +906,7 @@ class Output(object):
 
                 # 输出到文件
 
-                output_file_name = self.__dup_file_name(output_file_path_template, append_text="_" + md_name)
+                output_file_name = __dup_file_name(output_file_path_template, append_text="_" + md_name)
                 self.to_json_file(output_file_name, self.version, [md_name], output_event_list)
 
             else:
@@ -915,7 +930,7 @@ class Output(object):
 
                 # 输出到文件
 
-                output_file_name = self.__dup_file_name(output_file_path_template, append_text=("_0x%.8X" % page_start))
+                output_file_name = __dup_file_name(output_file_path_template, append_text=("_0x%.8X" % page_start))
                 self.to_json_file(output_file_name, self.version, [], output_event_list)
 
             else:
@@ -953,8 +968,7 @@ class Output(object):
     # ---------------------------------------------------------------------------
     # 重定向
 
-    @classmethod
-    def __rebase_frame_by_md_name(cls, frame, md_rebase_list):
+    def __rebase_frame_by_md_name(self, frame, md_rebase_list):
         """
         按照 md_name 重定位
 
@@ -1038,8 +1052,7 @@ class Output(object):
             # 所有模块名称都不匹配
             return False
 
-    @classmethod
-    def __rebase_frame_by_page(cls, frame, page_rebase_list):
+    def __rebase_frame_by_page(self, frame, page_rebase_list):
         """
         按照 page_start-page_end 重定位
 
@@ -1109,10 +1122,9 @@ class Output(object):
             # 所有范围都不匹配
             return False
 
-    @classmethod
-    def __rebase_event_list_by_md_list(cls, event_list, md_rebase_list):
+    def rebase_event_list_by_md_list(self, md_rebase_list):
         """根据模块名称和地址, 重定向 ProcmonEvent() 列表"""
-        for evt in event_list:
+        for evt in self.event_list:
 
             # 遍历帧
             for frame in evt.frame_list:
@@ -1120,16 +1132,13 @@ class Output(object):
                 if isinstance(frame, StackFrameModule):
 
                     # 模块上的帧都要试试看
-                    if md_rebase_list and cls.__rebase_frame_by_md_name(frame, md_rebase_list):
+                    if md_rebase_list and self.__rebase_frame_by_md_name(frame, md_rebase_list):
                         # print("rebased frame based on md_name: %s" % (frame))
                         pass
 
-        return event_list
-
-    @classmethod
-    def __rebase_event_list_by_page_list(cls, event_list, page_rebase_list):
+    def rebase_event_list_by_page_list(self, page_rebase_list):
         """根据堆的范围, 重定向 ProcmonEvent() 列表"""
-        for evt in event_list:
+        for evt in self.event_list:
 
             # 遍历帧
             for frame in evt.frame_list:
@@ -1137,24 +1146,9 @@ class Output(object):
                 if isinstance(frame, StackFramePage):
 
                     # 堆上的帧都要试试看
-                    if page_rebase_list and cls.__rebase_frame_by_page(frame, page_rebase_list):
+                    if page_rebase_list and self.__rebase_frame_by_page(frame, page_rebase_list):
                         # print("rebased frame based on page: %s" % (frame))
                         pass
-
-        return event_list
-
-    @classmethod
-    def __rebase_event_list(cls, event_list, md_rebase_list=None, page_rebase_list=None):
-        """重定向 ProcmonEvent() 列表"""
-        # 模块上的帧
-        if md_rebase_list:
-            event_list = cls.__rebase_event_list_by_md_list(event_list, md_rebase_list)
-
-        # 堆上的帧
-        if page_rebase_list:
-            event_list = cls.__rebase_event_list_by_page_list(event_list, page_rebase_list)
-
-        return event_list
 
     # ---------------------------------------------------------------------------
     # 混合/等价替换/去重
@@ -1179,7 +1173,7 @@ class Output(object):
             new_itd_md_list = list(set(self.itd_md_list + other.itd_md_list))
 
         # 混合
-        new_event_list = self.__merge_duplicate_event_list(list(self.event_list + other.event_list))
+        new_event_list = self.merge_duplicate_event_list(list(self.event_list + other.event_list))
 
         # 返回新对象
         return Output(self.version, new_itd_md_list, new_event_list)
@@ -1188,8 +1182,7 @@ class Output(object):
         """比较2个 Output() 对象的不同"""
         pass
 
-    @classmethod
-    def __equalvent_event_list(cls, event_list):
+    def equalvent_event_list(self):
         """
         等价转换某些 event
 
@@ -1197,7 +1190,7 @@ class Output(object):
             - LoadLibrary
         """
 
-        for evt in event_list:
+        for evt in self.event_list:
 
             # 确保是没有 merge 过的 event
             assert len(evt.operation_list) == 1
@@ -1248,17 +1241,14 @@ class Output(object):
                 # gethostname/gethostbyname 会导致很多 RegQueryValue, 而且中间有 procmon 无法识别的系统模块帧
                 # 0x00DB928F/0x00DB92B7
 
-        return event_list
-
-    @classmethod
-    def __merge_duplicate_event_list(cls, event_list):
+    def merge_duplicate_event_list(self):
         """ProcmonEvent() 对象列表去重"""
 
-        print("%d procmon event to remove duplicate" % (len(event_list)))
+        print("%d procmon event to remove duplicate" % (len(self.event_list)))
 
         # 按长度分组
         grouped_event_dict = {}
-        for evt in event_list:
+        for evt in self.event_list:
             if len(evt) not in grouped_event_dict:
                 grouped_event_dict[len(evt)] = [evt]
             else:
@@ -1297,16 +1287,15 @@ class Output(object):
             filtered_event_list = list(filtered_event_list + evt_group)
 
         print("%d procmon event remained..." % (len(filtered_event_list)))
-        return filtered_event_list
+        self.event_list = filtered_event_list
 
-    @classmethod
-    def remove_frames_procmon_recognized_sysmd_as_heap(cls, event_list):
+    def remove_frames_procmon_recognized_sysmd_as_heap(self):
         """
         去除 procmon 将系统模块帧识别为堆帧的帧
 
         - 把 frame.addr 以 0x70000000 开头的 frame
         """
-        for evt in event_list:
+        for evt in self.event_list:
 
             # 将符合条件的帧添加到删除列表
             remove_frame_list = []
@@ -1320,13 +1309,10 @@ class Output(object):
                 for frame_remove in remove_frame_list:
                     evt.frame_list.remove(frame_remove)
 
-        # 返回
-        return event_list
-
     # ---------------------------------------------------------------------------
     # json
 
-    def _to_json_file(self, json_file_path):
+    def save(self, json_file_path):
         """保存到 json 文件"""
         self.to_json_file(json_file_path, self.version, self.itd_md_list, self.event_list)
 
@@ -1484,23 +1470,17 @@ class Output(object):
         return event_list
 
     @classmethod
-    def from_xml_file(cls, file_path, itd_md_list, event_tag, meta={}):
+    def from_xml_file(cls, file_path, itd_md_list, event_tag, version="0.1"):
         """
         读取 xml 文件, 创建此对象
 
-        @param: meta : dict : 内容是这样的:
-                            "md_rebase_list": None/[(),(),...],
-                            "page_rebase_list": None/[(),(),...],
-                            "is_remove_frames_procmon_recognized_sysmd_as_heap": True/False,
-                            "version": "0.1"
+        @return: obj/None : Output() 对象
         """
         # 检查/补全参数
         if len(event_tag) == 0:
             raise Exception("must specify a event_tag for this xml log file")
         if len(itd_md_list) == 0:
             print("no itd md list specified. will only leave event with heap frames")
-        if "version" not in meta:
-            meta["version"] = "0.1"
 
         # 读取并解析 xml 文件
         with open(file_path, mode='r', encoding='utf-8') as f:
@@ -1516,24 +1496,13 @@ class Output(object):
             # 转为 ProcmonEvent() 对象列表
             event_list = cls.__to_event_list(soup, itd_md_list, event_tag)
 
-            # 移除哪些 procmon 将系统模块帧识别为堆帧的 帧
-            if "is_remove_frames_procmon_recognized_sysmd_as_heap" in meta and meta["is_remove_frames_procmon_recognized_sysmd_as_heap"]:
-                event_list = cls.remove_frames_procmon_recognized_sysmd_as_heap(event_list)
+            # 创建对象并返回
+            return Output(version, itd_md_list, event_list)
 
-            # 等价转换某些 ProcmonEvent()
-            event_list = cls.__equalvent_event_list(event_list)
+        print("open xml file fail: %s" % file_path)
 
-            # 混合调用栈相同的 ProcmonEvent()
-            event_list = cls.__merge_duplicate_event_list(event_list)
-
-            # 重定向
-            if "md_rebase_list" in meta:
-                event_list = cls.__rebase_event_list_by_md_list(event_list, meta["md_rebase_list"])
-            if "page_rebase_list" in meta:
-                event_list = cls.__rebase_event_list_by_page_list(event_list, meta["page_rebase_list"])
-
-            # 保存到 json 文件
-            cls.to_json_file(cls.__dup_file_name(file_path, new_ext="json"), meta["version"], itd_md_list, event_list)
+        # 返回 None
+        return None
 
     # ---------------------------------------------------------------------------
     # END OF CLASS
@@ -1553,11 +1522,28 @@ def test():
 
 if __name__ == "__main__":
 
-    if True:
-        Output.from_xml_file(r"e:\tmp\logfile.xml", ["explorer.exe"], "run_default", {
-            "page_rebase_list": [(0x90000, 0xF0000, 0xD80000)],
-            "is_remove_frames_procmon_recognized_sysmd_as_heap": True
-        })
+    if False:
+
+        xml_file_path = r"e:\tmp\logfile.xml"
+
+        # 创建对象
+        output = Output.from_xml_file(xml_file_path, ["explorer.exe"], "run_default")
+
+        # 重定向
+        output.rebase_event_list_by_page_list([(0x90000, 0xF0000, 0xD80000)])
+
+        # 等价转换某些 ProcmonEvent()
+        output.equalvent_event_list()
+
+        # 混合调用栈相同的 ProcmonEvent()
+        output.merge_duplicate_event_list()
+
+        # 去除 procmon 将系统模块帧识别为堆帧的帧
+        output.remove_frames_procmon_recognized_sysmd_as_heap()
+
+        # 保存到文件
+        output.save(__dup_file_name(xml_file_path, new_ext="json"))
+
     else:
         obj = Output.from_json_file(r"e:\tmp\logfile_000.json")
         for evt in obj.event_list:
