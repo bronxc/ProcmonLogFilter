@@ -609,7 +609,7 @@ class ProcmonEvent(object):
 
         oper_str = ""
         if self.direct_invoke_api:
-            oper_str = self.direct_invoke_api
+            oper_str = "(api)" + self.direct_invoke_api
         else:
             for operation in self.operation_list:
                 oper_str = operation + "/" + oper_str
@@ -759,9 +759,65 @@ class Output(object):
 
     # ---------------------------------------------------------------------------
 
+    def __validate_same_direct_invoke_api_retnto_addr(self):
+        """有同 1 个 direct_invoke_api_retnto_addr 的 event"""
+        group_dict = {}
+        for evt in self.event_list:
+            if len(evt.frame_list) > 1:
+                if evt.frame_list[1].addr not in group_dict:
+                    group_dict[evt.frame_list[1].addr] = [evt]
+                else:
+                    group_dict[evt.frame_list[1].addr].append(evt)
+        # 输出
+        for addr, evt_list in group_dict.items():
+            if len(evt_list) != 1:
+
+                print("evt return to same addr: 0x%.8X:" % (addr))
+
+                _1st_func_name_list = []
+                for evt in evt_list:
+                    if evt.frame_list[0].func_name not in _1st_func_name_list:
+                        _1st_func_name_list.append(evt.frame_list[0].func_name)
+                print("1st frame func name list: %s" % str(_1st_func_name_list))
+
+                print("event details:")
+                for evt in evt_list:
+                    print(evt)
+                    print("")
+                print("\n\n")
+
+    def __validate_same_1st_frame_funcname(self):
+        group_dict = {}
+        for evt in self.event_list:
+            if len(evt.frame_list) > 0:
+                if evt.frame_list[0].func_name not in group_dict:
+                    group_dict[evt.frame_list[0].func_name] = [evt]
+                else:
+                    group_dict[evt.frame_list[0].func_name].append(evt)
+        # 输出
+        for func_name, evt_list in group_dict.items():
+            if len(evt_list) != 1:
+
+                print("evt with same 1st funcname: %s:" % (func_name))
+
+                direct_invoke_api_retnto_addr_list = []
+                direct_invoke_api_retnto_addr_list_str = ""
+                for evt in evt_list:
+                    if evt.frame_list[1].addr not in direct_invoke_api_retnto_addr_list:
+                        direct_invoke_api_retnto_addr_list.append(evt.frame_list[1].addr)
+                        direct_invoke_api_retnto_addr_list_str += " 0x%.8X " % evt.frame_list[1].addr
+                print("this 1st func name return to those addrs: %s" % direct_invoke_api_retnto_addr_list_str)
+
+                print("event details:")
+                for evt in evt_list:
+                    print(evt)
+                    print("")
+                print("\n\n")
+
     def validate(self):
         """自检, 输出些信息"""
-        pass
+        # self.__validate_same_direct_invoke_api_retnto_addr()
+        self.__validate_same_1st_frame_funcname()
 
     # ---------------------------------------------------------------------------
     # util -
@@ -771,13 +827,58 @@ class Output(object):
 
     def guess_direct_invoke_api(self):
         """猜测 direct_invoke_api"""
+
+        _1st_func_name_as_direct_api_list = [
+            "LoadLibrary",
+            "CopyFile",
+            "GetFileAttributes",
+            "GetComputerName",
+            "GetFileSize",
+        ]
+
+        _1st_func_name_to_direct_api_dict = {
+            "ElfCloseEventLog": "RegCreateKey",
+            "EtwpMapEventToEventRecord": "RegEnumKey",
+        }
+
         for evt in self.event_list:
-            pass
+            # 没有 direct_invoke_api 且调用栈不为空的
+            if not evt.direct_invoke_api and len(evt.frame_list) > 0:
+
+                frame_1st = evt.frame_list[0]
+
+                # 第1帧的函数名作为 direct_invoke_api
+                for api_str in _1st_func_name_as_direct_api_list:
+                    if frame_1st.func_name.startswith(api_str):
+                        evt.direct_invoke_api = api_str
+                        break
+
+                # 第1帧的函数名转换后作为 direct_invoke_api
+                for api_str, api_invoke in _1st_func_name_to_direct_api_dict.items():
+                    if frame_1st.func_name.startswith(api_str):
+                        evt.direct_invoke_api = api_invoke
+                        break
+
+                #
 
     def export_unguessable_direct_invoke_api_retn_addrs(self):
-        """导出不能猜测 direct_invoke_api 的 evt 的 direct_invoke_api_retnto_addr, 借助 IDA 来判断具体的 api"""
-        # retnto_addr_list = []
-        pass
+        """
+        导出不能猜测 direct_invoke_api 的 evt 的 direct_invoke_api_retnto_addr, 借助 IDA 来判断具体的 api
+
+        这里采用 frame.addr. 所以调用此函数之前, 请考虑清楚是不是需要重定位基址之类的
+        """
+        retnto_addr_list = []
+        for evt in self.event_list:
+            if not evt.direct_invoke_api and len(evt.frame_list) > 1:
+
+                addr = evt.frame_list[1].addr
+                if addr not in retnto_addr_list:
+
+                    # 将此地址作为 direct_invoke_api_retnto_addr
+                    retnto_addr_list.append(addr)
+
+        # 返回
+        return retnto_addr_list
 
     def complete_direct_invoke_api(slef, file_path):
         """用 IDA 解析的内容, 补全 evt.direct_invoke_api"""
@@ -1537,8 +1638,22 @@ if __name__ == "__main__":
         output.save(__dup_file_name(xml_file_path, new_ext="json"))
 
     else:
-        obj = Output.from_json_file(r"e:\tmp\logfile_000.json")
-        obj.validate()
+        json_file_path = r"e:\tmp\logfile_000.json"
+
+        obj = Output.from_json_file(json_file_path)
+
+        # 猜测 direct_invoke_api
+        # obj.guess_direct_invoke_api()
+
+        # 保存
+        # obj.save(__dup_file_name(json_file_path))
+
+        # obj.validate()
+
+        addrs = obj.export_unguessable_direct_invoke_api_retn_addrs()
+        for addr in addrs:
+            print("0x%.8X" % addr)
+
         # for evt in obj.event_list:
         #     # if len(evt.frame_list) > 0 and evt.frame_list[0].func_name.startswith("KiFastCallEntry"):
         #     #     print(evt)
