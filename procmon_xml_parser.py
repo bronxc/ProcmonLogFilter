@@ -538,7 +538,6 @@ class ProcmonEvent(object):
         self.event_tag_list = [event_tag]
 
         self.direct_invoke_api = None
-        self.direct_invoke_api_retnto_addr = None
         self.direct_invoke_api_invoke_inst = None
 
     def __init__dict(self, dict_):
@@ -550,7 +549,6 @@ class ProcmonEvent(object):
         - frame_list                    : list   :
         - event_tag_list                : list   :
         - direct_invoke_api             : string : 调用的 api. 有了这个, self.operation_list 就没有意义了
-        - direct_invoke_api_retnto_addr : int    : 调用 api 的返回地址. 可以依据此地址, 在 IDA 中匹配 direct_invoke_api
         - direct_invoke_api_invoke_inst : string : 调用 api 的指令. 例如: "call eax" "call [eax + 0xC]" "call dowrd_12345"
         """
         self.operation_list = dict_["operation_list"]
@@ -561,10 +559,6 @@ class ProcmonEvent(object):
             self.direct_invoke_api = dict_["direct_invoke_api"]
         else:
             self.direct_invoke_api = None
-        if "direct_invoke_api_retnto_addr" in dict_:
-            self.direct_invoke_api_retnto_addr = dict_["direct_invoke_api_retnto_addr"]
-        else:
-            self.direct_invoke_api_retnto_addr = None
         if "direct_invoke_api_invoke_inst" in dict_:
             self.direct_invoke_api_invoke_inst = dict_["direct_invoke_api_invoke_inst"]
         else:
@@ -714,13 +708,10 @@ class ProcmonEvent(object):
             "operation_list": self.operation_list,
             "path_list": self.path_list,
             "event_tag_list": self.event_tag_list,
-
         }
 
         if self.direct_invoke_api:
             dict_["direct_invoke_api"] = self.direct_invoke_api
-        if self.direct_invoke_api_retnto_addr:
-            dict_["direct_invoke_api_retnto_addr"] = self.direct_invoke_api_retnto_addr
         if self.direct_invoke_api_invoke_inst:
             dict_["direct_invoke_api_invoke_inst"] = self.direct_invoke_api_invoke_inst
 
@@ -784,7 +775,8 @@ class Output(object):
             pass
 
     def export_unguessable_direct_invoke_api_retn_addrs(self):
-        """导出不能猜测 direct_invoke_api 的 evnt 的 direct_invoke_api_retnto_addr, 借助 IDA 来判断具体的 api"""
+        """导出不能猜测 direct_invoke_api 的 evt 的 direct_invoke_api_retnto_addr, 借助 IDA 来判断具体的 api"""
+        # retnto_addr_list = []
         pass
 
     def complete_direct_invoke_api(slef, file_path):
@@ -1546,12 +1538,13 @@ if __name__ == "__main__":
 
     else:
         obj = Output.from_json_file(r"e:\tmp\logfile_000.json")
-        for evt in obj.event_list:
-            # if len(evt.frame_list) > 0 and evt.frame_list[0].func_name.startswith("KiFastCallEntry"):
-            #     print(evt)
-            #     print("\n")
-            print(evt)
-            print("\n")
+        obj.validate()
+        # for evt in obj.event_list:
+        #     # if len(evt.frame_list) > 0 and evt.frame_list[0].func_name.startswith("KiFastCallEntry"):
+        #     #     print(evt)
+        #     #     print("\n")
+        #     print(evt)
+        #     print("\n")
 
     #
     pass
