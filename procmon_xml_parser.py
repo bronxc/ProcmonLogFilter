@@ -5,7 +5,10 @@
 
 2. 一步到位就得了, 别保存中间文件了
 
-3.
+3. # 如果要 "打印文件行为/打印注册表行为" 等内容, 请:
+    - 1. 创建/加载 config
+    - 2. 将 config["net/proc"] 等传入函数 output.new_by_operation_list(), 创建新的 output 对象
+    - 3. 使用新的 output_new.print()
 
 """
 
@@ -14,6 +17,7 @@ from __future__ import print_function
 
 
 import os
+import copy
 import json
 from bs4 import BeautifulSoup
 
@@ -72,6 +76,174 @@ def __dup_file_name(file_path, append_text=None, new_ext=None):
 
 # ---------------------------------------------------------------------------
 # 类
+
+
+class ConfigMgr(object):
+
+    def __init__(self, *args, **kwargs):
+        """初始化"""
+        if len(args) == 0:
+            self.__init__raw()
+
+        elif len(args) == 1:
+
+            assert isinstance(args[0], dict)
+            self.__init__dict(args[0])
+
+        else:
+            raise Exception("invalid init param length")
+
+    def __init__raw(self):
+        """默认配置"""
+        self.config_file_path = os.path.join(os.path.dirname(__file__), "config.json")
+        self.config_dict = {
+            "file": [
+                "CloseFile",
+                "CreateFile",
+                "CreateFileMapping",
+                "DeviceIoControl",
+                "FileSystemControl",
+                "FlushBuffersFile",
+                "LockFile",
+                "QueryAllInformationFile",
+                "QueryAttributeInformationVolume",
+                "QueryAttributeTagFile",
+                "QueryBasicInformationFile",
+                "QueryCompressionInformationFile",
+                "QueryDirectory",
+                "QueryEAFile",
+                "QueryFileInternalInformationFile",
+                "QueryInformationVolume",
+                "QueryNameInformationFile",
+                "QueryNetworkOpenInformationFile",
+                "QueryOpen",
+                "QueryRemoteProtocolInformation",
+                "QuerySecurityFile",
+                "QuerySizeInformationVolume",
+                "QueryStandardInformationFile",
+                "ReadFile",
+                "SetAllocationInformationFile",
+                "SetBasicInformationFile",
+                "SetDispositionInformationFile",
+                "SetEndOfFileInformationFile",
+                "SetRenameInformationFile",
+                "UnlockFileSingle",
+                "WriteFile",
+            ],
+            "reg": [
+                "RegCloseKey",
+                "RegCreateKey",
+                "RegDeleteKey",
+                "RegDeleteValue",
+                "RegEnumKey",
+                "RegEnumValue",
+                "RegOpenKey",
+                "RegQueryKey",
+                "RegQueryKeySecurity",
+                "RegQueryMultipleValueKey",
+                "RegQueryValue",
+                "RegSetInfoKey",
+                "RegSetValue",
+            ],
+            "net": [
+                "TCP Connect",
+                "TCP Disconnect",
+                "TCP Receive",
+                "TCP Reconnect",
+                "TCP Retransmit",
+                "TCP Send",
+                "TCP TCPCopy",
+                "UDP Receive",
+                "UDP Send",
+            ],
+            "proc": [
+                "Load Image",
+                "Process Create",
+                "Process Exit",
+                "Process Start",
+                "Thread Create",
+                "Thread Exit",
+            ],
+            "itd": [
+                "TCP Connect",
+                "TCP Disconnect",
+                "TCP Receive",
+                "TCP Reconnect",
+                "TCP Retransmit",
+                "TCP Send",
+                "TCP TCPCopy",
+                "UDP Receive",
+                "UDP Send",
+
+                "Process Create",
+                "Process Exit",
+                "Process Start",
+
+                "RegDeleteKey",
+                "RegDeleteValue",
+                "RegSetInfoKey",
+                "RegSetValue",
+
+                "WriteFile",
+            ]
+        }
+
+        if not os.path.exists(self.config_file_path):
+            print("default config init. u're suggested to save this config to file, and use file config later on...")
+            # self.save()
+        else:
+            print("initializing config from default config, but config file exists. "
+                  "u're suggested to use ConfigMgr.from_json_file() to load config")
+
+    def __init__dict(self, dict_):
+        """从配置文件加载的配置"""
+        self.config_file_path = dict_["json_file_path"]
+        del dict_["json_file_path"]
+        self.config_dict = dict_
+
+    # ---------------------------------------------------------------------------
+
+    def add_oper(self, oper_type, oper_str_list):
+        """添加行为类别"""
+        if oper_type not in self.config_dict:
+            self.config_dict[oper_type] = oper_str_list
+            return
+
+        self.config_dict[oper_type] = list(set(self.config_dict[oper_type] + oper_str_list))
+
+    def get_oper_list(self, oper_type):
+        """由行为类型获取行为 operation 列表"""
+        if oper_type not in self.config_dict:
+            return None
+        return self.config_dict[oper_type]
+
+    # ---------------------------------------------------------------------------
+    # 文件
+
+    def save(self):
+        """保存到配置文件"""
+        self.to_json_file(self.config_file_path, self.config_dict)
+
+    @classmethod
+    def to_json_file(cls, json_file_path, config_dict):
+        """转为 dict, 保存到 json 文件"""
+        with open(json_file_path, mode='w', encoding='utf-8') as f:
+            f.write(json.dumps(config_dict, ensure_ascii=False, indent=4))
+            print("config saved to file: %s" % json_file_path)
+
+    @classmethod
+    def from_json_file(cls, file_path):
+        """从 json 文件中加载配置"""
+        with open(os.path.abspath(file_path), mode='r', encoding='utf-8') as f:
+            dict_ = json.load(f)
+
+            dict_["json_file_path"] = file_path
+
+            return ConfigMgr(dict_)
+
+    # ---------------------------------------------------------------------------
+    # END OF CLASS
+    # ---------------------------------------------------------------------------
 
 
 class StackFrameBase(object):
@@ -245,6 +417,7 @@ class StackFramePage(StackFrameBase):
             if self.func_to_page_offset:
                 self.func_addr = self.page_start + self.func_to_page_offset
         else:
+            # 堆起始地址相同, 不需要重定位
             pass
 
     # ---------------------------------------------------------------------------
@@ -445,7 +618,7 @@ class StackFrameModule(StackFrameBase):
             if self.func_to_md_offset:
                 self.func_addr = self.func_to_md_offset + self.md_base
         else:
-            # 不需重定位
+            # 模块基地址相同, 不需重定位
             pass
 
     # ---------------------------------------------------------------------------
@@ -539,6 +712,9 @@ class ProcmonEvent(object):
 
         self.direct_invoke_api = None
         self.direct_invoke_api_invoke_inst = None
+        # 本来是有这个的, 但考虑到每次都要设置基址/重定位都需要考虑, 就放弃了.
+        # 去调用函数吧, 直接读取第 2 个 frame.addr
+        # self.direct_invoke_api_retnto_addr = None
 
     def __init__dict(self, dict_):
         """
@@ -636,6 +812,45 @@ class ProcmonEvent(object):
     # ---------------------------------------------------------------------------
     # util
 
+    def direct_invoke_func_name(self):
+        """第 1 个 frame.func_name"""
+        if len(self.frame_list) > 0:
+            return self.frame_list[0].func_name
+        else:
+            return None
+
+    def direct_invoke_api_retnto_addr(self):
+        """
+        获取第 2 个 frame.addr.
+
+        因为第 1 个 frame 被认为是(非直接)调用 api 的地方, 所以将第 2 个 frame 认为是返回 模块/堆 的地址
+        当然, 如果 procmon 把某些不能识别的 0x70000000 开头的系统模块识别为了堆模块, 这个就错了.
+        所以, 在调用此函数进行过滤之前, 最好先调用 self.remove_frames_procmon_recognized_sysmd_as_heap()
+
+        @return: addr 或者 None
+        """
+        if len(self.frame_list) > 1:
+            return self.frame_list[1].addr
+        return None
+
+    def remove_frames_procmon_recognized_sysmd_as_heap(self):
+        """
+        去除 procmon 将系统模块帧识别为堆帧的帧
+
+        去掉 frame.addr 以 0x70000000 开头的 frame
+        """
+        # 将符合条件的帧添加到删除列表
+        remove_frame_list = []
+        for frame in self.frame_list:
+            if isinstance(frame, StackFramePage) and frame.addr > 0x70000000:
+                remove_frame_list.append(frame)
+
+        # 删除
+        if len(remove_frame_list) != 0:
+            print("remove %d frames procmon recognized sysmd as heap for evt:\n%s\n" % (len(remove_frame_list), self))
+            for frame_remove in remove_frame_list:
+                self.frame_list.remove(frame_remove)
+
     def get_page_start_list(self):
         """获取所有的 self.frame_list 中的 page_start 集合"""
         page_start_list = []
@@ -679,24 +894,24 @@ class ProcmonEvent(object):
         """
         当2个对象 调用堆栈 相同时, 将其内容混合
 
-        - 如果有 direct_invoke_api, 则不管 operation_list
+        即便有了 direct_invoke_api, 也要混合 operation_list, 因为有可能依据 operation 来筛选
+        而2个事件的调用堆栈虽然相同, 但各自的 operation_list 可能已经经过了一番混合变得不相同了
         """
-        has_direct_invoke_api = False
         if self.direct_invoke_api and other.direct_invoke_api:
+
+            # 都有 direct_invoke_api, 因为2个事件的 调用堆栈 是完全相同的, 所以 direct_invoke_api 肯定也相同
             assert self.direct_invoke_api == other.direct_invoke_api
-            has_direct_invoke_api = True
-        elif self.direct_invoke_api:
-            has_direct_invoke_api = True
+
         elif other.direct_invoke_api:
+
+            # 对方有, 自己没有. 使用对方的
             self.direct_invoke_api = other.direct_invoke_api
-            has_direct_invoke_api = True
+
         else:
+            # 自己有, 或者2个都没有, 就不做什么了
             pass
 
-        # 没有调用的 api, 则混合 operation_list
-        if not has_direct_invoke_api:
-            self.operation_list = list(set(self.operation_list + other.operation_list))
-
+        self.operation_list = list(set(self.operation_list + other.operation_list))
         self.path_list = list(set(self.path_list + other.path_list))
         self.event_tag_list = list(set(self.event_tag_list + other.event_tag_list))
 
@@ -732,7 +947,7 @@ class ProcmonEvent(object):
     # ---------------------------------------------------------------------------
 
 
-class Output(object):
+class EventContainer(object):
     """输出"""
 
     def __init__(self, *args, **kwargs):
@@ -750,77 +965,13 @@ class Output(object):
 
     def __str__(self):
         """字符串表示"""
-        import pprint
-        return pprint.pformat({
-            "version": self.version,
-            "itd_md_list": self.itd_md_list,
-            "event_cnt": len(self.event_list)
-        })
-
-    # ---------------------------------------------------------------------------
-
-    def __validate_same_direct_invoke_api_retnto_addr(self):
-        """有同 1 个 direct_invoke_api_retnto_addr 的 event"""
-        group_dict = {}
+        ret = "version: %s\n" % self.version
+        ret += "itd md list: %s\n" % self.itd_md_list
+        ret += "event list: \n"
         for evt in self.event_list:
-            if len(evt.frame_list) > 1:
-                if evt.frame_list[1].addr not in group_dict:
-                    group_dict[evt.frame_list[1].addr] = [evt]
-                else:
-                    group_dict[evt.frame_list[1].addr].append(evt)
-        # 输出
-        for addr, evt_list in group_dict.items():
-            if len(evt_list) != 1:
+            ret += "%s\n" % evt
 
-                print("evt return to same addr: 0x%.8X:" % (addr))
-
-                _1st_func_name_list = []
-                for evt in evt_list:
-                    if evt.frame_list[0].func_name not in _1st_func_name_list:
-                        _1st_func_name_list.append(evt.frame_list[0].func_name)
-                print("1st frame func name list: %s" % str(_1st_func_name_list))
-
-                print("event details:")
-                for evt in evt_list:
-                    print(evt)
-                    print("")
-                print("\n\n")
-
-    def __validate_same_1st_frame_funcname(self):
-        group_dict = {}
-        for evt in self.event_list:
-            if len(evt.frame_list) > 0:
-                if evt.frame_list[0].func_name not in group_dict:
-                    group_dict[evt.frame_list[0].func_name] = [evt]
-                else:
-                    group_dict[evt.frame_list[0].func_name].append(evt)
-        # 输出
-        for func_name, evt_list in group_dict.items():
-            if len(evt_list) != 1:
-
-                print("evt with same 1st funcname: %s:" % (func_name))
-
-                direct_invoke_api_retnto_addr_list = []
-                direct_invoke_api_retnto_addr_list_str = ""
-                for evt in evt_list:
-                    if evt.frame_list[1].addr not in direct_invoke_api_retnto_addr_list:
-                        direct_invoke_api_retnto_addr_list.append(evt.frame_list[1].addr)
-                        direct_invoke_api_retnto_addr_list_str += " 0x%.8X " % evt.frame_list[1].addr
-                print("this 1st func name return to those addrs: %s" % direct_invoke_api_retnto_addr_list_str)
-
-                print("event details:")
-                for evt in evt_list:
-                    print(evt)
-                    print("")
-                print("\n\n")
-
-    def validate(self):
-        """自检, 输出些信息"""
-        # self.__validate_same_direct_invoke_api_retnto_addr()
-        self.__validate_same_1st_frame_funcname()
-
-    # ---------------------------------------------------------------------------
-    # util -
+        return ret
 
     # ---------------------------------------------------------------------------
     # 内容补全
@@ -869,10 +1020,10 @@ class Output(object):
         """
         retnto_addr_list = []
         for evt in self.event_list:
-            if not evt.direct_invoke_api and len(evt.frame_list) > 1:
+            if not evt.direct_invoke_api:
 
-                addr = evt.frame_list[1].addr
-                if addr not in retnto_addr_list:
+                addr = evt.direct_invoke_api_retnto_addr()
+                if addr and addr not in retnto_addr_list:
 
                     # 将此地址作为 direct_invoke_api_retnto_addr
                     retnto_addr_list.append(addr)
@@ -981,20 +1132,190 @@ class Output(object):
             self.complete_event_frame_by_page_func_list(page_start, page_func_list)
 
     # ---------------------------------------------------------------------------
+    # 汇总
+
+    def collect_by_direct_invoke_api_retnto_addr(self):
+        """
+        按 direct_invoke_api_retnto_addr 汇总, 即: 第2个 frame 的地址
+
+        @return: dict : {addr1: [evt1, evt2, ...], addr2: [...]}
+        """
+        group_dict = {}
+        for evt in self.event_list:
+
+            addr = evt.direct_invoke_api_retnto_addr()
+            if addr:
+                if addr not in group_dict:
+                    group_dict[addr] = [evt]
+                else:
+                    group_dict[addr].append(evt)
+
+        # 返回
+        return group_dict
+
+    def collect_by_direct_invoke_funcname(self):
+        """
+        按 底层 frame 的函数名进行汇总
+
+        @return: dict : {func_name1: [evt1, evt2, ...], func_name2: [...]}
+        """
+        group_dict = {}
+        for evt in self.event_list:
+            func_name = evt.direct_invoke_func_name()
+            if func_name:
+                if func_name not in group_dict:
+                    group_dict[func_name] = [evt]
+                else:
+                    group_dict[func_name].append(evt)
+
+        # 返回
+        return group_dict
+
+    def collect_by_operation_list(self, operation_list):
+        """
+        按 operation 汇总
+
+        @return: list : ProcmonEvent() 对象列表
+        """
+        event_list_new = []
+        for evt in self.event_list:
+
+            # 事件中的任何1个 operation 在 operation_list 中都算数
+            for oper in evt.operation_list:
+                if oper in operation_list:
+
+                    event_list_new.append(copy.deepcopy(evt))
+
+                    break
+
+        # 返回
+        return event_list_new
+
+    def collect_by_direct_invoke_api_list(self, direct_invoke_api_list):
+        """按直接调用的 api 汇总"""
+        pass
+
+    def collect_by_itd_name_list(self, itd_name_list):
+        """
+        按 感兴趣的模块 汇总
+
+        @return: dict : {md_name_1: [evt1, evt, ...], md_name_2: [...]}
+        """
+        group_dict = {}
+        for md_name in itd_name_list:
+
+            group_dict[md_name] = []
+
+            for evt in self.event_list:
+                if evt.check_any_frame_has_md_name(md_name):
+                    group_dict[md_name].append(evt)
+
+        # 返回
+        return group_dict
+
+    def collect_by_page_start_list(self, page_start_list):
+        """
+        按 堆起始地址 汇总
+        """
+        group_dict = {}
+        for page_start in page_start_list:
+
+            group_dict[page_start] = []
+
+            for evt in self.event_list:
+                if evt.check_any_frame_has_page_start(page_start):
+                    group_dict[page_start].append(evt)
+
+        # 返回
+        return group_dict
+
+    # ---------------------------------------------------------------------------
+    # 验证, 输出"可疑"内容
+
+    def __validate_same_direct_invoke_api_retnto_addr(self):
+        """有同 1 个 direct_invoke_api_retnto_addr 的 event"""
+        group_dict = self.collect_by_direct_invoke_api_retnto_addr()
+
+        # 输出
+        for addr, evt_list in group_dict.items():
+            if len(evt_list) != 1:
+
+                print("evt return to same addr: 0x%.8X:" % (addr))
+
+                direct_invoke_func_name_list = []
+                for evt in evt_list:
+                    func_name = evt.direct_invoke_func_name()
+                    if func_name and func_name not in direct_invoke_func_name_list:
+                        direct_invoke_func_name_list.append(func_name)
+                print("direct invoke func name list: %s" % str(direct_invoke_func_name_list))
+
+                print("event details:")
+                for evt in evt_list:
+                    print(evt)
+                    print("")
+                print("\n\n")
+
+    def __validate_same_direct_invoke_func_name(self):
+        """底层 frame 的函数名相同"""
+        group_dict = self.collect_by_direct_invoke_funcname()
+
+        # 输出
+        for func_name, evt_list in group_dict.items():
+            if len(evt_list) != 1:
+
+                print("evt with same direct invoke funcname: %s:" % (func_name))
+
+                direct_invoke_api_retnto_addr_list = []
+                direct_invoke_api_retnto_addr_list_str = ""
+                for evt in evt_list:
+
+                    addr = evt.direct_invoke_api_retnto_addr()
+                    if addr and addr not in direct_invoke_api_retnto_addr_list:
+                        direct_invoke_api_retnto_addr_list.append(addr)
+                        direct_invoke_api_retnto_addr_list_str += " 0x%.8X " % addr
+                print("this direct invoke func name return to those addrs: %s" % direct_invoke_api_retnto_addr_list_str)
+
+                print("event details:")
+                for evt in evt_list:
+                    print(evt)
+                    print("")
+                print("\n\n")
+
+    def validate(self):
+        """自检, 输出些信息"""
+        self.__validate_same_direct_invoke_api_retnto_addr()
+        self.__validate_same_direct_invoke_func_name()
+
+    # ---------------------------------------------------------------------------
+    # 根据条件, 创建新的 EventContainer 对象
+
+    def new_by_operation_list(self, operation_list):
+        """筛选指定行为的事件, 组成新的 EventContainer 对象"""
+        return EventContainer(self.version, self.itd_md_list, self.collect_by_operation_list(operation_list))
+
+    def new_by_itd_name(self, md_name):
+        """依据1个 模块名称 创建新的 EventContainer 对象"""
+        group_dict = self.collect_by_itd_name_list([md_name])
+        return EventContainer(self.version, [md_name], group_dict[md_name])
+
+    def new_by_page_start(self, page_start):
+        """依据1个 堆起始地址 创建新的 EventContainer 对象"""
+        group_dict = self.collect_by_page_start_list([page_start])
+        return EventContainer(self.version, [], group_dict[page_start])
+
+    # ---------------------------------------------------------------------------
     # 分割
 
     def split_by_md_name(self, itd_md_list, output_dir):
         """分割出 frame 中包含指定 md_name 的事件"""
         output_file_path_template = os.path.join(output_dir, "log_split", "log.json")
 
+        group_dict = self.collect_by_itd_name_list(itd_md_list)
+
         for md_name in itd_md_list:
 
-            # 匹配模块名称
+            output_event_list = group_dict[md_name]
 
-            output_event_list = []
-            for evt in self.event_list:
-                if evt.check_any_frame_has_md_name(md_name):
-                    output_event_list.append(evt)
             if len(output_event_list) != 0:
 
                 # 输出到文件
@@ -1011,14 +1332,12 @@ class Output(object):
         """分割出 frame 中包含 page_start 的事件"""
         output_file_path_template = os.path.join(output_dir, "log_split", "log.json")
 
+        group_dict = self.collect_by_page_start_list(page_start_list)
+
         for page_start in page_start_list:
 
-            # 匹配堆起始地址
+            output_event_list = group_dict[page_start]
 
-            output_event_list = []
-            for evt in self.event_list:
-                if evt.check_any_frame_has_page_start(page_start):
-                    output_event_list.append(evt)
             if len(output_event_list) != 0:
 
                 # 输出到文件
@@ -1057,6 +1376,115 @@ class Output(object):
         # 判断并分割/输出
         if len(page_start_list) != 0:
             self.split_by_page_start(page_start_list, output_dir)
+
+    # ---------------------------------------------------------------------------
+    # 控制台输出 - 事件列表
+
+    def print_by_direct_invoke_api_retnto_addr(self):
+        """按 direct_invoke_api_retnto_addr 分组, 打印每个分组"""
+        group_dict = self.collect_by_direct_invoke_api_retnto_addr()
+
+        # 输出
+        for addr, evt_list in group_dict.items():
+            if len(evt_list) != 1:
+
+                # 多个事件有此相同的 direct_invoke_api_retnto_addr, 按组打印
+
+                print("%d events return to same addr: 0x%.8X:" % (len(evt_list), addr))
+                direct_invoke_func_name_list = []
+                for evt in evt_list:
+                    func_name = evt.direct_invoke_func_name()
+                    if func_name and func_name not in direct_invoke_func_name_list:
+                        direct_invoke_func_name_list.append(func_name)
+                print("direct invoke func name list: %s" % str(direct_invoke_func_name_list))
+                print("event details:")
+
+            else:
+                # 只有1个事件有此 direct_invoke_api_retnto_addr, 不打印其他内容
+                pass
+
+            # 打印正常信息
+            for evt in evt_list:
+                print(evt)
+                print("")
+            print("\n\n")
+
+    def print_by_direct_invoke_funcname(self):
+        """按照 direct_invoke_funcname 分组并打印"""
+        group_dict = self.collect_by_direct_invoke_funcname()
+
+        # 输出
+        for func_name, evt_list in group_dict.items():
+            if len(evt_list) != 1:
+
+                # 多个事件由此相同的 direct_invoke_funcname, 打印一些额外信息
+
+                print("%d evt with same direct invoke funcname: %s:" % (len(evt_list), func_name))
+
+                direct_invoke_api_retnto_addr_list = []
+                direct_invoke_api_retnto_addr_list_str = ""
+                for evt in evt_list:
+                    addr = evt.direct_invoke_api_retnto_addr()
+                    if addr and addr not in direct_invoke_api_retnto_addr_list:
+                        direct_invoke_api_retnto_addr_list.append(addr)
+                        direct_invoke_api_retnto_addr_list_str += " 0x%.8X " % addr
+                print("this direct invoke func name return to those addrs: %s" % direct_invoke_api_retnto_addr_list_str)
+
+                print("event details:")
+
+            else:
+                # 只有1个事件有此 direct_invoke_funcname, 不说啥了
+                pass
+
+            # 打印事件信息
+            for evt in evt_list:
+                print(evt)
+                print("")
+            print("\n\n")
+
+    def print_by_md_name_list(self, itd_md_list):
+        """按 感兴趣的模块名 打印输出"""
+        group_dict = self.collect_by_itd_name_list(itd_md_list)
+
+        for md_name, evt_list in group_dict.items():
+
+            print("%d events related with module %s" % (len(evt_list), md_name))
+            for evt in evt_list:
+                print(evt)
+                print("\n")
+            print("\n" * 2)
+
+    def print_by_page_start_list(self, page_start_list):
+        """按 堆起始地址 打印输出"""
+        group_dict = self.collect_by_page_start_list(page_start_list)
+
+        for page_start, evt_list in group_dict.items():
+
+            print("%d events related with page start 0x%.8X" % (len(evt_list), page_start))
+            for evt in evt_list:
+                print(evt)
+                print("\n")
+            print("\n" * 2)
+
+    def print_by_operation_list(self, operation_list):
+        """按行为列表打印"""
+        event_list = self.collect_by_operation_list(operation_list)
+
+        print("%d events realted with %d operations: %s" % (len(event_list), len(operation_list), operation_list))
+        for evt in event_list:
+            print(evt)
+            print("\n")
+        print("\n" * 2)
+
+    def print(self):
+        """打印输出 全部事件"""
+        print("%d events:" % len(self.event_list))
+        for evt in self.event_list:
+            print(evt)
+            print("\n")
+
+    # ---------------------------------------------------------------------------
+    # 控制台输出 - 可用的 IDA 脚本
 
     # ---------------------------------------------------------------------------
     # 重定向
@@ -1216,7 +1644,16 @@ class Output(object):
             return False
 
     def rebase_event_list_by_md_list(self, md_rebase_list):
-        """根据模块名称和地址, 重定向 ProcmonEvent() 列表"""
+        """
+        根据模块名称和地址, 重定向 ProcmonEvent() 列表
+
+        @param: md_rebase_list : list : 模块重定向信息的列表
+                                      : 元素类型: (old_md_base, old_md_end, new_md_base)
+                                      : old_md_base : int : 在 procmon 记录行为时, 某模块(要分析的那个)的基址
+                                      : old_md_end  : int : 在 procmon 记录行为时, 某模块(要分析的那个)的结束地址
+                                      : new_md_base : int : 在 IDA 中以[PE]方式加载此模块, 在 IDA 中设置的基地址
+                                      : 这里主要是为了 frame.addr 能跟 IDA 中的地址对应, 分析时不需要(或不可能)再重定位
+        """
         for evt in self.event_list:
 
             # 遍历帧
@@ -1230,7 +1667,16 @@ class Output(object):
                         pass
 
     def rebase_event_list_by_page_list(self, page_rebase_list):
-        """根据堆的范围, 重定向 ProcmonEvent() 列表"""
+        """
+        根据堆的范围, 重定向 ProcmonEvent() 列表
+
+        @param: page_rebase_list : list : 堆重定向信息的列表
+                                        : 元素类型: (old_page_start, old_page_end, new_page_start)
+                                        : old_page_start : int : 在 procmon 记录行为时, 某堆(要分析的那个)的堆起始地址
+                                        : old_page_end   : int : 在 procmon 记录行为时, 某堆(要分析的那个)的堆结束地址
+                                        : new_page_start : int : 在 IDA 中以[二进制]方式加载此堆内存的 dump, 在 IDA 中设置的基地址
+                                        : 这里主要是为了 frame.addr 能跟 IDA 中的地址对应, 分析时不需要(或不可能)再重定位
+        """
         for evt in self.event_list:
 
             # 遍历帧
@@ -1248,31 +1694,31 @@ class Output(object):
 
     def __add__(self, other):
         """
-        相同版本的 Output 对象混合到一起
+        相同版本的 EventContainer 对象混合到一起
 
         - 要加就把两堆 ProcmonEvent() 对象加到一起, 因为每次添加都要执行 去重/组合 等操作, 如果一个一个加就太慢了
         - 最好重定位都是正确的, 要不然, 呵呵...
 
-        - 不提供 self.merge_from_xml_file()/self.merge_from_json_file() 的操作. 请先通过 xml_file/json_file 创建 Output 对象, 再让2个对象 +
+        - 不提供 self.merge_from_xml_file()/self.merge_from_json_file() 的操作. 请先通过 xml_file/json_file 创建 EventContainer 对象, 再让2个对象 +
         """
         # 比较版本
         if self.version != other.version:
-            raise Exception("can't merge 2 Output object with different version: %s vs %s" % (self.version, other.version))
+            raise Exception("can't merge 2 EventContainer object with different version: %s vs %s" % (self.version, other.version))
 
         # 对于模块名不相同的, 警告下, 后果用户自己承担吧...
         new_itd_md_list = self.itd_md_list
         if set(self.itd_md_list) != set(other.itd_md_list):
-            print("merge 2 Output object with different itd module list: %s vs %s" % (self.itd_md_list, other.itd_md_list))
+            print("merge 2 EventContainer object with different itd module list: %s vs %s" % (self.itd_md_list, other.itd_md_list))
             new_itd_md_list = list(set(self.itd_md_list + other.itd_md_list))
 
         # 混合
         new_event_list = self.merge_duplicate_event_list(list(self.event_list + other.event_list))
 
         # 返回新对象
-        return Output(self.version, new_itd_md_list, new_event_list)
+        return EventContainer(self.version, new_itd_md_list, new_event_list)
 
     def diff(self, other):
-        """比较2个 Output() 对象的不同"""
+        """比较2个 EventContainer() 对象的不同"""
         pass
 
     def equalvent_event_list(self):
@@ -1382,25 +1828,22 @@ class Output(object):
         print("%d procmon event remained..." % (len(filtered_event_list)))
         self.event_list = filtered_event_list
 
-    def remove_frames_procmon_recognized_sysmd_as_heap(self):
+    def remove_invalid_frames(self):
         """
-        去除 procmon 将系统模块帧识别为堆帧的帧
+        去除 procmon 识别错误的帧
 
-        - 把 frame.addr 以 0x70000000 开头的 frame
+        推荐在首次解析 xml 并保存之前使用.
+        当然, 其实随时用都可以, 就怕用的晚了在某些时刻这些错误的帧会造成不良影响
+
+        错误帧包括:
+            1. 将系统模块帧识别为堆帧的帧: frame.addr 以 0x70000000 开头的 frame
         """
         for evt in self.event_list:
 
-            # 将符合条件的帧添加到删除列表
-            remove_frame_list = []
-            for frame in evt.frame_list:
-                if isinstance(frame, StackFramePage) and frame.addr > 0x70000000:
-                    remove_frame_list.append(frame)
+            # 将系统模块帧识别为堆帧的帧
+            evt.remove_frames_procmon_recognized_sysmd_as_heap()
 
-            # 删除
-            if len(remove_frame_list) != 0:
-                print("remove %d frames procmon recognized sysmd as heap for evt:\n%s\n" % (len(remove_frame_list), evt))
-                for frame_remove in remove_frame_list:
-                    evt.frame_list.remove(frame_remove)
+            # 其他条件
 
     # ---------------------------------------------------------------------------
     # json
@@ -1443,7 +1886,7 @@ class Output(object):
 
             print("output info loaded from file: %s" % json_file_path)
 
-            return Output(version, itd_md_list, event_list)
+            return EventContainer(version, itd_md_list, event_list)
 
         print("open json file fail: %s" % json_file_path)
         return None
@@ -1565,9 +2008,18 @@ class Output(object):
     @classmethod
     def from_xml_file(cls, file_path, itd_md_list, event_tag, version="0.1"):
         """
-        读取 xml 文件, 创建此对象
+        读取 xml 文件, 创建 EventContainer() 对象
 
-        @return: obj/None : Output() 对象
+        @param: file_path   : string : xml 文件路径
+        @param: itd_md_list : list   : 感兴趣的模块名列表
+                                     : 脚本依据此列表中的模块名是否在事件的调用堆栈中出现, 来过滤事件
+                                     : 如果不指定, 则只那些调用栈中包含堆地址的事件
+        @param: event_tag   : string : 为此 xml 文件指定 tag
+                                     : 如果几个 xml 文件记录样本不同分支的代码产生的行为, 可以用 tag 进行区分
+                                     : 如果同1个事件(调用堆栈相同)在几个 EventContainer() 中都存在, 则这几个 EventContainer() 对象进行合并时, 此事件的不同 tag 会组合为1个列表
+        @param: version     : string : json 文件版本
+
+        @return: obj/None : EventContainer() 对象, 或者 None
         """
         # 检查/补全参数
         if len(event_tag) == 0:
@@ -1590,7 +2042,7 @@ class Output(object):
             event_list = cls.__to_event_list(soup, itd_md_list, event_tag)
 
             # 创建对象并返回
-            return Output(version, itd_md_list, event_list)
+            return EventContainer(version, itd_md_list, event_list)
 
         print("open xml file fail: %s" % file_path)
 
@@ -1605,7 +2057,144 @@ class Output(object):
 # - 函数
 
 
-def test():
+def example_1():
+    """
+    1. 从 xml 文件创建 EventContainer() 对象(参数作用见函数说明)
+    2. 保存为 json 文件
+    3. 从 json 文件创建 EventContainer() 对象
+    """
+    ctr = EventContainer.from_xml_file(r"e:\tmp\logfile.xml", ["explorer.exe"], "run_default")
+    ctr.remove_invalid_frames()
+    ctr.save(r"e:\tmp\logfile_.json")
+
+    ctr_again = EventContainer.from_json_file(r"e:\tmp\logfile_.json")
+
+    # 打印内容
+    ctr_again.print()
+
+
+def example_2():
+    """
+    1. 组合几个 json 文件中的事件, 保存到新文件
+    """
+    ctr1 = EventContainer.from_json_file(r"e:\tmp\logfile_1.json")
+    ctr2 = EventContainer.from_json_file(r"e:\tmp\logfile_2.json")
+    ctr3 = EventContainer.from_json_file(r"e:\tmp\logfile_3.json")
+
+    ctr_new = ctr1 + ctr2 + ctr3
+    ctr_new.save(r"e:\tmp\logfile_new.json")
+
+    # 打印内容
+    ctr_new.print()
+
+
+def example_3():
+    """
+    1. 堆重定向
+    2. 模块重定向
+    """
+    ctr = EventContainer.from_json_file(r"e:\tmp\logfile.json")
+
+    ctr.rebase_event_list_by_page_list([0x90000, 0xC0000, 0xD80000])
+    ctr.rebase_event_list_by_md_list([0x400000, 0x407000, 0x10000000])
+
+    ctr.save(r"e:\tmp\logfile_rebased.json")
+
+    # 打印内容
+    ctr.print()
+
+
+def example_4():
+    """
+    1. 筛选调用栈包含指定 模块名称 的帧, 组成新的 EventContainer() 对象
+    2. 筛选调用栈包含指定 堆起始地址 的帧, 组成新的 EventContainer() 对象
+    """
+    ctr = EventContainer.from_json_file(r"e:\tmp\logfile.json")
+
+    ctr_explorer = ctr.new_by_itd_name("explorer.exe")
+    ctr_0x90000 = ctr.new_by_page_start(0x90000)
+
+    ctr_explorer.save(r"e:\tmp\logfile_explorer.json")
+    ctr_0x90000.save(r"e:\tmp\logfile_0x90000.json")
+
+    # 打印内容
+    ctr_explorer.print()
+    ctr_explorer.print()
+
+
+def example_5():
+    """
+    1. 按指定的 感兴趣的模块名称列表 或 堆起始地址列表, 将 EventContainer() 对象分割为多个部分, 保存到指定目录
+    2. [!+默认+!] 分割方式
+    """
+    ctr = EventContainer.from_json_file(r"e:\tmp\logfile.json")
+
+    ctr.split_by_page_start([0x90000], r"e:\tmp\split_by_page_start_files")
+    ctr.split_by_md_name(["explorer.exe"], r"e:\tmp\split_by_md_name_files")
+    ctr.split(r"e:\tmp\split_default")
+
+
+def example_6():
+    """
+    1. 创建 ConfigMgr() 对象加载配置
+    2. 从配置文件加载配置, 修改, 保存
+    """
+    config = ConfigMgr()
+    config.save()
+    assert os.path.exists(config.config_file_path)
+
+    config_again = ConfigMgr.from_json_file("config.json")
+    config_again.add_oper("my_filter", ["RegSetValue"])
+    config_again.save()
+
+
+def example_7():
+    """
+    1. 用读取的配置文件, 过滤 EventContainer() 对象中的事件列表
+    """
+    ctr = EventContainer.from_json_file(r"e:\tmp\logfile.json")
+    config = ConfigMgr.from_json_file("config.json")
+
+    ctr_file = ctr.new_by_operation_list(config.get_oper_list("file"))
+    ctr_reg = ctr.new_by_operation_list(config.get_oper_list("reg"))
+    ctr_net = ctr.new_by_operation_list(config.get_oper_list("net"))
+    ctr_proc = ctr.new_by_operation_list(config.get_oper_list("proc"))
+    ctr_my_filter = ctr.new_by_operation_list(config.get_oper_list("my_filter"))
+
+    ctr_file.save(r"e:\tmp\logfile_file.json")
+    ctr_reg.save(r"e:\tmp\logfile_reg.json")
+    ctr_net.save(r"e:\tmp\logfile_net.json")
+    ctr_proc.save(r"e:\tmp\logfile_proc.json")
+    ctr_my_filter.save(r"e:\tmp\logfile_my_filter.json")
+
+    # 打印各自的内容
+    ctr_file.print()
+    ctr_reg.print()
+    ctr_net.print()
+    ctr_proc.print()
+    ctr_my_filter.print()
+
+
+def example_8():
+    """
+    1. 按不同过滤条件打印内容
+    """
+    ctr = EventContainer.from_json_file(r"e:\tmp\logfile.json")
+    ctr.print_by_page_start_list([0x90000])
+    ctr.print_by_md_name_list(["explorer.exe"])
+
+    config = ConfigMgr.from_json_file("config.json")
+    ctr.print_by_operation_list(config.get_oper_list("file"))
+    ctr.print_by_operation_list(config.get_oper_list("net"))
+    ctr.print_by_operation_list(config.get_oper_list("reg"))
+    ctr.print_by_operation_list(config.get_oper_list("proc"))
+    ctr.print_by_operation_list(config.get_oper_list("my_filter"))
+
+
+def example_9():
+    """
+    1. 与 IDA 结合, 补全 ProcmonEvent 的内容
+    """
     pass
 
 
@@ -1614,54 +2203,15 @@ def test():
 
 
 if __name__ == "__main__":
-
-    if False:
-
-        xml_file_path = r"e:\tmp\logfile.xml"
-
-        # 创建对象
-        output = Output.from_xml_file(xml_file_path, ["explorer.exe"], "run_default")
-
-        # 重定向
-        output.rebase_event_list_by_page_list([(0x90000, 0xF0000, 0xD80000)])
-
-        # 等价转换某些 ProcmonEvent()
-        output.equalvent_event_list()
-
-        # 混合调用栈相同的 ProcmonEvent()
-        output.merge_duplicate_event_list()
-
-        # 去除 procmon 将系统模块帧识别为堆帧的帧
-        output.remove_frames_procmon_recognized_sysmd_as_heap()
-
-        # 保存到文件
-        output.save(__dup_file_name(xml_file_path, new_ext="json"))
-
-    else:
-        json_file_path = r"e:\tmp\logfile_000.json"
-
-        obj = Output.from_json_file(json_file_path)
-
-        # 猜测 direct_invoke_api
-        # obj.guess_direct_invoke_api()
-
-        # 保存
-        # obj.save(__dup_file_name(json_file_path))
-
-        # obj.validate()
-
-        addrs = obj.export_unguessable_direct_invoke_api_retn_addrs()
-        for addr in addrs:
-            print("0x%.8X" % addr)
-
-        # for evt in obj.event_list:
-        #     # if len(evt.frame_list) > 0 and evt.frame_list[0].func_name.startswith("KiFastCallEntry"):
-        #     #     print(evt)
-        #     #     print("\n")
-        #     print(evt)
-        #     print("\n")
-
-    #
+    # example_1()
+    # example_2()
+    # example_3()
+    # example_4()
+    # example_5()
+    # example_6()
+    # example_7()
+    # example_8()
+    # example_9()
     pass
 
 # ---------------------------------------------------------------------------
